@@ -3,4 +3,5 @@ Font Parent/Pairing website about
 
 ## Contributors
 
-Hamilton Cline [link](https://github.com/bronkula/499_Final)
+- Raymond Shen [link](https://github.com/Raymondshen/499_Final)
+- Hamilton Cline [link](https://github.com/bronkula/499_Final)
