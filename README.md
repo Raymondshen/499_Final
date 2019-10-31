@@ -1,7 +1,7 @@
 # 499_Final
 Font Parent/Pairing website about 
 
-##Slack
+## Slack
 
 https://wnm499finalworkspace.slack.com
 
