@@ -5,3 +5,4 @@ Font Parent/Pairing website about
 
 - Raymond Shen [link](https://github.com/Raymondshen/499_Final)
 - Hamilton Cline [link](https://github.com/bronkula/499_Final)
+- Chunjia Ouyang [link](https://github.com/chunjiaouyang/499_Final)
