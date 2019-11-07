@@ -4,4 +4,4 @@ Nov 3 - 9:
 - Worked on moodboard
 - Met up with Lovisa and Gustav
 - Brainstormed
-- 
+- User flow
