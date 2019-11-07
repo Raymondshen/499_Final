@@ -1,6 +1,10 @@
 # 499_Final
 Font Parent/Pairing website about 
 
+## Slack
+
+https://wnm499finalworkspace.slack.com
+
 ## Contributors
 
 - Raymond Shen [link](https://github.com/Raymondshen/499_Final)
