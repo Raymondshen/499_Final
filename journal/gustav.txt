@@ -1,7 +1,17 @@
 Gustav Bodin 
 
-November 6
+Oct 31 - Nov 7 
 
 Today we had a group meeting to discus the flow and usability of the site that we're making. Me, Lovisa and Raymond met up at Werqwise to discuss the flow. 
 
 This is what we came up with:
+- Descided on the UX sollution and what the scope of the project is about. What does the user get out of using this application? We came up with a way for users to match different typefaces from google fonts. And create a document for the hierchy of the paired typefaces. 
+
+- Started a flow that's in the branch of the 
+
+- Started to gather a bunch of moodborad and inspirational website and post it in the figma document. 
+
+- Make some LoFi sketches of how each of us imagine the flow. 
+
+For the future. 
+We have to destinguish roles.
