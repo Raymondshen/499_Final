@@ -2,7 +2,7 @@
 *.css.map
 *.DS_Store
 *sftp_config.json
-.moodboard/
-.weblinks/
-.sketches/
+/moodboard
+/weblinks
+/sketches
 
