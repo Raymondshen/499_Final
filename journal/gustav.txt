@@ -15,3 +15,22 @@ This is what we came up with:
 
 For the future. 
 - We have to distinguish roles and distinguish responsibilities and a schedule for deadlines.
+
+Nov 7 - Nov 13
+
+No group meeting this week. Instead, we planned time before the next class to be upon speed for our sketches. Design ideas, visuals, and interactions. 
+
+I've been exploring a little bit into reacting for Lottie as well as seeing up node and react. And exploring a little more into components.
+
+Lottie could be a nice tool to use together with react for the visual parts of the page. Instead of using video or gif. If you're importing the library once, why not use it more trough out the application.
+
+Exploring designs in the Figma document. I will change this document to a PDF and upload the screens and changes coming week. Exploring the split-screen interactions. And looking at how the user is going to go through the flow.
+
+As well as getting some inspiration and sketching options for Lottie animations to load as SVG motion graphics. As part of branding etc.
+
+
+
+
+
+
+
