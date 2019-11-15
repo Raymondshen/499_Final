@@ -1,0 +1,20 @@
+## 11/14 ->
+
+WEEK GOALS
+- have solid finished design
+- have vector components done
+- structure built out, workable nav
+
+
+
+## 11/7 ->
+
+TO SEE GIT HISTORY
+- git log 
+
+WAYS TO PRESENT GIT
+- git log - -pretty=oneline
+- git log - -pretty=format: “%h %s”  - -graph
+
+TO MAKE A NEW BRANCH 
+- git checkout -b <branch name> <branch its from>
