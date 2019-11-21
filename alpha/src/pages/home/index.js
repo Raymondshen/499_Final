@@ -1,24 +1,16 @@
 import React from 'react';
 
+//Haven't started styling the app. Just setting up the routing. Have applied some easy classes that I had in my library to make it easy to look at.
+//https://mannenpag.github.io/sass-library/
+
 const HomePage = () => {
 	return(
-		<section>
-			<div className=""><h1>[Font pairing app name]</h1></div>
-					<div className="container">
-			<div className="card pad">
-				<p>This page will be a short introduction to some basic, and even advanced topics for creating a React App from scratch. Open the code and step through the application part by part, as you analyse the inner workings.</p>
-
-				<h3>Relevant Links</h3>
-				<ul>
-					<li>Add React to a Page: <a href="https://reactjs.org/docs/add-react-to-a-website.html">https://reactjs.org/docs/add-react-to-a-website.html</a></li>
-					<li>Hooks: <a href="https://reactjs.org/docs/hooks-reference.html">https://reactjs.org/docs/hooks-reference.html</a></li>
-					<li>Hooks Examples: <a href="https://daveceddia.com/useeffect-hook-examples/">https://daveceddia.com/useeffect-hook-examples/</a></li>
-					<li>React Router: <a href="https://reacttraining.com/react-router/web/guides/quick-start">https://reacttraining.com/react-router/web/guides/quick-start</a></li>
-					<li>Deployment: <a href="https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing">https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing</a></li>
-					<li>Reducer Pattern: <a href="https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks">https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks</a></li>
-				</ul>
+		<section className="container max-xs-s">
+			<div className="">
+				<h4>Welcome to our font pairing app</h4>
+				<p>This is our app for pairing fonts.</p>
+				<p className="max-xs-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-		</div>
 		</section>
 		);
 } 
