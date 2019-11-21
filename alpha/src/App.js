@@ -18,7 +18,8 @@ import {
 import Nav from "./components/nav";
 
 //Here goes the pages that we're importing to the main app.
-//The pages are the contet that will be exchanged in the app.
+//The pages are the content that will be exchanged in the app.
+//Files can be located in /src/pages/{about, fontPairing, home, etc}.
 import HomePage from "./pages/home";
 import PairPage from "./pages/fontPairing";
 import AboutPage from "./pages/about";
@@ -26,7 +27,7 @@ import AboutPage from "./pages/about";
 function App() {
   return (
     <Router>
-      <Nav projectTitle="Pairing fonts">
+      <Nav projectTitle="FontPairing">
           <Link to="/">Home</Link>
           <Link to="/pairfonts">How to pairfonts</Link>
           <Link to="/about">About project</Link>
