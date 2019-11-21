@@ -1,0 +1,145 @@
+body, html {
+  font-family: "Helvetica", "Arial", sans-serif;}
+*,*:before,*:after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.button{
+	color: var(--color-body-background);
+	@include breakpoint ('tablet') {
+	}
+}
+
+p{
+	line-height: 115%;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+h1{
+	font-size: 3.25em;
+	line-height: 112%;
+	@include breakpoint ('tablet') {
+		font-size: 6em;
+		line-height: 92%;
+	}
+}
+
+h2{
+	font-size: 1.75em;
+	line-height: 105%;
+	@include breakpoint ('tablet') {
+		font-size: 3.25em;
+		line-height: 112%;
+	}
+}
+
+h3{
+	font-size: 1.375em;
+	line-height: 105%;
+	@include breakpoint ('tablet') {
+		font-size: 2em;
+		line-height: 102%;
+	}
+}
+
+h4, .button{
+	font-size: 1.1em;
+	line-height: 105%;
+	@include breakpoint ('tablet') {
+		font-size: 2em;
+		line-height: 102%;
+	}
+}
+
+h5 {
+	font-size: 1.375em;
+	line-height: 105%;
+}
+
+a {
+	font-size: 1.1em;
+	line-height: 105%;
+}
+
+.body-text{
+	&-lg{
+		font-size: 1.375em;
+		line-height: 115%;
+	}
+}
+
+//STYLE GUIDE CSS
+
+main {
+	width: 100vw;
+	float: right;
+	@include breakpoint ('tablet') {
+		width: 85vw;
+	}
+}
+
+header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 15vw;
+	background-color: #f5f2f0;	
+	display: none;
+	@include breakpoint ('tablet') {
+		display: block;
+	}
+	nav {
+		padding-left: 2vw;
+		padding-top: 2em;
+		.copyright {
+			font-size: 1em;
+			position: absolute;
+			bottom: 2em;
+			font-family: "Helvetica", "Arial", sans-serif;
+		}
+	}
+
+}
+
+.well {
+	background-color: #f5f2f0;
+	padding: map-get($spacers, 's');
+	color: rgba(var(--color-body-background), 1);
+	border: 1px solid #d4ccc5;
+}
+
+.swell {
+	@extend .well;
+	background-color: rgba(var(--color-body-background), 1);
+}
+
+pre {
+	border: 1px solid #d4ccc5;
+	max-height: 25em;
+}
+
+.class-style {
+	color: #00aa06;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.file-style {
+	color: #dd4a68;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.property-style {
+	color: #07a;
+	font-family: "Helvetica", "Arial", sans-serif;
+}

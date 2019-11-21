@@ -1,0 +1,27 @@
+
+.compact{
+	list-style-type: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.nav{
+	ul{
+		@extend .compact;
+	}
+	a {
+		display: block;
+		padding: 0.2em 0.5em;
+		font-weight: normal;
+		cursor: pointer;
+		color: var(--color-body-background-light);
+		&:hover{
+			color: var(--color-body-background);
+		}
+	}
+}
+
+.container{
+	margin: 0em auto;
+}
