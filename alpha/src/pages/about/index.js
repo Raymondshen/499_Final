@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage = () => {
 	return (
-		<section className="container max-xs-s">
+		<section className="container max-xs-s p-xs-txl">
 			<div className="hero"><h3>Here goes info about the project</h3></div>
 			
 			<div className="container">

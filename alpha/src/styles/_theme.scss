@@ -70,13 +70,6 @@ a {
 	line-height: 105%;
 }
 
-.body-text{
-	&-lg{
-		font-size: 1.375em;
-		line-height: 115%;
-	}
-}
-
 //STYLE GUIDE CSS
 
 main {
@@ -89,13 +82,12 @@ header {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	height: 100px;
+	height: 3.2rem;
+	background-color: var(--main-color-dark);
 	width: 100vw;
-	background-color: #f5f2f0;	
 	display: none;
 	nav {
 		padding-left: 2vw;
-		padding-top: 2em;
 	}
 
 }

@@ -21,7 +21,7 @@ const HomePage = () => {
 	);
 
 	return(
-		<section className="container max-xs-s">
+		<section className="container max-xs-s p-xs-txl">
 			<div className="container">
 				<h4>Welcome to our font pairing app</h4>
 				<p>This is our app for pairing fonts.</p>
