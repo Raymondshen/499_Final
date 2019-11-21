@@ -27,7 +27,7 @@ import AboutPage from "./pages/about";
 function App() {
   return (
     <Router>
-      <Nav projectTitle="Pairing fonts">
+      <Nav projectTitle="FontPairing">
           <Link to="/">Home</Link>
           <Link to="/pairfonts">How to pairfonts</Link>
           <Link to="/about">About project</Link>
