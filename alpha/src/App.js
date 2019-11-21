@@ -19,6 +19,7 @@ import Nav from "./components/nav";
 
 //Here goes the pages that we're importing to the main app.
 //The pages are the contet that will be exchanged in the app.
+//You may locate these files via /src/pages/{the selected files}.
 import HomePage from "./pages/home";
 import PairPage from "./pages/fontPairing";
 import AboutPage from "./pages/about";
