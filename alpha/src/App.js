@@ -1,5 +1,7 @@
+//Hello!
+//Suggested workfolw. Open a new terminal tab for node running react, sass compile and watch for style folder, and git for alpha folder. 
+
 import React from 'react';
-import logo from './assets/images/logo.svg';
 import './styles/App.css';
 import './styles/style.min.css';
 
@@ -18,20 +20,24 @@ import Nav from "./components/nav";
 //Here goes the pages that we're importing to the main app.
 //The pages are the contet that will be exchanged in the app.
 import HomePage from "./pages/home";
+import PairPage from "./pages/fontPairing";
+import AboutPage from "./pages/about";
 
 function App() {
   return (
     <Router>
       <main>
-        <Nav>
-
+        <Nav projectTitle="Pairing fonts">
+            <Link to="/">Home</Link>
+            <Link to="/pairfonts">How to pairfonts</Link>
+            <Link to="/about">About project</Link>
         </Nav>
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/pairfonts" component={PairPage}/>
+          <Route path="/about" component={AboutPage}/>
+        </Switch>
       </main>
-      <Switch>
-        <Route exact path="/" component={HomePage}/>
-        <Route exact path="/" component={HomePage}/>
-      </Switch>
-    
     </Router>
   );
 }

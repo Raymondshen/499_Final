@@ -81,6 +81,7 @@ a {
 
 main {
 	width: 100vw;
+	height: 6000px;
 	float: right;
 	@include breakpoint ('tablet') {
 		width: 85vw;
@@ -88,7 +89,23 @@ main {
 }
 
 header {
-
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100vw;
+	background-color: #f5f2f0;	
+	display: none;
 	nav {
+		padding-left: 2vw;
+		padding-top: 2em;
+		.copyright {
+			font-size: 1em;
+			position: absolute;
+			bottom: 2em;
+			font-family: "Helvetica", "Arial", sans-serif;
 		}
+	}
+
 }
