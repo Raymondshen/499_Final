@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = (props) => {
     return (
-    <header className="">
+    <header className="nav">
     	<div>
     		<p>{props.projectTitle}</p>
     	</div>

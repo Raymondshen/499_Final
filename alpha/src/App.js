@@ -26,12 +26,12 @@ import AboutPage from "./pages/about";
 function App() {
   return (
     <Router>
+      <Nav projectTitle="Pairing fonts">
+          <Link to="/">Home</Link>
+          <Link to="/pairfonts">How to pairfonts</Link>
+          <Link to="/about">About project</Link>
+      </Nav>
       <main>
-        <Nav projectTitle="Pairing fonts">
-            <Link to="/">Home</Link>
-            <Link to="/pairfonts">How to pairfonts</Link>
-            <Link to="/about">About project</Link>
-        </Nav>
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route path="/pairfonts" component={PairPage}/>
