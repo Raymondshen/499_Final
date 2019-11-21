@@ -19,7 +19,7 @@ import Nav from "./components/nav";
 
 //Here goes the pages that we're importing to the main app.
 //The pages are the content that will be exchanged in the app.
-//Files can be located in /src/pages/{about, fontPairing, home, etc}.
+//Files can be located in /src/pages/{about, fontPairing, home, etc}.dsfsd
 import HomePage from "./pages/home";
 import PairPage from "./pages/fontPairing";
 import AboutPage from "./pages/about";
