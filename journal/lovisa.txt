@@ -12,3 +12,9 @@ November 09-14:
 – Continuing research and moodboard
 - Sketches
 - Design exploration in Figma
+
+November 14-21:
+
+- Research React
+- Test to create components in React
+– Continuing design work in Figma
