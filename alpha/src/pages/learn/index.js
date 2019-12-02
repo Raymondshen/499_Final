@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Learn = () => {
+const LearnPage = () => {
 	return (
 		<section className="container max-xs-s p-xs-txl">
 			<div className="hero"><h3>Here goes infor about pairing fonts</h3></div>
@@ -11,4 +11,4 @@ const Learn = () => {
 	);
 }
 
-export default Learn;
+export default LearnPage;
