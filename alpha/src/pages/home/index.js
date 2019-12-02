@@ -6,14 +6,25 @@ import {
 	Link,
 	useRouteMatch
 } from 'react-router-dom';
+//Haven't started styling the app. Just setting up the routing. Have applied some easy classes that I had in my library to make it easy to look at.
+//https://mannenpag.github.io/sass-library/
 
 //Here is home content. 
 const HomePage = () => {
 	let {path} = useRouteMatch();
 
+	// A reducer is a handy way of creating app data that is subscribed but somewhat custom
+	// These will reset if you ever navigate away from the Learn pages
+	// let [fonts,setFont] = useReducer(
+	// 	(s,a) => ({...s,...a}),
+	// 	{first:'Arial',second:'serif'}
+	// );
+
 	let [font1,setFont1] = useState('Arial');
 	let [font2,setFont2] = useState('Times New Roman');
 	let [num,setNum] = useState(0);
+
+
 
 	return(
 		<section className="container max-xs-s p-xs-txl">
@@ -27,7 +38,7 @@ const HomePage = () => {
 					<Route exact path={`${path}`}>
 						<PairFont path={path}/>
 					</Route>
-					<Route exact path={`${path}/1`}>
+					<Route path={`${path}/1`}>
 						<PairFont1
 							path={path}
 							font1={font1}
@@ -83,16 +94,9 @@ const PairFont1 = ({path,font1,setFont1}) => {
 	}
 	return (
 		<section>
-			<div>
-				<h3>Here is info about the pairing process</h3>
-				<p className="max-xs-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-
 			{font1}
 			<input value={font1} onChange={updateFont} />
-			<div>
-				<Link to={`${path}/2`}>Next</Link>
-			</div>
+			<div><Link to={`${path}/2`}>Next</Link></div>
 		</section>
 	);
 }
@@ -102,11 +106,10 @@ const PairFont2 = ({path,font2,setFont2}) => {
 	return (
 		<section>
 			{font2}
-			<div style="padding-top: 400px;" ><Link to={`${path}/3`}>Next</Link></div>
+			<div><Link to={`${path}/3`}>Next</Link></div>
 		</section>
 	);
 }
-
 const PairFont3 = (props) => {
 	const doNum = e => {
 		e.preventDefault();

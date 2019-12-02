@@ -1,7 +1,7 @@
 //Hello!
 //Suggested workfolw. Open a new terminal tab for node running react, sass compile and watch for style folder, and git for alpha folder. 
 
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './styles/App.css';
 import './styles/style.min.css';
 
@@ -20,22 +20,24 @@ import {HeaderNav} from "./components/nav";
 //Here goes the pages that we're importing to the main app.
 //The pages are the contet that will be exchanged in the app.
 import HomePage from "./pages/home";
-import Learn from "./pages/learn";
+import PairPage from "./pages/fontPairing";
 import AboutPage from "./pages/about";
 
 function App() {
+  let [title,setTitle] = useState("Pairing fonts");
+
   return (
-    <Router >
-      <HeaderNav title="Pairing fonts">
-          <Link to="/">Home</Link>
-          <Link to="/pairfonts">How to pairfonts</Link>
-          <Link to="/about">About project</Link>
+    <Router>
+      <HeaderNav title={title}>
+        <Link to="/">Home</Link>
+        <Link to="/pairfonts">How to pairfonts</Link>
+        <Link to="/about">About project</Link>
       </HeaderNav>
       <main>
         <Switch>
-          <Route exact path="/" component={IntroPage}/>
-          <Route exact path="/choose" component={HomePage}/>
-          <Route path="/pairfonts" component={Learn}/>
+          <Route exact path="/"><IntroPage/></Route>
+          <Route path="/choose" component={HomePage}/>
+          <Route path="/pairfonts" component={PairPage}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
       </main>
@@ -44,11 +46,9 @@ function App() {
 }
 
 const IntroPage = () => {
-  return(
-    <div>
-      <Link className="" to="choose">Start!</Link>
-    </div>
-  );
-}
+  return (<div>
+    <Link className="" to="choose">Start!</Link>
+  </div>);
+};
 
 export default App;
