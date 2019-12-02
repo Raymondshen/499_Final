@@ -3,7 +3,7 @@ import React from 'react';
 //Question for pairing dock. How does one change the unique h1 for the user and not the whole document.
 
 //Components that's global
-const PairingDoc = (props) => {
+const PairingDoc = ({fontStyle, fontName}) => {
     return ( <>
       <section className="grid p-xs-m">
         <div className="userInputH1 col--12">An Adaptable Foundation</div>
@@ -22,30 +22,36 @@ const PairingDoc = (props) => {
         </div>
       </section>
       <section className="p-xs-hs">
-        <TypeHierchy fontSize={"H1"}/>
-        <TypeHierchy fontSize={"H2"}/>
-        <TypeHierchy fontSize={"H3"}/>
-        <TypeHierchy fontSize={"H4"}/>
-        <TypeHierchy fontSize={"H5"}/>
+        <TypeHierchy style={fontStyle} text={fontName}/>
       </section>
     </>
     );
 }
 
-//Kick list from Hamilton
+//Click list from Hamilton
 const ClickList = ({data,callback}) => {
-  return (<p style={{lineHeight: 2.4}}>
+  return (
+    <section class="flex-xs-parent flex-xs-wrap">
       {data.map(o=>(
-          <span className="btn" onClick={()=>callback({first:o})}>{o}</span>
+        <div className="font-card">
+          <p className="btn" onClick={()=>callback({first:o})}>{o}</p>
+          <h4>Aa</h4>
+        </div>
       )).reduce((r,o)=>[r," ",o])}
-  </p>);
+    </section>
+  );
 }
 
 //Components that's local
-const TypeHierchy = ({fontSize}) => {
+const TypeHierchy = ({fontStyle, text}) => {
   return (
     <section>
-      <div>{fontSize}</div>
+      <div className="userInputH1 m-xs-bs" style={{fontFamily:fontStyle}}>H1 / {text}</div>
+      <div className="userInputH2 m-xs-bs" style={{fontFamily:fontStyle}}>H2 / {text}</div>
+      <div className="userInputH3 m-xs-bs" style={{fontFamily:fontStyle}}>H3 / {text}</div>
+      <div className="userInputH4 m-xs-bs" style={{fontFamily:fontStyle}}>H4 / {text}</div>
+      <div className="userInputH5 m-xs-bs" style={{fontFamily:fontStyle}}>H5 / {text}</div>
+      <div className="userInputP m-xs-bs" style={{fontFamily:fontStyle}}>p / {text}</div>
     </section>
   );
 }
@@ -60,6 +66,9 @@ const Slider = () => {
 const FontCard = () => {
   return (
     <section>
+      <h4>
+        Aa
+      </h4>
     </section>
   );
 }

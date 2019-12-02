@@ -92,19 +92,32 @@ header {
 
 }
 
+.font-input {
+	width: 100%;
+}
+
+.font-card {
+	padding: 2em;
+	flex: 1 1 40%;
+	border: 1px solid black;
+	cursor: pointer;
+	margin: 5%;
+}
+
+
 //Here goes all of the user class's that will change depending on what the users input to the left. It's not the same as the h1 of the whole docs.
 .userInputH1{
 	font-size: 4em;
 }
 .userInputH2{
-
+	font-size: 3em;
 }
 .userInputH3{
 	font-size: 2.3em;
 }
 
 .userInputH4{
-	font-size: 1.8em;
+	font-size: 1.2em;
 
 }
 
