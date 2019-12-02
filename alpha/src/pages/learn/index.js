@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PairPage = () => {
+const Learn = () => {
 	return (
 		<section className="container max-xs-s p-xs-txl">
 			<div className="hero"><h3>Here goes infor about pairing fonts</h3></div>
@@ -11,4 +11,4 @@ const PairPage = () => {
 	);
 }
 
-export default PairPage;
+export default Learn;

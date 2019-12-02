@@ -15,30 +15,39 @@ import {
 //Here goes the components that we're importing to the main app.
 //The main components are the ones that will be displayed at all times. 
 //Etc. the nav, the footer. The components that will be in the blocks that make up the pages can be imported directlly into the pages and then the pages into the main app.
-import Nav from "./components/nav";
+import {HeaderNav} from "./components/nav";
 
 //Here goes the pages that we're importing to the main app.
 //The pages are the contet that will be exchanged in the app.
 import HomePage from "./pages/home";
-import PairPage from "./pages/fontPairing";
+import Learn from "./pages/learn";
 import AboutPage from "./pages/about";
 
 function App() {
   return (
-    <Router>
-      <Nav projectTitle="Pairing fonts">
+    <Router >
+      <HeaderNav title="Pairing fonts">
           <Link to="/">Home</Link>
           <Link to="/pairfonts">How to pairfonts</Link>
           <Link to="/about">About project</Link>
-      </Nav>
+      </HeaderNav>
       <main>
         <Switch>
-          <Route exact path="/" component={HomePage}/>
-          <Route path="/pairfonts" component={PairPage}/>
+          <Route exact path="/" component={IntroPage}/>
+          <Route exact path="/choose" component={HomePage}/>
+          <Route path="/pairfonts" component={Learn}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
       </main>
     </Router>
+  );
+}
+
+const IntroPage = () => {
+  return(
+    <div>
+      <Link className="" to="chose">Start!</Link>
+    </div>
   );
 }
 
