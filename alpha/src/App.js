@@ -46,7 +46,7 @@ function App() {
 const IntroPage = () => {
   return(
     <div>
-      <Link className="" to="chose">Start!</Link>
+      <Link className="" to="choose">Start!</Link>
     </div>
   );
 }
