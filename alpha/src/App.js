@@ -21,7 +21,7 @@ import {HeaderNav} from "./components/nav";
 //The pages are the contet that will be exchanged in the app.
 //You may locate these files via /src/pages/{the selected files}.
 import HomePage from "./pages/home";
-import PairPage from "./pages/fontPairing";
+import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
         <Switch>
           <Route exact path="/"><IntroPage/></Route>
           <Route path="/choose" component={HomePage}/>
-          <Route path="/pairfonts" component={PairPage}/>
+          <Route path="/pairfonts" component={LearnPage}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
       </main>
