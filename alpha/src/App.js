@@ -27,7 +27,7 @@ function App() {
   let [title,setTitle] = useState("Pairing fonts");
 
   return (
-    <Router>
+    <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
         <Link to="/">Home</Link>
         <Link to="/pairfonts">How to pairfonts</Link>
