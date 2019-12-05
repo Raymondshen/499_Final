@@ -24,25 +24,31 @@ import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
 
+
+
+
+const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
+const parseRow = row => {
+  return getKeys(row).reduce((obj, key) => {
+    obj[key.slice(4)] = row[key].$t;
+    return obj;
+  }, {});
+};
+
+
+
 function App() {
   let [title,setTitle] = useState("Pairing fonts");
 
-  let [fonts, setFonts] = useState([]);
+  let [fonts,setFonts] = useState([]);
 
-  const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
-  const parseRow = row => {
-    return getKeys(row).reduce((obj, key) => {
-      obj[key.slice(4)] = row[key].$t;
-      return obj;
-    }, {});
-  };
-
-  useEffect(() => {
-		fetch(`https://spreadsheets.google.com/feeds/list/1PESw8-xfT77YuG3VuqFvCJW_4M2_yhM63Jm24Ha49oc/${sheet}/public/values?alt=json`)
-		.then(r => r.json());
-		.then(d => )
-  },[]
-  );
+	useEffect(()=>{
+		fetch(`https://spreadsheets.google.com/feeds/list/1Zr0TqJSpp8iYLqXZlbGFftGetv8XxVCM-IHG1NSbPqc/1/public/values?alt=json`)
+		.then(r => r.json())
+		.then(d=>{
+      setFonts(d.feed.entry.map(parseRow))
+		})
+	},[]);
 
   return (
     <Router style={{overflow: 'auto'}}>
@@ -54,7 +60,9 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/"><IntroPage/></Route>
-          <Route path="/choose" component={HomePage}/>
+          <Route path="/choose">
+            <HomePage fonts={fonts} />
+          </Route>
           <Route path="/pairfonts" component={LearnPage}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
