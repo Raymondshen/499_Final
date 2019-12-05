@@ -66,7 +66,7 @@ const TypeHierchy = ({ fontStyleOne, fontStyleTwo, fontSize, fontNameOne, fontNa
       <h3 className="userInputH3 m-xs-bs" style={{ fontFamily: fontStyleOne }}>H3 / {fontNameOne}</h3>
       <h4 className="userInputH4 m-xs-bs" style={{ fontFamily: fontStyleOne }}>H4 / {fontNameOne}</h4>
       <h5 className="userInputH5 m-xs-bs" style={{ fontFamily: fontStyleOne }}>H5 / {fontNameOne}</h5>
-      <p className="userInputP m-xs-bs" style={{ fontFamily: fontStyleTwo }}>p / {fontNameTwo}</p>
+      <p className="userInputP m-xs-bs" style={{ fontFamily: fontStyleTwo }}>Body / {fontNameTwo}</p>
     </section>
   );
 }

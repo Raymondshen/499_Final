@@ -14,6 +14,8 @@ import {ClickList} from "./components";
 
 //Here is home content. 
 const HomePage = () => {
+
+
 	let {path} = useRouteMatch();
 
 	let [fonts,setFont] = useReducer(
@@ -22,7 +24,7 @@ const HomePage = () => {
 	);
 
 	let [num,setNum] = useState(14);
-
+	
 	return(
 		<article className=" container p-xs-ts">
 			<section className="grid">
@@ -71,6 +73,9 @@ const PairFont = ({path,fonts,setFont}) => {
 		e.preventDefault();
 		setFont({second:e.target.value});
 	}
+
+
+
 	return (
 		<section className="grid">
 			<div className="bg-dark col--6">

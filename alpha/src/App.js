@@ -27,6 +27,23 @@ import AboutPage from "./pages/about";
 function App() {
   let [title,setTitle] = useState("Pairing fonts");
 
+  let [fonts, setFonts] = useState([]);
+
+  const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
+  const parseRow = row => {
+    return getKeys(row).reduce((obj, key) => {
+      obj[key.slice(4)] = row[key].$t;
+      return obj;
+    }, {});
+  };
+
+  useEffect(() => {
+		fetch(`https://spreadsheets.google.com/feeds/list/1PESw8-xfT77YuG3VuqFvCJW_4M2_yhM63Jm24Ha49oc/${sheet}/public/values?alt=json`)
+		.then(r => r.json());
+		.then(d => )
+  },[]
+  );
+
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
