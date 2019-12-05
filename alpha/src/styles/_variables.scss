@@ -1,0 +1,153 @@
+$color-main:#F8F7F4;
+$color-main-dark:darken($color-main,20%);
+$color-body-text: #F8F7F4;
+$color-bg-dark: #1C1C1C;
+$color-bg-lightdark: #262626;
+$color-purewhite: #FFFFFF;
+$color-dark-gray: #A9A9A9;
+$color-red: #FF6161;
+$color-purple: #7B78FF;
+
+$color-body-background: #0F1313;
+$color-body-background-light: lighten($color-body-background,30%);
+
+$color-main-yellow:#FFDCA7;
+$color-main-transition-yellow:#FF876C;
+$color-main-transition-red:#FF5C4F;
+$color-main-red:#FF3232;
+
+// List of Font Weight
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+//List of maps
+
+$breakpoints:(
+	xs:0,
+	sm:500px,
+	md:800px,
+	lg:1000px,
+	xl:1440px,
+	4k:2300px,
+);
+
+$spacers:(
+	xl:6em,
+	l:3em,
+	m:2em,
+	s:1em,
+	n:0,
+	auto:auto,
+);
+
+$columns: (
+	12:12,
+	10:10,
+	8:8,
+	6:6,
+	3:3,			
+);
+
+$positions: (
+	t:top,
+	r:right,
+	b:bottom,
+	l:left,			
+);
+
+$boxes: (
+	p:padding,
+	m:margin,		
+);
+
+$display: (
+	b:block,
+	i:inline,
+	inb:inline-block,
+	f:flex,
+	inf:inline-flex,		
+	n:none,
+);
+
+$zindex: (	
+	n:0,
+	1:10,
+	2:20,
+	3:30,
+	4:40,
+	5:50,
+);
+
+$maxwidths: (	
+	flexitem: 10%,
+	xl: 60%,
+	l: 70%,
+	m: 80%,
+	s: 90%,
+	xs: 100%,
+);
+
+$minwidths: (	
+	flexitem: 30%,
+	xl: 60%,
+	l: 70%,
+	m: 80%,
+	s: 90%,
+	xs: 100%,
+);
+
+$alignment-vertical: (
+	t:top,
+	m:middle,
+	b:bottom,
+	bl:baseline,
+	tb:text-bottom
+);
+
+$alignment-horizontal: (
+	l:left,
+	c:center,
+	r:right,
+	j:justify
+);
+
+$positioning: (
+	s:static,
+	r:relative,
+	a:absolute,
+	f:fixed
+);
+
+$gap:map-get($spacers,'l');
+
+$header-height: 3rem;
+
+:root {
+
+	--color-purple:#{$color-purple};
+	--color-red:#{$color-red};
+	--color-purewhite:#{$color-purewhite};
+	--color-bg-dark:#{$color-bg-dark};
+	--color-bg-lightdark:#{$color-bg-lightdark};
+	--color-dark-gray:#{$color-dark-gray};
+
+	--main-color:#{$color-main};
+	--border-color: 248, 247, 244;
+	--main-color-dark:#{$color-main-dark};
+	--body-text-color:#{$color-body-text};
+	--color-body-background:#{$color-body-background};
+	--color-body-background-light:#{$color-body-background-light};
+
+
+	--main-yellow:#{$color-main-yellow};
+	--main-transition-yellow:#{$color-main-transition-yellow};
+	--main-transition-red:#{$color-main-transition-red};
+	--main-red:#{$color-main-red};
+
+	--color-gray-dark: #2e2b39;
+	--color-gray-light: #ede8ff;
+
+	--header-height: #{$header-height};
+}

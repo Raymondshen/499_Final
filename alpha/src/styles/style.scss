@@ -1,0 +1,26 @@
+/* sass --watch style.scss:style.min.css --style compressed */
+
+@import 'variables';
+@import 'functions';
+@import 'reset';
+
+// The theme needs to be imported last. This overrides all the style desisions
+@import 'classes';
+
+// The theme needs to be imported last. This overrides all the style desisions
+@import 'theme';
+
+// NEW CODE Sep 26
+
+@include makeGrid();
+@include makeColumns();
+
+@each $breakpoint-i, $breakpoint-v in $breakpoints {
+	@media (min-width:$breakpoint-v) {
+		@include makeRow(#{$breakpoint-i});
+		@include makeGap(#{$breakpoint-i});
+		@include makeColumns(#{$breakpoint-i});
+		@include makeUtilities(#{$breakpoint-i});
+		@include makeFlex(#{$breakpoint-i});
+	}
+}
