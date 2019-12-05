@@ -43,7 +43,7 @@ function App() {
   let [fonts,setFonts] = useState([]);
 
 	useEffect(()=>{
-		fetch(`https://spreadsheets.google.com/feeds/list/1Zr0TqJSpp8iYLqXZlbGFftGetv8XxVCM-IHG1NSbPqc/1/public/values?alt=json`)
+		fetch(`https://spreadsheets.google.com/feeds/list/1dR_EZsCGs9CbicR9pdI0UbVC5fXWlRjZLgdNTsRDwM4/1/public/values?alt=json`)
 		.then(r => r.json())
 		.then(d=>{
       setFonts(d.feed.entry.map(parseRow))

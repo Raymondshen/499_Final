@@ -178,10 +178,11 @@ header {
 						background: var(--color-purple);
 					}
 				}
-			}
+				&.chosen {
+					color: black;
+					background: white;
+				}
 		}
 	}
 }
-
-// NAV
-
+}
