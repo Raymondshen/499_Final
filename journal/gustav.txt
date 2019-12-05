@@ -30,7 +30,20 @@ As well as getting some inspiration and sketching options for Lottie animations 
 
 
 
+Nov 13 - Nov 20
+
+During this week I spent some time with Hamilton's code. Setting up a simple routing example. But I am am struggling with writing react. It's quite different from other code frameworks I've used before. I feel like passing in data is going to be trouble. 
 
 
+Nov 20 - Dec 5
 
+After class the 20th we sat and made sure that we were on the same page with the web app we're developing. We sat a common flow. Removed some aspects to create the MVP of the app.
 
+After getting started on the code for the main function I hade a list of questions that we still need to solve. 
+
+List:
+How are all the typefaces going to be passed into the head of our document. I started a JSON doc, where I stored the font name to pass in with CSS, the type / Serif or Sans Serif and the URL that the typefaces is stored at. 
+
+Questions regarding reducers, I understand what they do and what they are for. But it seems like you need a different reducer depending on what use case.
+
+Performance trouble, where the font's aren't displayed at once on user click.

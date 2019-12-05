@@ -16,12 +16,11 @@ import {ClickList} from "./components";
 const HomePage = () => {
 	let {path} = useRouteMatch();
 
-	// A reducer is a handy way of creating app data that is subscribed but somewhat custom
-	// These will reset if you ever navigate away from the Learn pages
 	let [fonts,setFont] = useReducer(
 		(s,a) => ({...s,...a}),
 		{first:'Arial', second:'serif'}
 	);
+
 	let [num,setNum] = useState(14);
 
 	return(
@@ -61,18 +60,25 @@ const HomePage = () => {
 
 const PairFont = ({path,fonts,setFont}) => {
 	//Here insert jason file with all of our fonts.
-	let fontlist = ['Arial', 'Arial Black', 'Tahoma', 'Verdana', 'Sans-Serif', 'Open-Sans'];
+	let fontlist = ['Arial', 'Arial Black', 'Tahoma', 'Verdana', 'Sans-Serif', 'Times New Roman', 'Cambria', 'Georgia', 'Serif'];
 
-	const handleInput = (e) => {
+	const changeFontOne = (e) => {
 		e.preventDefault();
 		setFont({first:e.target.value});
 	}
 
+	const changeFontTwo = (e) => {
+		e.preventDefault();
+		setFont({second:e.target.value});
+	}
 	return (
 		<section className="grid">
 			<div className="col--6">
 				<div className="p-xs-bs"><Link to={`${path}/1`}>Next</Link></div>
-				<input className="font-input m-xs-bm" type="text" value={fonts.first} onChange={handleInput} />
+				<section className="grid">
+					<input className="font-input m-xs-bm col--6" type="text" value={fonts.first} onChange={changeFontOne} />
+					<input className="font-input p-xs-s m-xs-bm offset--7 col--6" type="text" value={fonts.second} onChange={changeFontTwo} />
+				</section>
 				<ClickList 
 					data={fontlist} 
 					callback={setFont}
@@ -81,8 +87,10 @@ const PairFont = ({path,fonts,setFont}) => {
 			<div className="col--6 offset--7 pairing-wrapper">
 				<PairingDoc 
 					fontSize={72} 
-					fontStyle={fonts.first} 
-					fontName={fonts.first}
+					fontStyleTwo={fonts.second} 
+					fontStyleOne={fonts.first} 
+					fontNameOne={fonts.first}
+					fontNameTwo={fonts.second}
 					/>
 			</div>
 		</section>
@@ -105,8 +113,10 @@ const SetSize = ({path,fonts,num,setNum}) => {
 			<div className="col--6 offset--7 pairing-wrapper">
 				<PairingDoc 
 					fontSize={num} 
-					fontStyle={fonts.first} 
-					fontName={fonts.first}
+					fontStyleTwo={fonts.second} 
+					fontStyleOne={fonts.first} 
+					fontNameOne={fonts.first}
+					fontNameTwo={fonts.second}
 					/>
 			</div>
 		</section>
