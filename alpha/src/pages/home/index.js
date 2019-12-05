@@ -24,7 +24,7 @@ const HomePage = () => {
 	let [num,setNum] = useState(14);
 
 	return(
-		<article className="container max-xs-s p-xs-ts">
+		<article className=" container p-xs-ts">
 			<section className="grid">
 				<h4 className="col--4">Welcome to our font pairing app</h4>
 			</section>
@@ -73,7 +73,7 @@ const PairFont = ({path,fonts,setFont}) => {
 	}
 	return (
 		<section className="grid">
-			<div className="col--6">
+			<div className="bg-dark col--6">
 				<div className="p-xs-bs"><Link to={`${path}/1`}>Next</Link></div>
 				<section className="grid">
 					<input className="font-input m-xs-bm col--6" type="text" value={fonts.first} onChange={changeFontOne} />
