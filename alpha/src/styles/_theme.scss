@@ -91,3 +91,94 @@ header {
 	}
 
 }
+
+// RAYMOND EDITS
+#root {
+	overflow-y:scroll;
+	overflow-x: hidden;
+}
+#selectfont {
+}
+.nav {
+	z-index: 10;
+}
+.bg-dark {
+	background: var(--color-bg-dark);
+}
+.txt-purewhite{
+	color: var(--color-purewhite);
+}
+.txt-darkgray{
+	color: var(--color-dark-gray);
+}
+.font-card-name {
+	@include setFont($medium, 1.2em);
+	padding-top: 0;
+}
+.font-card-dummy {
+	@include setFont($bold, 6em);
+}
+//
+
+.font-input {
+	width: 100%;
+}
+
+.font-card {
+	&:nth-child(odd){
+		margin-left: 7.5%;
+		margin-right:2.5%;
+	}
+	&:nth-child(even){
+		margin-right: 7.5%;
+		margin-left:2.5%;
+	}
+	position:relative;
+	margin-bottom:5%;
+	width: 40%;
+	padding: 4em 3em;
+	// flex: 1 1 40%;
+	border: 1px solid var(--color-purewhite);
+	// margin: 5%;
+	background: var(--color-bg-lightdark);
+	.button {
+		cursor: pointer;
+		font-size: 1em;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.font-card-nav {
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5em;
+		p {
+			padding: 0;
+		}
+		.font-card-btns-container {
+			.font-card-btns {
+				margin-left: 0.5em;
+				justify-content: center;
+				align-items: center;
+				width:1.8em;
+				height: 1.8em;
+				padding: 1.2em;
+				border: 1.5px solid white;
+				@include setFont($bold, 0.85em);
+				border-radius: 100px;
+				color: white;
+				&:nth-child(odd){
+					&:hover {
+						background: var(--color-red);
+					}
+				}
+				&:nth-child(even){
+					&:hover {
+						background: var(--color-purple);
+					}
+				}
+			}
+		}
+	}
+}
