@@ -1,18 +1,24 @@
 import React from 'react';
 
-const Nav = (props) => {
+const HeaderNav = ({title,children}) => {
     return (
     <header className="nav flex-xs-parent p-xs-s">
     	<div>
-    		<h5>{props.projectTitle}</h5>
+    		<h1 style={{fontSize:'1em'}}>{title}</h1>
     	</div>
-    	<nav>
-    		<ul className="flex-xs-parent flex-xs-justify-end">
-                {props.children.map((o,i)=>(<li key={i}>{o}</li>))}
-    		</ul>
-    	</nav>
+		<Nav>{children||[]}</Nav>
     </header>
     )
 }
 
-export default Nav;
+const Nav = ({children}) => {
+	return (
+	<nav>
+		<ul className="flex-xs-parent flex-xs-justify-end">
+			{children.map((o,i)=>(<li key={i}>{o}</li>))}
+		</ul>
+	</nav>
+	);
+}
+
+export {HeaderNav, Nav};

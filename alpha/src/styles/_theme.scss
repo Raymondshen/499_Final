@@ -91,3 +91,21 @@ header {
 	}
 
 }
+
+.font-input {
+	width: 100%;
+}
+
+.font-card {
+	padding: 2em;
+	flex: 1 1 40%;
+	border: 1px solid black;
+	margin: 5%;
+	.button {
+		cursor: pointer;
+		font-size: 1em;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
