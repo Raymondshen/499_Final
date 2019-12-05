@@ -15,3 +15,10 @@ Nov 16 - 23
 - Worked on some personal brainstorming + Sketches
 - Researched a bit on React going to catch up with it by Wed hopefully to understand fully what's going on.
 - Left notes for the team reminders about journal on slack :)
+
+Nov 28 - Dec 4
+- Worked on styling and adding css after gustav's update
+- Researched adding collab for issues
+- Researched a bit on REACT
+- Stayed up to date with gustav regarding the coding progress of the project
+- Reworked some of the html structure and naming.
