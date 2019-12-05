@@ -1,3 +1,12 @@
+## 12/5 --------------------------->
+- Need to add google fonts to database
+
+- simplify workflow ? or functionality of tool?
+- making graphic elements, maybe custom font on ipad, or some graphic symbols, ____, _____, ____
+- Going to choose and create main colorway, styleguide with main font choice for site, and site logo for nav bar and brand
+- certain people to work on certain parts of the site so no overlap? assigned parts of the site to work on ~ 
+
+
 ## 11/14 --------------------------->
 
 - - In Figma  - -
