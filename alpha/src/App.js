@@ -28,21 +28,12 @@ function App() {
   let [title,setTitle] = useState("Pairing fonts");
 
   return (
-<<<<<<< HEAD
-    <Router>
-      <Nav projectTitle="FontPairing">
-          <Link to="/">Home</Link>
-          <Link to="/pairfonts">How to pairfonts</Link>
-          <Link to="/about">About project</Link>
-      </Nav>
-=======
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
         <Link to="/">Home</Link>
         <Link to="/pairfonts">How to pairfonts</Link>
         <Link to="/about">About project</Link>
       </HeaderNav>
->>>>>>> c5dc67f5f583e2d4066041fc500ed3e2ab4831e6
       <main>
         <Switch>
           <Route exact path="/"><IntroPage/></Route>
