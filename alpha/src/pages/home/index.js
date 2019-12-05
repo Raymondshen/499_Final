@@ -89,7 +89,8 @@ const PairFont = ({path,fonts,setFont}) => {
 					fontSize={72} 
 					fontStyleTwo={fonts.second} 
 					fontStyleOne={fonts.first} 
-					fontName={fonts.first}
+					fontNameOne={fonts.first}
+					fontNameTwo={fonts.second}
 					/>
 			</div>
 		</section>
@@ -112,8 +113,10 @@ const SetSize = ({path,fonts,num,setNum}) => {
 			<div className="col--6 offset--7 pairing-wrapper">
 				<PairingDoc 
 					fontSize={num} 
-					fontStyle={fonts.first} 
-					fontName={fonts.first}
+					fontStyleTwo={fonts.second} 
+					fontStyleOne={fonts.first} 
+					fontNameOne={fonts.first}
+					fontNameTwo={fonts.second}
 					/>
 			</div>
 		</section>

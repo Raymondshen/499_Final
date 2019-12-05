@@ -6,7 +6,7 @@ import React from 'react';
 
 
 //Pairing doc, pass font style as a property as well
-const PairingDoc = ({fontStyleOne, fontStyleTwo, fontSize, fontName}) => {
+const PairingDoc = ({fontStyleOne, fontStyleTwo, fontSize, fontNameOne, fontNameTwo}) => {
     return ( <>
       <section className="grid p-xs-m">
         <h1 style={{fontFamily:fontStyleOne}} className="col--12">An Adaptable Foundation</h1>
@@ -29,7 +29,8 @@ const PairingDoc = ({fontStyleOne, fontStyleTwo, fontSize, fontName}) => {
           fontStyleOne={fontStyleOne} 
           fontStyleTwo={fontStyleTwo} 
           fontSize={fontSize} 
-          text={fontName}
+          fontNameOne={fontNameOne}
+          fontNameTwo={fontNameTwo}
           />
       </section>
     </>
@@ -53,15 +54,15 @@ const ClickList = ({data,callback}) => {
 }
 
 //Components that's local
-const TypeHierchy = ({fontStyleOne, fontStyleTwo, fontSize, text}) => {
+const TypeHierchy = ({fontStyleOne, fontStyleTwo, fontSize, fontNameOne, fontNameTwo}) => {
   return (
     <section>
-      <h1 className="userInputH1 m-xs-bs" style={{fontFamily:fontStyleOne, fontSize:fontSize}}>H1 / {text}</h1>
-      <h2 className="userInputH2 m-xs-bs" style={{fontFamily:fontStyleOne}}>H2 / {text}</h2>
-      <h3 className="userInputH3 m-xs-bs" style={{fontFamily:fontStyleOne}}>H3 / {text}</h3>
-      <h4 className="userInputH4 m-xs-bs" style={{fontFamily:fontStyleOne}}>H4 / {text}</h4>
-      <h5 className="userInputH5 m-xs-bs" style={{fontFamily:fontStyleOne}}>H5 / {text}</h5>
-      <p className="userInputP m-xs-bs" style={{fontFamily:fontStyleTwo}}>p / {text}</p>
+      <h1 className="userInputH1 m-xs-bs" style={{fontFamily:fontStyleOne, fontSize:fontSize}}>H1 / {fontNameOne}</h1>
+      <h2 className="userInputH2 m-xs-bs" style={{fontFamily:fontStyleOne}}>H2 / {fontNameOne}</h2>
+      <h3 className="userInputH3 m-xs-bs" style={{fontFamily:fontStyleOne}}>H3 / {fontNameOne}</h3>
+      <h4 className="userInputH4 m-xs-bs" style={{fontFamily:fontStyleOne}}>H4 / {fontNameOne}</h4>
+      <h5 className="userInputH5 m-xs-bs" style={{fontFamily:fontStyleOne}}>H5 / {fontNameOne}</h5>
+      <p className="userInputP m-xs-bs" style={{fontFamily:fontStyleTwo}}>p / {fontNameTwo}</p>
     </section>
   );
 }
