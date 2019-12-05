@@ -41,8 +41,10 @@ const ClickList = ({data,callback}) => {
     <section class="flex-xs-parent flex-xs-wrap">
       {data.map(o=>(
         <div className="font-card">
-          <p className="btn" onClick={()=>callback({first:o})}>{o}</p>
+          <p className="btn">{o}</p>
           <h4>Aa</h4>
+          <div className="button" onClick={()=>callback({first:o})}>Select as font1</div>
+          <div className="button" onClick={()=>callback({second:o})}>Select as font2</div>
         </div>
       )).reduce((r,o)=>[r," ",o])}
     </section>

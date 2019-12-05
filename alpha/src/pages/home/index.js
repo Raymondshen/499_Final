@@ -61,18 +61,23 @@ const HomePage = () => {
 
 const PairFont = ({path,fonts,setFont}) => {
 	//Here insert jason file with all of our fonts.
-	let fontlist = ['Arial', 'Arial Black', 'Tahoma', 'Verdana', 'Sans-Serif', 'Open-Sans'];
+	let fontlist = ['Arial', 'Arial Black', 'Tahoma', 'Verdana', 'Sans-Serif', 'Open-Sans', ];
 
-	const handleInput = (e) => {
+	const changeFontOne = (e) => {
 		e.preventDefault();
 		setFont({first:e.target.value});
 	}
 
+	const changeFontTwo = (e) => {
+		e.preventDefault();
+		setFont({second:e.target.value});
+	}
 	return (
 		<section className="grid">
 			<div className="col--6">
 				<div className="p-xs-bs"><Link to={`${path}/1`}>Next</Link></div>
-				<input className="font-input m-xs-bm" type="text" value={fonts.first} onChange={handleInput} />
+				<input className="font-input m-xs-bm" type="text" value={fonts.first} onChange={changeFontOne} />
+				<input className="font-input m-xs-bm" type="text" value={fonts.second} onChange={changeFontTwo} />
 				<ClickList 
 					data={fontlist} 
 					callback={setFont}
