@@ -18,3 +18,9 @@ November 14-21:
 - Research React
 - Test to create components in React
 – Continuing design work in Figma
+
+November 21-December 05:
+
+- Refined prototype. New idea and design of two buttons on each font card, one for headline and one for body text, instead of locking fonts.
+- Layout and design for the landing page.
+- Sketched on the icon set for the svg animations.
