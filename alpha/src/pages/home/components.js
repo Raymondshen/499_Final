@@ -83,11 +83,11 @@ const TypeHierarchy = ({ fontFamilies, fontSizes }) => {
   );
 }
 
-const FontRange = ({id,size,max,min,setSize}) => {
+const FontRange = ({id,size,setSize}) => {
 	return (<div>
 		<span>{size[id].name}</span>
 		<input type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
-		<input type="number" value={size[id].size} min="12" max="72" onChange={setSize} data-id={id}/>
+		<input type="number" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
 	</div>);
 }
 
