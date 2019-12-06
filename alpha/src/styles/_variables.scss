@@ -11,11 +11,6 @@ $color-purple: #7B78FF;
 $color-body-background: #0F1313;
 $color-body-background-light: lighten($color-body-background,30%);
 
-$color-main-yellow:#FFDCA7;
-$color-main-transition-yellow:#FF876C;
-$color-main-transition-red:#FF5C4F;
-$color-main-red:#FF3232;
-
 // List of Font Weight
 $regular: 400;
 $medium: 500;
@@ -38,6 +33,7 @@ $spacers:(
 	l:3em,
 	m:2em,
 	s:1em,
+	xs:.3em,
 	n:0,
 	auto:auto,
 );
@@ -139,12 +135,6 @@ $header-height: 3rem;
 	--body-text-color:#{$color-body-text};
 	--color-body-background:#{$color-body-background};
 	--color-body-background-light:#{$color-body-background-light};
-
-
-	--main-yellow:#{$color-main-yellow};
-	--main-transition-yellow:#{$color-main-transition-yellow};
-	--main-transition-red:#{$color-main-transition-red};
-	--main-red:#{$color-main-red};
 
 	--color-gray-dark: #2e2b39;
 	--color-gray-light: #ede8ff;

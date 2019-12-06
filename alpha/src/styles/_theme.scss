@@ -168,6 +168,9 @@ header {
 				@include setFont($bold, 0.85em);
 				border-radius: 100px;
 				color: white;
+				&:hover {
+					cursor: pointer;
+				}
 				&:nth-child(odd){
 					&:hover {
 						background: var(--color-red);
@@ -185,4 +188,9 @@ header {
 		}
 	}
 }
+}
+
+.slider-info{
+	font-size: 1em;
+	color: var(--color-dark-gray);
 }

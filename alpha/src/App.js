@@ -35,8 +35,6 @@ const parseRow = row => {
   }, {});
 };
 
-
-
 function App() {
   let [title,setTitle] = useState("Pairing fonts");
 

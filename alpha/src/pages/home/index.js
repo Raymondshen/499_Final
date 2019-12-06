@@ -27,12 +27,12 @@ const HomePage = ({fonts}) => {
 			return [...s];
 		},
 		[
-			{size:72,min:10,max:72,name:'H1'},
-			{size:56,min:10,max:72,name:'H2'},
-			{size:43,min:10,max:72,name:'H3'},
-			{size:16,min:10,max:72,name:'H4'},
-			{size:14,min:10,max:72,name:'H5'},
-			{size:10,min:10,max:72,name:'P'}
+			{size:72,min:12,max:96,name:'H1'},
+			{size:56,min:12,max:72,name:'H2'},
+			{size:43,min:12,max:72,name:'H3'},
+			{size:16,min:12,max:72,name:'H4'},
+			{size:14,min:12,max:72,name:'H5'},
+			{size:12,min:12,max:26,name:'P'}
 		]
 	);
 
@@ -44,8 +44,6 @@ const HomePage = ({fonts}) => {
 		setFontFamilies({first:fonts[r1]})
 		setFontFamilies({second:fonts[r2]})
 	},[fonts]);
-
-
 
 	//let [fontSize,setFontSize] = useState(14);
 
@@ -89,11 +87,6 @@ const HomePage = ({fonts}) => {
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
 const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes}) => {
-	//Here insert jason file with all of our fonts.
-	console.log(fontlist)
-	// fontlist = ['Arial', 'Arial Black', 'Tahoma', 'Verdana', 'Sans-Serif', 'Times New Roman', 'Cambria', 'Georgia', 'Serif'];
-
-
 	const changeFontOne = (e) => {
 		e.preventDefault();
 		setFontFamilies({first:e.target.value});
@@ -108,7 +101,7 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes}) => {
 
 	return (
 		<section className="grid">
-			<div className="col--6">
+			<div className="col--4">
 				<div className="p-xs-bs"><Link to={`${path}/1`}>Next</Link></div>
 				{/* <section className="grid">
 					<input className="font-input m-xs-bm col--6" type="text" value={fontFamilies.first.name} onChange={changeFontOne} />
@@ -122,7 +115,7 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes}) => {
 					/>
 				</div>
 			</div>
-			<div className="col--6 offset--7 pairing-wrapper">
+			<div className="col--8 offset--6 pairing-wrapper">
 				<PairingDoc 
 					fontSizes={fontSizes} 
 					fontFamilies={fontFamilies} 
@@ -146,17 +139,20 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies}) => {
 
 	return (
 		<section className="grid">
-			<div className="col--6">
+			<div className="col--4">
 				<div className="p-xs-bs"><Link to={`${path}/2`}>Next</Link></div>
+				<div className="p-xs-bs"><Link to={`${path}/`}>Previous</Link></div>
 				{ fontSizes.map((o,i)=>(
 					<FontRange
 						key={i}
 						id={i}
 						size={fontSizes}
+						min={fontSizes.min}
+						max={fontSizes.max}
 						setSize={setSize} />
 				))}
 			</div>
-			<div className="col--6 offset--7 pairing-wrapper">
+			<div className="col--8 offset--6 pairing-wrapper">
 				<PairingDoc 
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}

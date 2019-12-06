@@ -62,20 +62,31 @@ const ClickList = ({ data, families, callback }) => {
 const TypeHierarchy = ({ fontFamilies, fontSizes }) => {
   return (
     <section>
-      <h1 className="userInputH1 m-xs-bs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[0].size+'px' }}>H1 / {fontFamilies.first.name}</h1>
-      <h2 className="userInputH2 m-xs-bs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[1].size+'px' }}>H2 / {fontFamilies.first.name}</h2>
-      <h3 className="userInputH3 m-xs-bs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[2].size+'px' }}>H3 / {fontFamilies.first.name}</h3>
-      <h4 className="userInputH4 m-xs-bs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[3].size+'px' }}>H4 / {fontFamilies.first.name}</h4>
-      <h5 className="userInputH5 m-xs-bs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[4].size+'px' }}>H5 / {fontFamilies.first.name}</h5>
-      <p className="userInputP m-xs-bs" style={{ fontFamily: fontFamilies.second.name, fontSize: fontSizes[5].size+'px' }}>p / {fontFamilies.second.name}</p>
+      <h1 className="p-xs-bxs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[0].size+'px' }}>H1 / {fontFamilies.first.name}</h1>
+      <div class="slider-info m-xs-bl">{fontSizes[0].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+
+      <h2 className="p-xs-bxs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[1].size+'px' }}>H2 / {fontFamilies.first.name}</h2>
+      <div class="slider-info m-xs-bl">{fontSizes[1].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+
+      <h3 className="p-xs-bxs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[2].size+'px' }}>H3 / {fontFamilies.first.name}</h3>
+      <div class="slider-info m-xs-bl">{fontSizes[2].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+
+      <h4 className="p-xs-bxs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[3].size+'px' }}>H4 / {fontFamilies.first.name}</h4>
+      <div class="slider-info m-xs-bl">{fontSizes[3].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+
+      <h5 className="p-xs-bxs" style={{ fontFamily: fontFamilies.first.name, fontSize: fontSizes[4].size+'px' }}>H5 / {fontFamilies.first.name}</h5>
+      <div class="slider-info m-xs-bl">{fontSizes[4].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+
+      <p className="p-xs-bxs" style={{ fontFamily: fontFamilies.second.name, fontSize: fontSizes[5].size+'px' }}>p / {fontFamilies.second.name}</p>
+      <div class="slider-info m-xs-bl">{fontSizes[5].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
     </section>
   );
 }
 
-const FontRange = ({id,size,setSize}) => {
+const FontRange = ({id,size,max,min,setSize}) => {
 	return (<div>
 		<span>{size[id].name}</span>
-		<input type="range" value={size[id].size} min="12" max="72" onChange={setSize} data-id={id}/>
+		<input type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
 		<input type="number" value={size[id].size} min="12" max="72" onChange={setSize} data-id={id}/>
 	</div>);
 }
