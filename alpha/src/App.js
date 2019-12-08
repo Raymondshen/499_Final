@@ -51,17 +51,19 @@ function App() {
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
-        <Link to="/">Home</Link>
-        <Link to="/pairfonts">How to pairfonts</Link>
-        <Link to="/about">About project</Link>
+        <Link to="/">fontPairing</Link>
+        <Link to="/learn">How to pairfonts</Link>
+        <Link to="/about">About fontPairing</Link>
+        <Link className="" to="pair-fonts">Get Started</Link>
+
       </HeaderNav>
       <main>
         <Switch>
           <Route exact path="/"><IntroPage/></Route>
-          <Route path="/choose">
+          <Route path="/pair-fonts">
             <HomePage fonts={fonts} />
           </Route>
-          <Route path="/pairfonts" component={LearnPage}/>
+          <Route path="/learn" component={LearnPage}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
       </main>
@@ -71,7 +73,7 @@ function App() {
 
 const IntroPage = () => {
   return (<div>
-    <Link className="" to="choose">Start!</Link>
+    <Link className="" to="pair-fonts">Start!</Link>
   </div>);
 };
 

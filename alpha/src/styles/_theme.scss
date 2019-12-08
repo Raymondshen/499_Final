@@ -1,9 +1,13 @@
-body, html {
-  font-family: "Helvetica", "Arial", sans-serif;}
-*,*:before,*:after {
+body,
+html {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+*,
+*:before,
+*:after {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased; 
+  font-smoothing: antialiased;
 }
 
 h1,
@@ -13,186 +17,265 @@ h4,
 h5,
 h6,
 p,
-.button{
-	color: var(--color-body-background);
-	@include breakpoint ('tablet') {
-	}
+.button {
+  color: var(--color-body-background);
+  @include breakpoint("tablet") {
+  }
 }
 
-p{
-	line-height: 115%;
-	font-family: "Helvetica", "Arial", sans-serif;
+p {
+  line-height: 115%;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
-h1{
-	font-size: 3.25em;
-	line-height: 112%;
-	@include breakpoint ('tablet') {
-		font-size: 6em;
-		line-height: 92%;
-	}
+h1 {
+  font-size: 3.25em;
+  line-height: 112%;
+  @include breakpoint("tablet") {
+    font-size: 6em;
+    line-height: 92%;
+  }
 }
 
-h2{
-	font-size: 1.75em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 3.25em;
-		line-height: 112%;
-	}
+h2 {
+  font-size: 1.75em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 3.25em;
+    line-height: 112%;
+  }
 }
 
-h3{
-	font-size: 1.375em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 2em;
-		line-height: 102%;
-	}
+h3 {
+  font-size: 1.375em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 2em;
+    line-height: 102%;
+  }
 }
 
-h4, .button{
-	font-size: 1.1em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 2em;
-		line-height: 102%;
-	}
+h4,
+.button {
+  font-size: 1.1em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 2em;
+    line-height: 102%;
+  }
 }
 
 h5 {
-	font-size: 1.375em;
-	line-height: 105%;
+  font-size: 1.375em;
+  line-height: 105%;
 }
 
 a {
-	font-size: 1.1em;
-	line-height: 105%;
+  font-size: 1.1em;
+  line-height: 105%;
 }
 
 //STYLE GUIDE CSS
 
 main {
-	width: 100vw;
-	height: 6000px;
+  width: 100vw;
+  height: 6000px;
 }
 
 header {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	height: 3.2rem;
-	background-color: var(--main-color-dark);
-	width: 100vw;
-	display: none;
-	nav {
-		padding-left: 2vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 5rem;
+  background-color: var(--color-purewhite);
+  border-bottom: 1px solid var(--color-bg-dark);
+  width: 100vw;
+  display: none;
+  nav {
+	padding-left: 2vw;
+	li:nth-last-child(1){
+		background-color: var(--color-bg-dark);
+		border-radius: 5px;
+		a {
+			color: var(--color-purewhite)!important;
+		}
 	}
-
+	li:nth-last-child(1):hover{
+		background-color: var(--color-purewhite);
+		border: 1px solid var(--color-bg-dark);
+		border-radius: 5px;
+		a {
+			color: var(--color-bg-dark)!important;
+		}
+	}
+  }
 }
 
 // RAYMOND EDITS
 #root {
-	overflow-y:scroll;
-	overflow-x: hidden;
-}
-#selectfont {
+  padding-top: 5rem;
 }
 .nav {
-	z-index: 10;
+  z-index: 10;
 }
 .bg-dark {
-	background: var(--color-bg-dark);
+  background: var(--color-bg-dark);
 }
-.txt-purewhite{
-	color: var(--color-purewhite);
+.txt-purewhite {
+  color: var(--color-purewhite);
 }
-.txt-darkgray{
-	color: var(--color-dark-gray);
-}
-.font-card-name {
-	@include setFont($medium, 1.2em);
-	padding-top: 0;
-}
-.font-card-dummy {
-	@include setFont($bold, 6em);
-}
-//
-
-.font-input {
-	width: 100%;
+.txt-darkgray {
+  color: var(--color-dark-gray);
 }
 
-.font-card {
-	&:nth-child(odd){
-		margin-left: 7.5%;
-		margin-right:2.5%;
-	}
-	&:nth-child(even){
-		margin-right: 7.5%;
-		margin-left:2.5%;
-	}
-	position:relative;
-	margin-bottom:5%;
-	width: 40%;
-	padding: 4em 3em;
-	// flex: 1 1 40%;
-	border: 1px solid var(--color-purewhite);
-	// margin: 5%;
-	background: var(--color-bg-lightdark);
-	.button {
-		cursor: pointer;
-		font-size: 1em;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	.font-card-nav {
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1.5em;
-		p {
-			padding: 0;
-		}
-		.font-card-btns-container {
-			.font-card-btns {
-				margin-left: 0.5em;
-				justify-content: center;
-				align-items: center;
-				width:1.8em;
-				height: 1.8em;
-				padding: 1.2em;
-				border: 1.5px solid white;
-				@include setFont($bold, 0.85em);
-				border-radius: 100px;
-				color: white;
-				&:hover {
-					cursor: pointer;
-				}
-				&:nth-child(odd){
-					&:hover {
-						background: var(--color-red);
-					}
-				}
-				&:nth-child(even){
-					&:hover {
-						background: var(--color-purple);
-					}
-				}
-				&.chosen {
-					color: black;
-					background: white;
-				}
-		}
-	}
-}
+// # GLOBAL: Selection Navigation #
+#selection {
+  position: relative;
+  // # Navigation for the selection Area #
+  .selection-nav-container {
+    z-index: 2;
+    padding: 2em 3.5em;
+    flex-flow: wrap row;
+    border-bottom: 1px solid #ffffff63;
+    .selection-nav-links {
+      color: var(--color-purewhite);
+      margin-right: 0.8em;
+    }
+  }
 }
 
-.slider-info{
-	font-size: 1em;
-	color: var(--color-dark-gray);
+// # SELECTION : FONT PAIR #
+  #selection-fontpair-interface {
+    #selectfont {
+      height: 100vh;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .font-card {
+        &:nth-child(odd) {
+          margin-left: 7.5%;
+          margin-right: 2.5%;
+        }
+        &:nth-child(even) {
+          margin-right: 7.5%;
+          margin-left: 2.5%;
+        }
+        position: relative;
+        margin-bottom: 5%;
+        width: 40%;
+        padding: 4em 3em;
+        border: 1px solid var(--color-purewhite);
+        background: var(--color-bg-lightdark);
+        .button {
+          cursor: pointer;
+          font-size: 1em;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .font-card-nav {
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5em;
+          .font-card-name {
+            @include setFont($bold, 1em);
+            padding: 0em;
+          }
+          .font-card-btns-container {
+            .font-card-btns {
+              margin-left: 0.5em;
+              justify-content: center;
+              align-items: center;
+              @include makewh(1em);
+              padding: 1.2em;
+              border: 1.5px solid white;
+              @include setFont($bold, 0.65em);
+              border-radius: 100px;
+              &:hover {
+                cursor: pointer;
+              }
+              &:nth-child(odd) {
+                &:hover {
+                  background: var(--color-red);
+                }
+              }
+              &:nth-child(even) {
+                &:hover {
+                  background: var(--color-purple);
+                }
+              }
+              &.chosen {
+                color: black;
+                background: white;
+              }
+            }
+          }
+        }
+        .font-card-dummy {
+          @include setFont($bold, 4em);
+        }
+      }
+    }
+  }
+
+// # SELECTION: Font Size #
+.fontsize-title {
+  padding: 0em 3.5em;
+  p {
+    @include setFont($medium, 0.8em);
+    color: var(--color-purewhite);
+    padding: 0;
+    padding-top: 5em;
+  }
+}
+.fontsize-slider-container {
+  padding: 2em 3.5em;
+  align-items: center;
+  justify-content: space-between;
+  .fontsize-head {
+    @include setFont($bold, 1.5em);
+    margin-right: 3%;
+  }
+  .fontsize-slider-track {
+    -webkit-appearance: none;
+    width: 75%;
+    height: 2px;
+    border-radius: 50px;
+    background: var(--color-purewhite);
+    outline: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      background: var(--color-purewhite);
+      cursor: pointer;
+    }
+  }
+  .fontsize-slider-input {
+    border:none;
+    background: none;
+    @include setFont($bold, 1.2em);
+    color: var(--color-purewhite);
+  }
+}
+
+// # Preview Container #
+#preview {
+  padding: 3em 4em;
+  overflow-y: scroll;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.slider-info {
+  font-size: 1em;
+  color: var(--color-dark-gray);
 }
 
 .all-caps {

@@ -1,4 +1,4 @@
-import React, {useReducer,useState,useEffect} from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 
 import {
 	Switch,
@@ -14,25 +14,25 @@ import {PairingDoc,ClickList,FontRange, Spacing} from "./components";
 
 
 //Here is home content. 
-const HomePage = ({fonts}) => {
-	let {path} = useRouteMatch();
+const HomePage = ({ fonts }) => {
+	let { path } = useRouteMatch();
 
-	let [fontFamilies,setFontFamilies] = useReducer(
-		(s,a) => ({...s,...a}),
-		{first:{}, second:{}}
+	let [fontFamilies, setFontFamilies] = useReducer(
+		(s, a) => ({ ...s, ...a }),
+		{ first: {}, second: {} }
 	);
-	let [fontSizes,setFontSizes] = useReducer(
-		(s,a) => {
-			s[+a.i]={...s[+a.i],...a.v};
+	let [fontSizes, setFontSizes] = useReducer(
+		(s, a) => {
+			s[+a.i] = { ...s[+a.i], ...a.v };
 			return [...s];
 		},
 		[
-			{size:72,min:12,max:96,name:'H1'},
-			{size:56,min:12,max:72,name:'H2'},
-			{size:43,min:12,max:72,name:'H3'},
-			{size:16,min:12,max:72,name:'H4'},
-			{size:14,min:12,max:72,name:'H5'},
-			{size:12,min:12,max:26,name:'P'}
+			{ size: 72, min: 12, max: 96, name: 'H1' },
+			{ size: 56, min: 12, max: 72, name: 'H2' },
+			{ size: 43, min: 12, max: 72, name: 'H3' },
+			{ size: 16, min: 12, max: 72, name: 'H4' },
+			{ size: 14, min: 12, max: 72, name: 'H5' },
+			{ size: 12, min: 12, max: 26, name: 'P' }
 		]
 	);
 
@@ -115,26 +115,20 @@ const HomePage = ({fonts}) => {
 	useEffect(()=>{
 		if(!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
-		let r2 = Math.floor(Math.random() * fonts.filter((o,i)=>i!=r1).length);
-		console.log(r1,r2,fonts[r1],fonts[r2])
-		setFontFamilies({first:fonts[r1]})
-		setFontFamilies({second:fonts[r2]})
-	},[fonts]);
+		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i != r1).length);
+		console.log(r1, r2, fonts[r1], fonts[r2])
+		setFontFamilies({ first: fonts[r1] })
+		setFontFamilies({ second: fonts[r2] })
+	}, [fonts]);
 
 	//let [fontSize,setFontSize] = useState(14);
 
-	return(
-		<article className=" container p-xs-ts">
-			<section className="grid">
-				<h4 className="col--4">Welcome to our font pairing app</h4>
-			</section>
-			<section className="grid">
-				<p className="col--4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</section>
+	return (
+		<article className=" container">
 			<section>
 				<Switch>
 					<Route exact path={`${path}`}>
-						<PairFont 
+						<PairFont
 							path={path}
 							spacings={spacings}
 
@@ -145,8 +139,8 @@ const HomePage = ({fonts}) => {
 							fontSizes={fontSizes}
 						/>
 					</Route>
-					<Route path={`${path}/1`}>
-						<SetSize 
+					<Route path={`${path}/set-sizes`}>
+						<SetSize
 							path={path}
 							spacings={spacings}
 							setFontSizes={setFontSizes}
@@ -154,7 +148,7 @@ const HomePage = ({fonts}) => {
 							fontSizes={fontSizes}
 						/>
 					</Route>
-					<Route path={`${path}/2`}>
+					<Route path={`${path}/spacing`}>
 						<SetSpacing 
 							path={path}
 
@@ -165,10 +159,13 @@ const HomePage = ({fonts}) => {
 							fontSizes={fontSizes}
 						/>
 					</Route>
+					<Route path={`${path}/download`}>
+						{/* Insert download component */}
+					</Route>
 				</Switch>
 			</section>
 		</article>
-		);
+	);
 }
 
 //Here is the start pairing content.
@@ -177,31 +174,31 @@ const HomePage = ({fonts}) => {
 const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings}) => {
 	const changeFontOne = (e) => {
 		e.preventDefault();
-		setFontFamilies({first:e.target.value});
+		setFontFamilies({ first: e.target.value });
 	}
 
 	const changeFontTwo = (e) => {
 		e.preventDefault();
-		setFontFamilies({second:e.target.value});
+		setFontFamilies({ second: e.target.value });
 	}
 
 	return (
 		<section className="grid">
-			<div className="col--4">
-				<div className="p-xs-bs"><Link to={`${path}/1`}>Next</Link></div>
-				{/* <section className="grid">
-					<input className="font-input m-xs-bm col--6" type="text" value={fontFamilies.first.name} onChange={changeFontOne} />
-					<input className="font-input p-xs-s m-xs-bm offset--7 col--6" type="text" value={fontFamilies.second.name} onChange={changeFontTwo} />
-				</section> */}
-				<div className="bg-dark">
-				<ClickList 
-					data={fontlist} 
-					families={fontFamilies}
-					callback={setFontFamilies}
+			<div id="selection" className="col--5 pos-r">
+				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+				</div>
+				<div id="selection-fontpair-interface" className="bg-dark">
+					<ClickList
+						data={fontlist}
+						families={fontFamilies}
+						callback={setFontFamilies}
 					/>
 				</div>
 			</div>
-			<div className="col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
 				<PairingDoc 
 					fontSizes={fontSizes} 
 					fontFamilies={fontFamilies}
@@ -217,8 +214,8 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 	const setSize = e => {
 		e.preventDefault();
 		setFontSizes({
-			i:e.target.dataset.id,
-			v:{size:e.target.value}
+			i: e.target.dataset.id,
+			v: { size: e.target.value }
 		});
 	}
 
@@ -226,10 +223,16 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 
 	return (
 		<section className="grid">
-			<div className="col--4">
-				<div className="p-xs-bs"><Link to={`${path}/2`}>Next</Link></div>
-				<div className="p-xs-bs"><Link to={`${path}/`}>Previous</Link></div>
-				{ fontSizes.map((o,i)=>(
+			<div id="selection" className="col--5 pos-r bg-dark-solid">
+				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
+					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+				</div>
+				<div className="fontsize-title">
+					<p>Choose the font size</p>
+				</div>
+				{fontSizes.map((o, i) => (
 					<FontRange
 						key={i}
 						id={i}
@@ -237,8 +240,8 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 						setSize={setSize} />
 				))}
 			</div>
-			<div className="col--8 offset--6 pairing-wrapper">
-				<PairingDoc 
+			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+				<PairingDoc
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
 					spacings={spacings}
@@ -271,23 +274,29 @@ const SetSpacing = ({path,setSpacings,spacings,fontSizes,fontFamilies}) => {
 
 	return (
 		<section className="grid">
-		<div className="col--4">
-			<section className="grid">
-				<div className="p-xs-bs"><Link to={`${path}/3`}>Next</Link></div>
-				<div className="p-xs-bs"><Link to={`${path}/1`}>Previous</Link></div>
+		<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+				<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 			</section>
-			{ spacings.map((o,i)=>(
-				<Spacing
-				key={i}
-				id={i}
-				spacing={spacings}
-				setTracking={setTracking}
-				setLeading={setLeading}
-				 />
-			))}
+			<div className="p-xs-txl">			
+				<div className="fontsize-title">
+					<p>Choose the font size</p>
+				</div>
+				{ spacings.map((o,i)=>(
+					<Spacing
+					key={i}
+					id={i}
+					spacing={spacings}
+					setTracking={setTracking}
+					setLeading={setLeading}
+					/>
+				))}
+			</div>
 		</div>
 
-		<div className="col--8 offset--6 pairing-wrapper">
+		<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
 			<PairingDoc 
 				fontFamilies={fontFamilies}
 				fontSizes={fontSizes}

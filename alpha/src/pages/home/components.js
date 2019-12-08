@@ -46,12 +46,12 @@ const ClickList = ({ data, families, callback }) => {
   // let r2 = Math.floor(Math.random() * data.filter((o,i)=>i!=r1).length);
   console.log(data)
   return (
-    <section id="selectfont" className="flex-xs-parent flex-xs-wrap">
+    <section id="selectfont" className="flex-xs-parent flex-xs-wrap p-xs-txl">
       {data.map((o,i) => (
         <div className="font-card" key={i}>
           <div className="font-card-nav flex-xs-parent">
             <p className="txt-purewhite font-card-name" style={{fontFamily:o.name}}>{o.name}</p>
-            <div className="font-card-btns-container flex-xs-parent">
+            <div className="font-card-btns-container flex-xs-parent txt-purewhite">
               <div className={`font-card-btns flex-xs-parent ${o.id==families.first.id?'chosen':''}`} onClick={() => callback({ first: o })}>H</div>
               <div className={`font-card-btns flex-xs-parent ${o.id==families.second.id?'chosen':''}`} onClick={() => callback({ second: o })}>B</div>
             </div>
@@ -90,23 +90,24 @@ const TypeHierarchy = ({ fontFamilies, fontSizes, spacings }) => {
 }
 
 const FontRange = ({id,size,setSize}) => {
-	return (<div>
-		<span>{size[id].name}</span>
-		<input type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
-		<input type="number" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
+	return (<div id="selectfont" className="fontsize-slider-container flex-row">
+		<span className="txt-purewhite fontsize-head">{size[id].name}</span>
+		<input className="fontsize-slider-track" type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
+		<input className="fontsize-slider-input" type="number" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
 	</div>);
 }
 
 const Spacing = ({id,spacing,setTracking, setLeading}) => {
-	return (<div>
-    <h5>{spacing[id].name}</h5>
-		<span>{spacing[id].label1}</span>
-		<input type="range" value={spacing[id].trackingSize} min={spacing[id].trackingMin} max={spacing[id].trackingMax} onChange={setTracking} data-id={id}/>
-    <input type="number" value={spacing[id].trackingSize} min={spacing[id].trackingMin} max={spacing[id].trackingMax} onChange={setTracking} data-id={id}/>
+	return (<div id="selectfont" className="fontsize-slider-container flex-row">
+    <h5 className="txt-purewhite fontsize-head">{spacing[id].name}</h5>
     <br/>
-    <span>{spacing[id].label2}</span>
-    <input type="range" value={spacing[id].leadingSize} min={spacing[id].leadingMin} max={spacing[id].leadingMax} onChange={setLeading} data-id={id}/>
-    <input type="number" value={spacing[id].leadingSize} min={spacing[id].leadingMin} max={spacing[id].leadingMax} onChange={setLeading} data-id={id}/>
+		<span className="txt-purewhite fontsize-head">{spacing[id].label1}</span>
+		<input className="fontsize-slider-track" type="range" value={spacing[id].trackingSize} min={spacing[id].trackingMin} max={spacing[id].trackingMax} onChange={setTracking} data-id={id}/>
+    <input className="fontsize-slider-input" type="number" value={spacing[id].trackingSize} min={spacing[id].trackingMin} max={spacing[id].trackingMax} onChange={setTracking} data-id={id}/>
+    <br/>
+    <span className="txt-purewhite fontsize-head">{spacing[id].label2}</span>
+    <input className="fontsize-slider-track" type="range" value={spacing[id].leadingSize} min={spacing[id].leadingMin} max={spacing[id].leadingMax} onChange={setLeading} data-id={id}/>
+    <input className="fontsize-slider-input" type="number" value={spacing[id].leadingSize} min={spacing[id].leadingMin} max={spacing[id].leadingMax} onChange={setLeading} data-id={id}/>
 	</div>);
 }
 
