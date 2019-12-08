@@ -69,19 +69,19 @@ const TypeHierarchy = ({ fontFamilies, fontSizes, spacings }) => {
   return (
     <section>
       <h1 className="p-xs-bxs" style={{ letterSpacing:spacings[0].trackingSize+'px', lineHeight:spacings[0].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[0].size+'px' }}>H1 / {fontFamilies.first.name}</h1>
-      <div class="slider-info m-xs-bl">{fontSizes[0].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+      <div class="slider-info m-xs-bl">{fontSizes[0].size} / {spacings[0].trackingSize} px / {spacings[0].leadingSize} % </div>
 
       <h2 className="p-xs-bxs" style={{ letterSpacing:spacings[1].trackingSize+'px', lineHeight:spacings[1].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[1].size+'px' }}>H2 / {fontFamilies.first.name}</h2>
-      <div class="slider-info m-xs-bl">{fontSizes[1].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+      <div class="slider-info m-xs-bl">{fontSizes[1].size} / {spacings[1].trackingSize} px / {spacings[1].leadingSize} % </div>
 
       <h3 className="p-xs-bxs" style={{ letterSpacing:spacings[2].trackingSize+'px', lineHeight:spacings[2].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[2].size+'px' }}>H3 / {fontFamilies.first.name}</h3>
-      <div class="slider-info m-xs-bl">{fontSizes[2].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+      <div class="slider-info m-xs-bl">{fontSizes[2].size} / {spacings[2].trackingSize} px / {spacings[2].leadingSize} % </div>
 
       <h4 className="p-xs-bxs" style={{ letterSpacing:spacings[3].trackingSize+'px', lineHeight:spacings[3].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[3].size+'px' }}>H4 / {fontFamilies.first.name}</h4>
-      <div class="slider-info m-xs-bl">{fontSizes[3].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+      <div class="slider-info m-xs-bl">{fontSizes[3].size} / {spacings[3].trackingSize} px / {spacings[3].leadingSize} % </div>
 
       <h5 className="p-xs-bxs" style={{ letterSpacing:spacings[4].trackingSize+'px', lineHeight:spacings[4].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[4].size+'px' }}>H5 / {fontFamilies.first.name}</h5>
-      <div class="slider-info m-xs-bl">{fontSizes[4].size} / [insert letter-spacing]% / [insert line-spacing] % </div>
+      <div class="slider-info m-xs-bl">{fontSizes[4].size} / {spacings[4].trackingSize} px / {spacings[4].leadingSize} % </div>
 
       <p className="p-xs-bxs" style={{ letterSpacing:spacings[5].trackingSize+'px', lineHeight:spacings[5].leadingSize+'%', fontFamily: fontFamilies.second.name, fontSize: fontSizes[5].size+'px' }}>p / {fontFamilies.second.name}</p>
       <div class="slider-info m-xs-bl">{fontSizes[5].size} / {spacings[5].trackingSize} px / {spacings[5].leadingSize} % </div>
