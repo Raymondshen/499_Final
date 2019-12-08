@@ -16,7 +16,7 @@ const PairingDoc = ({ fontSizes,fontFamilies }) => {
         <h5 style={{ fontSize:fontSizes[4].size+'px', fontFamily: fontFamilies.first.name }}>Headline 5</h5>
         <p style={{ fontSize:fontSizes[5].size+'px', fontFamily: fontFamilies.second.name }}>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half.</p>
       </div>
-      <div className="col--6 offset--7 p-xs-hs">
+      <div className="col--6 offset--7 p-xs-hm">
         <h3 style={{ fontSize:fontSizes[2].size+'px', fontFamily: fontFamilies.first.name }}>Headline 3</h3>
         <h4 style={{ fontSize:fontSizes[3].size+'px', fontFamily: fontFamilies.first.name }}>Headline 4</h4>
         <p style={{ fontSize:fontSizes[5].size+'px', fontFamily: fontFamilies.second.name }}>
@@ -45,7 +45,7 @@ const ClickList = ({ data, families, callback }) => {
         <div className="font-card" key={i}>
           <div className="font-card-nav flex-xs-parent">
             <p className="txt-purewhite font-card-name" style={{fontFamily:o.name}}>{o.name}</p>
-            <div className="font-card-btns-container flex-xs-parent">
+            <div className="font-card-btns-container flex-xs-parent txt-purewhite">
               <div className={`font-card-btns flex-xs-parent ${o.id==families.first.id?'chosen':''}`} onClick={() => callback({ first: o })}>H</div>
               <div className={`font-card-btns flex-xs-parent ${o.id==families.second.id?'chosen':''}`} onClick={() => callback({ second: o })}>B</div>
             </div>
@@ -84,10 +84,10 @@ const TypeHierarchy = ({ fontFamilies, fontSizes }) => {
 }
 
 const FontRange = ({id,size,setSize}) => {
-	return (<div>
-		<span>{size[id].name}</span>
-		<input type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
-		<input type="number" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
+	return (<div className="fontsize-slider-container flex-row">
+		<span className="txt-purewhite fontsize-head">{size[id].name}</span>
+		<input className="fontsize-slider-track" type="range" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
+		<input className="fontsize-slider-input" type="number" value={size[id].size} min={size[id].min} max={size[id].max} onChange={setSize} data-id={id}/>
 	</div>);
 }
 

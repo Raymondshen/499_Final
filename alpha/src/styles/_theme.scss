@@ -98,11 +98,7 @@ header {
 
 // RAYMOND EDITS
 #root {
-	padding-top: 3.2em;
-}
-#selectfont {
-	height:100vh;
-	overflow-y: scroll;
+  padding-top: 3.2em;
 }
 .nav {
   z-index: 10;
@@ -116,123 +112,152 @@ header {
 .txt-darkgray {
   color: var(--color-dark-gray);
 }
-.font-card-name {
-  @include setFont($medium, 1em);
-  padding-top: 0;
-}
-.font-card-dummy {
-  @include setFont($bold, 6em);
-}
-.selection-container {
- &::-webkit-scrollbar {
-	 width:0;
- }
- .nav-selection-links {
-	margin: 0% 7.5%;
-	margin-top: 3em;
-	margin-bottom: 2em;
-	.link-setsize {
-	  a {
-		@include setFont($regular, 1.5em);
-		color: var(--color-purewhite);
-	  }
-	}
-  }
-}
-//
-.font-input-container {
-  margin: 0% 7.5%;
-  margin-bottom: 2em;
-  .font-input-name {
-    p {
-      @include setFont($medium, 0.8em);
-      opacity: 0.8;
-      padding: 0;
-      padding-bottom: 0.6em;
+
+// # GLOBAL: Selection Navigation #
+#selection {
+  position: relative;
+  // # Navigation for the selection Area #
+  .selection-nav-container {
+    z-index: 2;
+    padding: 2em 3.5em;
+    flex-flow: wrap row;
+    border-bottom: 1px solid #ffffff63;
+    .selection-nav-links {
       color: var(--color-purewhite);
-      width: 50%;
-    }
-  }
-  .font-input-box {
-    border-bottom: 1px solid white;
-    .font-input {
-      width: 50%;
-      background: none;
-      border: none;
-      @include setFont($medium, 2em);
-      color: var(--color-purewhite);
-      padding: 0.4em 0em;
+      margin-right: 0.8em;
     }
   }
 }
 
-.font-card {
-	&:nth-child(odd){
-		margin-left: 7.5%;
-		margin-right:2.5%;
-	}
-	&:nth-child(even){
-		margin-right: 7.5%;
-		margin-left:2.5%;
-	}
-	position:relative;
-	margin-bottom:5%;
-	width: 40%;
-	padding: 4em 3em;
-	// flex: 1 1 40%;
-	border: 1px solid var(--color-purewhite);
-	// margin: 5%;
-	background: var(--color-bg-lightdark);
-	.button {
-		cursor: pointer;
-		font-size: 1em;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+// # SELECTION : FONT PAIR #
+  #selection-fontpair-interface {
+    #selectfont {
+      height: 100vh;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .font-card {
+        &:nth-child(odd) {
+          margin-left: 7.5%;
+          margin-right: 2.5%;
+        }
+        &:nth-child(even) {
+          margin-right: 7.5%;
+          margin-left: 2.5%;
+        }
+        position: relative;
+        margin-bottom: 5%;
+        width: 40%;
+        padding: 4em 3em;
+        border: 1px solid var(--color-purewhite);
+        background: var(--color-bg-lightdark);
+        .button {
+          cursor: pointer;
+          font-size: 1em;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .font-card-nav {
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5em;
+          .font-card-name {
+            @include setFont($bold, 1em);
+            padding: 0em;
+          }
+          .font-card-btns-container {
+            .font-card-btns {
+              margin-left: 0.5em;
+              justify-content: center;
+              align-items: center;
+              @include makewh(1em);
+              padding: 1.2em;
+              border: 1.5px solid white;
+              @include setFont($bold, 0.65em);
+              border-radius: 100px;
+              &:hover {
+                cursor: pointer;
+              }
+              &:nth-child(odd) {
+                &:hover {
+                  background: var(--color-red);
+                }
+              }
+              &:nth-child(even) {
+                &:hover {
+                  background: var(--color-purple);
+                }
+              }
+              &.chosen {
+                color: black;
+                background: white;
+              }
+            }
+          }
+        }
+        .font-card-dummy {
+          @include setFont($bold, 4em);
+        }
+      }
+    }
+  }
 
-	.font-card-nav {
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1.5em;
-		p {
-			padding: 0;
-		}
-		.font-card-btns-container {
-			.font-card-btns {
-				margin-left: 0.5em;
-				justify-content: center;
-				align-items: center;
-				width:1.8em;
-				height: 1.8em;
-				padding: 1.2em;
-				border: 1.5px solid white;
-				@include setFont($bold, 0.85em);
-				border-radius: 100px;
-				color: white;
-				&:hover {
-					cursor: pointer;
-				}
-				&:nth-child(odd){
-					&:hover {
-						background: var(--color-red);
-					}
-				}
-				&:nth-child(even){
-					&:hover {
-						background: var(--color-purple);
-					}
-				}
-				&.chosen {
-					color: black;
-					background: white;
-				}
-		}
-	}
+// # SELECTION: Font Size #
+.fontsize-title {
+  padding: 0em 3.5em;
+  p {
+    @include setFont($medium, 0.8em);
+    color: var(--color-purewhite);
+    padding: 0;
+    padding-top: 5em;
+  }
 }
+.fontsize-slider-container {
+  padding: 2em 3.5em;
+  align-items: center;
+  justify-content: space-between;
+  .fontsize-head {
+    @include setFont($bold, 1.5em);
+    margin-right: 3%;
+  }
+  .fontsize-slider-track {
+    -webkit-appearance: none;
+    width: 75%;
+    height: 2px;
+    border-radius: 50px;
+    background: var(--color-purewhite);
+    outline: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      background: var(--color-purewhite);
+      cursor: pointer;
+    }
+  }
+  .fontsize-slider-input {
+    border:none;
+    background: none;
+    @include setFont($bold, 1.2em);
+    color: var(--color-purewhite);
+  }
 }
 
-.slider-info{
-	font-size: 1em;
-	color: var(--color-dark-gray);
+// # Preview Container #
+#preview {
+  padding: 3em 4em;
+  overflow-y: scroll;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.slider-info {
+  font-size: 1em;
+  color: var(--color-dark-gray);
 }
