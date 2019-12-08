@@ -46,8 +46,8 @@ function App() {
 		.then(d=>{
       setFonts(d.feed.entry.map(parseRow))
 		})
-	},[]);
-
+  },[]);
+  
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
