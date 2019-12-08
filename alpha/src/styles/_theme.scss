@@ -1,9 +1,13 @@
-body, html {
-  font-family: "Helvetica", "Arial", sans-serif;}
-*,*:before,*:after {
+body,
+html {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+*,
+*:before,
+*:after {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased; 
+  font-smoothing: antialiased;
 }
 
 h1,
@@ -13,172 +17,210 @@ h4,
 h5,
 h6,
 p,
-.button{
-	color: var(--color-body-background);
-	@include breakpoint ('tablet') {
-	}
+.button {
+  color: var(--color-body-background);
+  @include breakpoint("tablet") {
+  }
 }
 
-p{
-	line-height: 115%;
-	font-family: "Helvetica", "Arial", sans-serif;
+p {
+  line-height: 115%;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
-h1{
-	font-size: 3.25em;
-	line-height: 112%;
-	@include breakpoint ('tablet') {
-		font-size: 6em;
-		line-height: 92%;
-	}
+h1 {
+  font-size: 3.25em;
+  line-height: 112%;
+  @include breakpoint("tablet") {
+    font-size: 6em;
+    line-height: 92%;
+  }
 }
 
-h2{
-	font-size: 1.75em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 3.25em;
-		line-height: 112%;
-	}
+h2 {
+  font-size: 1.75em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 3.25em;
+    line-height: 112%;
+  }
 }
 
-h3{
-	font-size: 1.375em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 2em;
-		line-height: 102%;
-	}
+h3 {
+  font-size: 1.375em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 2em;
+    line-height: 102%;
+  }
 }
 
-h4, .button{
-	font-size: 1.1em;
-	line-height: 105%;
-	@include breakpoint ('tablet') {
-		font-size: 2em;
-		line-height: 102%;
-	}
+h4,
+.button {
+  font-size: 1.1em;
+  line-height: 105%;
+  @include breakpoint("tablet") {
+    font-size: 2em;
+    line-height: 102%;
+  }
 }
 
 h5 {
-	font-size: 1.375em;
-	line-height: 105%;
+  font-size: 1.375em;
+  line-height: 105%;
 }
 
 a {
-	font-size: 1.1em;
-	line-height: 105%;
+  font-size: 1.1em;
+  line-height: 105%;
 }
 
 //STYLE GUIDE CSS
 
 main {
-	width: 100vw;
-	height: 6000px;
+  width: 100vw;
+  height: 6000px;
 }
 
 header {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	height: 3.2rem;
-	background-color: var(--main-color-dark);
-	width: 100vw;
-	display: none;
-	nav {
-		padding-left: 2vw;
-	}
-
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 3.2rem;
+  background-color: var(--main-color-dark);
+  width: 100vw;
+  display: none;
+  nav {
+    padding-left: 2vw;
+  }
 }
 
 // RAYMOND EDITS
 #root {
-	overflow-y:scroll;
-	overflow-x: hidden;
+	padding-top: 3.2em;
 }
 #selectfont {
+	height:100vh;
+	overflow-y: scroll;
 }
 .nav {
-	z-index: 10;
+  z-index: 10;
 }
 .bg-dark {
-	background: var(--color-bg-dark);
+  background: var(--color-bg-dark);
 }
-.txt-purewhite{
-	color: var(--color-purewhite);
+.txt-purewhite {
+  color: var(--color-purewhite);
 }
-.txt-darkgray{
-	color: var(--color-dark-gray);
+.txt-darkgray {
+  color: var(--color-dark-gray);
 }
 .font-card-name {
-	@include setFont($medium, 1.2em);
-	padding-top: 0;
+  @include setFont($medium, 1em);
+  padding-top: 0;
 }
 .font-card-dummy {
-	@include setFont($bold, 6em);
+  @include setFont($bold, 6em);
+}
+.selection-container {
+ &::-webkit-scrollbar {
+	 width:0;
+ }
+ .nav-selection-links {
+	margin: 0% 7.5%;
+	margin-top: 3em;
+	margin-bottom: 2em;
+	.link-setsize {
+	  a {
+		@include setFont($regular, 1.5em);
+		color: var(--color-purewhite);
+	  }
+	}
+  }
 }
 //
-
-.font-input {
-	width: 100%;
+.font-input-container {
+  margin: 0% 7.5%;
+  margin-bottom: 2em;
+  .font-input-name {
+    p {
+      @include setFont($medium, 0.8em);
+      opacity: 0.8;
+      padding: 0;
+      padding-bottom: 0.6em;
+      color: var(--color-purewhite);
+      width: 50%;
+    }
+  }
+  .font-input-box {
+    border-bottom: 1px solid white;
+    .font-input {
+      width: 50%;
+      background: none;
+      border: none;
+      @include setFont($medium, 2em);
+      color: var(--color-purewhite);
+      padding: 0.4em 0em;
+    }
+  }
 }
 
 .font-card {
-	&:nth-child(odd){
-		margin-left: 7.5%;
-		margin-right:2.5%;
-	}
-	&:nth-child(even){
-		margin-right: 7.5%;
-		margin-left:2.5%;
-	}
-	position:relative;
-	margin-bottom:5%;
-	width: 40%;
-	padding: 4em 3em;
-	// flex: 1 1 40%;
-	border: 1px solid var(--color-purewhite);
-	// margin: 5%;
-	background: var(--color-bg-lightdark);
-	.button {
-		cursor: pointer;
-		font-size: 1em;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+  &:nth-child(odd) {
+    margin-left: 7.5%;
+    margin-right: 2.5%;
+  }
+  &:nth-child(even) {
+    margin-right: 7.5%;
+    margin-left: 2.5%;
+  }
+  position: relative;
+  margin-bottom: 5%;
+  width: 40%;
+  padding: 4em 3em;
+  // flex: 1 1 40%;
+  border: 1px solid var(--color-purewhite);
+  // margin: 5%;
+  background: var(--color-bg-lightdark);
+  .button {
+    cursor: pointer;
+    font-size: 1em;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-	.font-card-nav {
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1.5em;
-		p {
-			padding: 0;
-		}
-		.font-card-btns-container {
-			.font-card-btns {
-				margin-left: 0.5em;
-				justify-content: center;
-				align-items: center;
-				width:1.8em;
-				height: 1.8em;
-				padding: 1.2em;
-				border: 1.5px solid white;
-				@include setFont($bold, 0.85em);
-				border-radius: 100px;
-				color: white;
-				&:nth-child(odd){
-					&:hover {
-						background: var(--color-red);
-					}
-				}
-				&:nth-child(even){
-					&:hover {
-						background: var(--color-purple);
-					}
-				}
-			}
-		}
-	}
+  .font-card-nav {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+    p {
+      padding: 0;
+    }
+    .font-card-btns-container {
+      .font-card-btns {
+        margin-left: 0.5em;
+        justify-content: center;
+        align-items: center;
+        width: 1.8em;
+        height: 1.8em;
+        padding: 1.2em;
+        border: 1.5px solid white;
+        @include setFont($bold, 0.75em);
+        border-radius: 100px;
+        color: white;
+        &:nth-child(odd) {
+          &:hover {
+            background: var(--color-red);
+          }
+        }
+        &:nth-child(even) {
+          &:hover {
+            background: var(--color-purple);
+          }
+        }
+      }
+    }
+  }
 }
