@@ -71,7 +71,10 @@ h5 {
 }
 
 a {
-  font-size: 1.1em;
+  @include setFont($bold, 0.9em);
+  @include breakpoint("laptop"){
+    @include setFont($bold, 1.1em);
+  }
   line-height: 105%;
 }
 
@@ -134,7 +137,7 @@ header {
 }
 
 // # GLOBAL: Selection Navigation #
-#selection {
+.selection {
   // # Navigation for the selection Area #
   .selection-nav-container {
     z-index: 2;
@@ -303,24 +306,28 @@ header {
 }
 
 // # SELECTION: PRINT BUTTON #
-#selectprint {
-  justify-content: center;
-  align-items: center;
-  .print-button {
-    border-radius: 5px;
-    color: var(--color-purewhite) !important;
-    background-color: var(--color-bg-dark);
-    border: 1px solid var(--color-purewhite);
-    height: 3em;
-    padding: 0em 3em;
-    // margin: 7rem;
-    // padding: 1rem;
-  }
-  .print-button:hover {
-    background-color: var(--color-purewhite);
-    border: 1px solid var(--color-bg-dark);
-    border-radius: 5px;
-    color: var(--color-bg-dark) !important;
+.pdf-container {
+  height: 100vh;
+  #selectprint {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .print-button {
+      border-radius: 5px;
+      color: var(--color-purewhite) !important;
+      background-color: var(--color-bg-dark);
+      border: 1px solid var(--color-purewhite);
+      height: 3em;
+      padding: 0em 3em;
+      // margin: 7rem;
+      // padding: 1rem;
+    }
+    .print-button:hover {
+      background-color: var(--color-purewhite);
+      border: 1px solid var(--color-bg-dark);
+      border-radius: 5px;
+      color: var(--color-bg-dark) !important;
+    }
   }
 }
 

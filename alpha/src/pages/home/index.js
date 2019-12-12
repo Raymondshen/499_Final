@@ -193,7 +193,7 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 
 	return (
 		<section className="grid">
-			<div id="selection" className=" col-md-5 position-xs-a position-md-r">
+			<div className="selection col-md-5 position-xs-a position-md-r">
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -233,7 +233,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 position-xs-a position-md-r bg-dark-solid ">
+			<div className="size-container selection col-md-5 position-xs-a position-md-r bg-dark-solid ">
 				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -285,7 +285,7 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<div className="spacing-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -343,7 +343,7 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<div className="pdf-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
