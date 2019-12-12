@@ -26,3 +26,11 @@ w13:
 -Had a good thanksgiving break
 -received feedback from Gustav, need to adjust the Hierarchy of texts
 
+w13+:
+
+-Refined the ux ui again.
+-designed mobile version
+-adjusted the Hierarchy of texts
+-joined the repository Raymond shared
+
+

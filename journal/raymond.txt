@@ -22,3 +22,9 @@ Nov 28 - Dec 4
 - Researched a bit on REACT
 - Stayed up to date with gustav regarding the coding progress of the project
 - Reworked some of the html structure and naming.
+
+Dec 5 - 12
+- Worked on styling further the new pages added by Gustav
+- Checked in with everyone on their progress
+- Helped out classmate and resolved any git issues
+- Cleaned up some of the coding and naming.
