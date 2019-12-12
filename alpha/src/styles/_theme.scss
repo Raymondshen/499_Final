@@ -98,6 +98,7 @@ header {
     li:nth-last-child(1) {
       background-color: var(--color-bg-dark);
       border-radius: 5px;
+      border: 1px solid transparent;
       a {
         color: var(--color-purewhite) !important;
       }
