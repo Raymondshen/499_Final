@@ -24,3 +24,9 @@ November 21-December 05:
 - Refined prototype. New idea and design of two buttons on each font card, one for headline and one for body text, instead of locking fonts.
 - Layout and design for the landing page.
 - Sketched on the icon set for the svg animations.
+
+December 05-12:
+
+- Worked on the landing page.
+- Started looking into the animation for landing page and download success of design doc.
+- Met with Gustav on Wednesday to continue working on the project.
