@@ -100,7 +100,7 @@ const FontRange = ({id,size,setSize}) => {
 
 const Spacing = ({id,spacing,setTracking, setLeading}) => {
 	return (
-  <div className=" spacingfont fontsize-slider-container">
+  <div className="spacingfont fontsize-slider-container">
 
       <h5 className="txt-purewhite spacing-width-100">{spacing[id].name}</h5>
       <br/>
