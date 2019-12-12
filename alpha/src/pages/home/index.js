@@ -6,6 +6,10 @@ import {
 	Link,
 	useRouteMatch
 } from 'react-router-dom';
+
+import { renderToString } from "react-dom/server";
+import jsPDF from "jspdf";
+
 //Haven't started styling the app. Just setting up the routing. Have applied some easy classes that I had in my library to make it easy to look at.
 //https://mannenpag.github.io/sass-library/
 
@@ -160,7 +164,12 @@ const HomePage = ({ fonts }) => {
 						/>
 					</Route>
 					<Route path={`${path}/download`}>
-						{/* Insert download component */}
+						<PrintPDF
+							path={path}
+							spacings={spacings}
+							fontFamilies={fontFamilies}
+							fontSizes={fontSizes}
+						/>
 					</Route>
 				</Switch>
 			</section>
@@ -189,6 +198,7 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
 				<div id="selection-fontpair-interface" className="bg-dark">
 					<ClickList
@@ -228,6 +238,7 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
 				<div className="fontsize-title">
 					<p>Choose the font size</p>
@@ -276,9 +287,10 @@ const SetSpacing = ({path,setSpacings,spacings,fontSizes,fontFamilies}) => {
 		<section className="grid">
 		<div id="selection" className="col--5 pos-r bg-dark-solid">
 			<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-				<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 			</section>
 			<div className="p-xs-txl">			
 				<div className="fontsize-title">
@@ -306,6 +318,49 @@ const SetSpacing = ({path,setSpacings,spacings,fontSizes,fontFamilies}) => {
 		</div>
 		</section>
 	);
+}
+
+const PrintPDF = ({path,spacings,fontSizes,fontFamilies}) => {
+
+	const printDoc = e => {
+		e.preventDefault();
+		const string = renderToString(
+			<PairingDoc 
+			fontFamilies={fontFamilies}
+			fontSizes={fontSizes}
+			spacings={spacings}
+		  />
+		  );
+		const pdf = new jsPDF("p", "mm", "a4");
+	  
+	  // doc.setFont('courier')
+	  // doc.setFontType('normal')
+	  // doc.text(20, 30, 'This is courier normal.')
+	  
+		pdf.fromHTML(string);
+		pdf.save("pdf");
+	}
+
+  return (
+    <section className="grid">
+		<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+			<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+			<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
+			<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+			<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
+		</section>
+	 <div id="selection" className="col--5 pos-r bg-dark-solid">
+      	<button className="print-button" onClick={printDoc}>Download PDF</button>
+	  </div>
+	  <div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+		<PairingDoc 
+			fontFamilies={fontFamilies}
+			fontSizes={fontSizes}
+			spacings={spacings}
+			/>
+		</div>
+    </section>
+  );
 }
 
 

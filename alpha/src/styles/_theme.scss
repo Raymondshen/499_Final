@@ -309,3 +309,18 @@ header {
       width: 100%;
     }
 }
+
+.print-button{
+  border-radius: 5px;
+  color: var(--color-purewhite)!important;
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-purewhite);
+  margin: 1rem;
+  padding: 1rem;
+}
+.print-button:hover{
+  background-color: var(--color-purewhite);
+  border: 1px solid var(--color-bg-dark);
+  border-radius: 5px;
+  color: var(--color-bg-dark)!important;
+}

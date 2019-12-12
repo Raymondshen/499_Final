@@ -3,6 +3,7 @@ import React from 'react';
 import {
 	Link,
 } from 'react-router-dom';
+
 //Question for pairing dock. How does one change the unique h1 for the user and not the whole document.
 
 //Components that's global
@@ -117,4 +118,4 @@ const Spacing = ({id,spacing,setTracking, setLeading}) => {
 	</div>);
 }
 
-export { PairingDoc, ClickList, FontRange, Spacing };
+export { PairingDoc, ClickList, FontRange, Spacing};

@@ -72,7 +72,7 @@ function App() {
 }
 
 const IntroPage = () => {
-  return (<div>
+  return (<div className="bg-dark">
     <Link className="" to="pair-fonts">Start!</Link>
   </div>);
 };
