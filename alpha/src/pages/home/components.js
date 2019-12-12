@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 
 import {
 	Link,
@@ -41,14 +41,31 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings }) => {
   );
 }
 
+
+
+
 //Click list from Hamilton
 const ClickList = ({ data, families, callback }) => {
+  const makeFontSearch = (e) => {
+    let s = e.target.value;
+    let r = new RegExp(s,'i');
+    console.log(s,r);
+    setList(data.filter(o=>r.test(o.name)))
+  }
+
+  let [list,setList] = useState([]);
+  useEffect(()=>{
+    setList(data);
+  },[data]);
   // let r1 = Math.floor(Math.random() * data.length);
   // let r2 = Math.floor(Math.random() * data.filter((o,i)=>i!=r1).length);
   console.log(data)
-  return (
-    <section id="selectfont" className="flex-xs-parent flex-xs-wrap p-xs-txl">
-      {data.map((o,i) => (
+  return (<>
+    <div>
+      <input type="search" onChange={makeFontSearch} />
+    </div>
+    <section id="selectfont" className="flex-xs-parent flex-xs-wrap">
+      {list.map((o,i) => (
         <div className="font-card" key={i}>
           <div className="font-card-nav flex-xs-parent">
             <p className="txt-purewhite font-card-name" style={{fontFamily:o.name}}>{o.name}</p>
@@ -61,6 +78,7 @@ const ClickList = ({ data, families, callback }) => {
         </div>
       ))}
     </section>
+    </>
   );
 }
 

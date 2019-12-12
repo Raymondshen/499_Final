@@ -198,7 +198,7 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
-				<div id="selection-fontpair-interface" className="bg-dark">
+				<div id="selection-fontpair-interface" className="bg-dark p-xs-txl">
 					<ClickList
 						data={fontlist}
 						families={fontFamilies}
