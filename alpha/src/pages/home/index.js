@@ -343,13 +343,13 @@ const PrintPDF = ({path,spacings,fontSizes,fontFamilies}) => {
 
   return (
     <section className="grid">
-		<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+	 <div id="selection" className="col--5 pos-r bg-dark-solid">
+		 <section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 			<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 			<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 			<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 			<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 		</section>
-	 <div id="selection" className="col--5 pos-r bg-dark-solid">
       	<button className="print-button" onClick={printDoc}>Download PDF</button>
 	  </div>
 	  <div id="preview" className="preview col--8 offset--6 pairing-wrapper">
