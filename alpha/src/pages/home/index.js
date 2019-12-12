@@ -15,21 +15,22 @@ import jsPDF from "jspdf";
 
 import {PairingDoc,ClickList,FontRange, Spacing} from "./components";
 
-
+const reduceProperty = (s, a) => {
+	s[+a.i] = { ...s[+a.i], ...a.v };
+	return [...s];
+}
+const reduceIndex = (s, a) => ({ ...s, ...a });
 
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
 
 	let [fontFamilies, setFontFamilies] = useReducer(
-		(s, a) => ({ ...s, ...a }),
+		reduceIndex,
 		{ first: {}, second: {} }
 	);
 	let [fontSizes, setFontSizes] = useReducer(
-		(s, a) => {
-			s[+a.i] = { ...s[+a.i], ...a.v };
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{ size: 72, min: 12, max: 96, name: 'H1' },
 			{ size: 56, min: 12, max: 72, name: 'H2' },
@@ -42,10 +43,7 @@ const HomePage = ({ fonts }) => {
 
 	//Reducer for letter spacing and line height
 	let [spacings,setSpacings] = useReducer(
-		(s,a) => {
-			s[+a.i]={...s[+a.i],...a.v};
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{
 				trackingSize:0,
