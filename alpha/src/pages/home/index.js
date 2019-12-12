@@ -193,7 +193,7 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col-xs-5 col-md-5 position-xs-a position-md-r">
+			<div id="selection" className=" col-md-5 position-xs-a position-md-r">
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
