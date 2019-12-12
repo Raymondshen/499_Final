@@ -24,21 +24,46 @@ import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
 
-function App() {
-  let [title,setTitle] = useState("Pairing fonts");
 
+
+
+const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
+const parseRow = row => {
+  return getKeys(row).reduce((obj, key) => {
+    obj[key.slice(4)] = row[key].$t;
+    return obj;
+  }, {});
+};
+
+function App() {
+  let [title,setTitle] = useState("FontPairing");
+
+  let [fonts,setFonts] = useState([]);
+
+	useEffect(()=>{
+		fetch(`https://spreadsheets.google.com/feeds/list/1dR_EZsCGs9CbicR9pdI0UbVC5fXWlRjZLgdNTsRDwM4/1/public/values?alt=json`)
+		.then(r => r.json())
+		.then(d=>{
+      setFonts(d.feed.entry.map(parseRow))
+		})
+  },[]);
+  
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
-        <Link to="/">Home</Link>
-        <Link to="/pairfonts">How to pairfonts</Link>
-        <Link to="/about">About project</Link>
+        {/* <Link to="/">FontPairing</Link> */}
+        <Link to="/learn">How to pair fonts</Link>
+        <Link to="/about">About FontPairing</Link>
+        <Link className="" to="pair-fonts">Get Started</Link>
+
       </HeaderNav>
       <main>
         <Switch>
           <Route exact path="/"><IntroPage/></Route>
-          <Route path="/choose" component={HomePage}/>
-          <Route path="/pairfonts" component={LearnPage}/>
+          <Route path="/pair-fonts">
+            <HomePage fonts={fonts} />
+          </Route>
+          <Route path="/learn" component={LearnPage}/>
           <Route path="/about" component={AboutPage}/>
         </Switch>
       </main>
@@ -47,8 +72,8 @@ function App() {
 }
 
 const IntroPage = () => {
-  return (<div>
-    <Link className="" to="choose">Start!</Link>
+  return (<div className="bg-dark">
+    <Link className="" to="pair-fonts">Start!</Link>
   </div>);
 };
 
