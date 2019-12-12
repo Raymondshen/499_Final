@@ -15,7 +15,7 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings }) => {
 
   return (<div>
     <section className="grid p-xs-m">
-      <h1 style={{ letterSpacing:spacings[0].trackingSize+'px', lineHeight:spacings[0].leadingSize+'%', fontSize:fontSizes[0].size+'px', fontFamily: fontFamilies.first.name }} className="col--12">An Adaptable Foundation</h1>
+      <h1 style={{ letterSpacing:spacings[0].trackingSize+'px', lineHeight:spacings[0].leadingSize+'%', fontSize:fontSizes[0].size+'px', fontFamily: fontFamilies.first.name }} className="col--12">An Afxdaptable Foundation</h1>
     </section>
     <section className="grid p-xs-m p-xs-hs">
       <div className="col-xs-12 col-lg-6 p-lg-rl">
@@ -45,8 +45,10 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings }) => {
 const ClickList = ({ data, families, callback }) => {
   // let r1 = Math.floor(Math.random() * data.length);
   // let r2 = Math.floor(Math.random() * data.filter((o,i)=>i!=r1).length);
+
   console.log(data)
-  return (
+  return (<>
+  {/* <div><input type="search" onchange={makeFontSearch}/></div> */}
     <section id="selectfont" className="flex-xs-parent flex-xs-wrap p-xs-txl">
       {data.map((o,i) => (
         <div className="font-card" key={i}>
@@ -61,7 +63,7 @@ const ClickList = ({ data, families, callback }) => {
         </div>
       ))}
     </section>
-  );
+  </>);
 }
 
 
