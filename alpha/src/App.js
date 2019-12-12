@@ -36,7 +36,7 @@ const parseRow = row => {
 };
 
 function App() {
-  let [title,setTitle] = useState("Pairing fonts");
+  let [title,setTitle] = useState("FontPairing");
 
   let [fonts,setFonts] = useState([]);
 
@@ -51,9 +51,9 @@ function App() {
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={title}>
-        <Link to="/">fontPairing</Link>
-        <Link to="/learn">How to pairfonts</Link>
-        <Link to="/about">About fontPairing</Link>
+        {/* <Link to="/">FontPairing</Link> */}
+        <Link to="/learn">How to pair fonts</Link>
+        <Link to="/about">About FontPairing</Link>
         <Link className="" to="pair-fonts">Get Started</Link>
 
       </HeaderNav>

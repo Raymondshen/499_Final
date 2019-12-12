@@ -292,7 +292,7 @@ const SetSpacing = ({path,setSpacings,spacings,fontSizes,fontFamilies}) => {
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 			</section>
-			<div className="p-xs-txl">			
+			<div id="selectspacing" className="p-xs-txl vh-100">			
 				<div className="fontsize-title">
 					<p>Choose the font size</p>
 				</div>

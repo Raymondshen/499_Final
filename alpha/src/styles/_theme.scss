@@ -93,22 +93,22 @@ header {
   width: 100vw;
   display: none;
   nav {
-	padding-left: 2vw;
-	li:nth-last-child(1){
-		background-color: var(--color-bg-dark);
-		border-radius: 5px;
-		a {
-			color: var(--color-purewhite)!important;
-		}
-	}
-	li:nth-last-child(1):hover{
-		background-color: var(--color-purewhite);
-		border: 1px solid var(--color-bg-dark);
-		border-radius: 5px;
-		a {
-			color: var(--color-bg-dark)!important;
-		}
-	}
+    padding-left: 2vw;
+    li:nth-last-child(1) {
+      background-color: var(--color-bg-dark);
+      border-radius: 5px;
+      a {
+        color: var(--color-purewhite) !important;
+      }
+    }
+    li:nth-last-child(1):hover {
+      background-color: var(--color-purewhite);
+      border: 1px solid var(--color-bg-dark);
+      border-radius: 5px;
+      a {
+        color: var(--color-bg-dark) !important;
+      }
+    }
   }
 }
 
@@ -118,6 +118,8 @@ header {
 }
 .nav {
   z-index: 10;
+  justify-content: space-between;
+  align-items: center;
 }
 .bg-dark {
   background: var(--color-bg-dark);
@@ -146,89 +148,89 @@ header {
 }
 
 // # SELECTION : FONT PAIR #
-  #selection-fontpair-interface {
-    #selectfont {
-      height: 100vh;
-      overflow-y: scroll;
-      &::-webkit-scrollbar {
-        width: 0;
-      }
-      .font-card {
-        &:nth-child(odd) {
-          margin-left: 2.5%;
-          margin-right: 2.5%;
-          @include breakpoint("laptop") {
-            margin-left: 7.5%;
-          }
-        }
-        &:nth-child(even) {
-          margin-right: 2.5%;
-          margin-left: 2.5%;
-          @include breakpoint("laptop") {
-            margin-right: 7.5%;
-          }
-        }
-        position: relative;
-        margin-bottom: 5%;
-        width: 100%;
-        padding: 4em 3em;
-        border: 1px solid var(--color-purewhite);
-        background: var(--color-bg-lightdark);
+#selection-fontpair-interface {
+  #selectfont {
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 6em;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    .font-card {
+      &:nth-child(odd) {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
         @include breakpoint("laptop") {
-          width: 40%;
-
+          margin-left: 7.5%;
         }
-        .button {
-          cursor: pointer;
-          font-size: 1em;
-          &:hover {
-            text-decoration: underline;
-          }
+      }
+      &:nth-child(even) {
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        @include breakpoint("laptop") {
+          margin-right: 7.5%;
         }
-        .font-card-nav {
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1.5em;
-          .font-card-name {
-            @include setFont($bold, 1em);
-            padding: 0em;
-          }
-          .font-card-btns-container {
-            .font-card-btns {
-              margin-left: 0.5em;
-              justify-content: center;
-              align-items: center;
-              @include makewh(1em);
-              padding: 1.2em;
-              border: 1.5px solid white;
-              @include setFont($bold, 0.65em);
-              border-radius: 100px;
+      }
+      position: relative;
+      margin-bottom: 5%;
+      width: 100%;
+      padding: 4em 3em;
+      border: 1px solid var(--color-purewhite);
+      background: var(--color-bg-lightdark);
+      @include breakpoint("laptop") {
+        width: 40%;
+      }
+      .button {
+        cursor: pointer;
+        font-size: 1em;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .font-card-nav {
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5em;
+        .font-card-name {
+          @include setFont($bold, 1em);
+          padding: 0em;
+        }
+        .font-card-btns-container {
+          .font-card-btns {
+            margin-left: 0.5em;
+            justify-content: center;
+            align-items: center;
+            @include makewh(1em);
+            padding: 1.2em;
+            border: 1.5px solid white;
+            @include setFont($bold, 0.65em);
+            border-radius: 100px;
+            &:hover {
+              cursor: pointer;
+            }
+            &:nth-child(odd) {
               &:hover {
-                cursor: pointer;
+                background: var(--color-red);
               }
-              &:nth-child(odd) {
-                &:hover {
-                  background: var(--color-red);
-                }
+            }
+            &:nth-child(even) {
+              &:hover {
+                background: var(--color-purple);
               }
-              &:nth-child(even) {
-                &:hover {
-                  background: var(--color-purple);
-                }
-              }
-              &.chosen {
-                color: black;
-                background: white;
-              }
+            }
+            &.chosen {
+              color: black;
+              background: white;
             }
           }
         }
-        .font-card-dummy {
-          @include setFont($bold, 4em);
-        }
+      }
+      .font-card-dummy {
+        @include setFont($bold, 4em);
       }
     }
   }
+}
 
 // # SELECTION: Font Size #
 .fontsize-title {
@@ -238,6 +240,7 @@ header {
     color: var(--color-purewhite);
     padding: 0;
     padding-top: 5em;
+    opacity: 0.8;
   }
 }
 .fontsize-slider-container {
@@ -254,8 +257,8 @@ header {
     border-radius: 50px;
     background: var(--color-purewhite);
     outline: none;
-    &-limited-width{
-      width: 75%;
+    &-limited-width {
+      width: 66%;
     }
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
@@ -268,10 +271,33 @@ header {
     }
   }
   .fontsize-slider-input {
-    border:none;
+    border: none;
     background: none;
     @include setFont($bold, 1.2em);
     color: var(--color-purewhite);
+  }
+}
+
+// # SELECTION: SPACING FONT #
+#selectspacing {
+  height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 6em;
+  .spacingfont {
+    h5 {
+      @include setFont($bold, 1.5em);
+    }
+    .spacing-head-label {
+      @include setFont($medium, 1em);
+      width: 20%;
+    }
+    .spacing-input {
+      width: 10%;
+    }
+    .spacing-lead,
+    .spacing-track {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -289,38 +315,38 @@ header {
 
 .slider-info {
   font-size: 1em;
-  padding-top: .6em;
+  padding-top: 0.6em;
   color: var(--color-dark-gray);
 }
 
 .all-caps {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .link-color {
-	background: var(--color-dark-gray);
+  background: var(--color-dark-gray);
 }
 
 .spacing-width {
-    &-80{
-      width: 80%;
-    }
-    &-100{
-      width: 100%;
-    }
+  &-80 {
+    width: 80%;
+  }
+  &-100 {
+    width: 100%;
+  }
 }
 
-.print-button{
+.print-button {
   border-radius: 5px;
-  color: var(--color-purewhite)!important;
+  color: var(--color-purewhite) !important;
   background-color: var(--color-bg-dark);
   border: 1px solid var(--color-purewhite);
   margin: 7rem;
   padding: 1rem;
 }
-.print-button:hover{
+.print-button:hover {
   background-color: var(--color-purewhite);
   border: 1px solid var(--color-bg-dark);
   border-radius: 5px;
-  color: var(--color-bg-dark)!important;
+  color: var(--color-bg-dark) !important;
 }
