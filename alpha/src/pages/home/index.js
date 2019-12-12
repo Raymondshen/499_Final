@@ -193,7 +193,7 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 position-xs-a position-md-r">
+			<div id="selection" className="col-xs-5 col-md-5 position-xs-a position-md-r">
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -208,7 +208,7 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 					/>
 				</div>
 			</div>
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
 					fontSizes={fontSizes}
 					fontFamilies={fontFamilies}
@@ -233,7 +233,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid ">
+			<div id="selection" className="col--5 position-xs-a position-md-r bg-dark-solid ">
 				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -251,7 +251,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 						setSize={setSize} />
 				))}
 			</div>
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
