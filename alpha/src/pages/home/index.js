@@ -15,21 +15,22 @@ import jsPDF from "jspdf";
 
 import {PairingDoc,ClickList,FontRange, Spacing} from "./components";
 
-
+const reduceProperty = (s, a) => {
+	s[+a.i] = { ...s[+a.i], ...a.v };
+	return [...s];
+}
+const reduceIndex = (s, a) => ({ ...s, ...a });
 
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
 
 	let [fontFamilies, setFontFamilies] = useReducer(
-		(s, a) => ({ ...s, ...a }),
+		reduceIndex,
 		{ first: {}, second: {} }
 	);
 	let [fontSizes, setFontSizes] = useReducer(
-		(s, a) => {
-			s[+a.i] = { ...s[+a.i], ...a.v };
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{ size: 72, min: 12, max: 96, name: 'H1' },
 			{ size: 56, min: 12, max: 72, name: 'H2' },
@@ -42,10 +43,7 @@ const HomePage = ({ fonts }) => {
 
 	//Reducer for letter spacing and line height
 	let [spacings,setSpacings] = useReducer(
-		(s,a) => {
-			s[+a.i]={...s[+a.i],...a.v};
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{
 				trackingSize:0,
@@ -191,16 +189,23 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings
 		setFontFamilies({ second: e.target.value });
 	}
 
+	// const openMobile = () =>{
+	// 	document.querySelector("#selection").classList.toggle("active");
+	// };
+
+	let [sideBarOpen, setSideBarOpen] = useState(false);
+
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r">
+    		<div class="closeBtn display-md-none" onClick={()=>setSideBarOpen(!sideBarOpen)}>x</div>
+			<div id="selection" className={`col--5 pos-r ${sideBarOpen?'active':''}`}>
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
-				<div id="selection-fontpair-interface" className="bg-dark">
+				<div id="selection-fontpair-interface" className="bg-dark p-xs-txl">
 					<ClickList
 						data={fontlist}
 						families={fontFamilies}

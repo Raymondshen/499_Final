@@ -135,6 +135,7 @@ header {
 // # GLOBAL: Selection Navigation #
 #selection {
   position: relative;
+  transition: .5s ease;
   // # Navigation for the selection Area #
   .selection-nav-container {
     z-index: 2;
@@ -146,6 +147,18 @@ header {
       margin-right: 0.8em;
     }
   }
+  &.active {
+    //transform: positionX(-2000px);
+    width: 0;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  color: var(--color-purewhite);
+  font-size: 4rem;
+  z-index: 10;
+  cursor: pointer;
 }
 
 // # SELECTION : FONT PAIR #
@@ -158,6 +171,7 @@ header {
       width: 0;
     }
     .font-card {
+      max-height: 245px;
       &:nth-child(odd) {
         margin-left: 2.5%;
         margin-right: 2.5%;
