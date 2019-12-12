@@ -92,6 +92,7 @@ header {
   border-bottom: 1px solid var(--color-bg-dark);
   width: 100vw;
   display: none;
+  padding: 1em 3.5em;
   nav {
     padding-left: 2vw;
     li:nth-last-child(1) {
@@ -301,6 +302,28 @@ header {
   }
 }
 
+// # SELECTION: PRINT BUTTON #
+#selectprint {
+  justify-content: center;
+  align-items: center;
+  .print-button {
+    border-radius: 5px;
+    color: var(--color-purewhite) !important;
+    background-color: var(--color-bg-dark);
+    border: 1px solid var(--color-purewhite);
+    height: 3em;
+    padding: 0em 3em;
+    // margin: 7rem;
+    // padding: 1rem;
+  }
+  .print-button:hover {
+    background-color: var(--color-purewhite);
+    border: 1px solid var(--color-bg-dark);
+    border-radius: 5px;
+    color: var(--color-bg-dark) !important;
+  }
+}
+
 // # Preview Container #
 #preview {
   overflow-y: scroll;
@@ -334,19 +357,4 @@ header {
   &-100 {
     width: 100%;
   }
-}
-
-.print-button {
-  border-radius: 5px;
-  color: var(--color-purewhite) !important;
-  background-color: var(--color-bg-dark);
-  border: 1px solid var(--color-purewhite);
-  margin: 7rem;
-  padding: 1rem;
-}
-.print-button:hover {
-  background-color: var(--color-purewhite);
-  border: 1px solid var(--color-bg-dark);
-  border-radius: 5px;
-  color: var(--color-bg-dark) !important;
 }
