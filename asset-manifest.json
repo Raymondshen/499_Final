@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/499_Final/alpha/static/css/main.0ed4d512.chunk.css",
+    "main.js": "/499_Final/alpha/static/js/main.1e8a9486.chunk.js",
+    "main.js.map": "/499_Final/alpha/static/js/main.1e8a9486.chunk.js.map",
+    "runtime-main.js": "/499_Final/alpha/static/js/runtime-main.6f4abbad.js",
+    "runtime-main.js.map": "/499_Final/alpha/static/js/runtime-main.6f4abbad.js.map",
+    "static/js/2.2bc869ac.chunk.js": "/499_Final/alpha/static/js/2.2bc869ac.chunk.js",
+    "static/js/2.2bc869ac.chunk.js.map": "/499_Final/alpha/static/js/2.2bc869ac.chunk.js.map",
+    "index.html": "/499_Final/alpha/index.html",
+    "precache-manifest.c97a4f796d36f6c0df6cb9d5acdd3c6e.js": "/499_Final/alpha/precache-manifest.c97a4f796d36f6c0df6cb9d5acdd3c6e.js",
+    "service-worker.js": "/499_Final/alpha/service-worker.js",
+    "static/css/main.0ed4d512.chunk.css.map": "/499_Final/alpha/static/css/main.0ed4d512.chunk.css.map",
+    "static/js/2.2bc869ac.chunk.js.LICENSE": "/499_Final/alpha/static/js/2.2bc869ac.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f4abbad.js",
+    "static/js/2.2bc869ac.chunk.js",
+    "static/css/main.0ed4d512.chunk.css",
+    "static/js/main.1e8a9486.chunk.js"
+  ]
+}
