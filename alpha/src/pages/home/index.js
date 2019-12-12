@@ -21,6 +21,16 @@ const reduceProperty = (s, a) => {
 }
 const reduceIndex = (s, a) => ({ ...s, ...a });
 
+
+const FontStyleSheet = ({fonts}) => {
+ return (
+	 <style>
+		 {/* Map trouch fonts, output the style @import */}
+		 {fonts.reduce((r,o)=>r+o.import,"")}
+	 </style>
+ )
+}
+
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
@@ -117,7 +127,7 @@ const HomePage = ({ fonts }) => {
 	useEffect(() => {
 		if (!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
-		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i != r1).length);
+		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
 		console.log(r1, r2, fonts[r1], fonts[r2])
 		setFontFamilies({ first: fonts[r1] })
 		setFontFamilies({ second: fonts[r2] })
@@ -127,6 +137,7 @@ const HomePage = ({ fonts }) => {
 
 	return (
 		<article className=" container">
+			<FontStyleSheet fonts={fonts}/>
 			<section>
 				<Switch>
 					<Route exact path={`${path}`}>
@@ -156,7 +167,6 @@ const HomePage = ({ fonts }) => {
 
 							spacings={spacings}
 							setSpacings={setSpacings}
-							spacings={spacings}
 							fontFamilies={fontFamilies}
 							fontSizes={fontSizes}
 						/>
@@ -179,15 +189,15 @@ const HomePage = ({ fonts }) => {
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
 const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, spacings }) => {
-	const changeFontOne = (e) => {
-		e.preventDefault();
-		setFontFamilies({ first: e.target.value });
-	}
+	// const changeFontOne = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ first: e.target.value });
+	// }
 
-	const changeFontTwo = (e) => {
-		e.preventDefault();
-		setFontFamilies({ second: e.target.value });
-	}
+	// const changeFontTwo = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ second: e.target.value });
+	// }
 
 	// const openMobile = () =>{
 	// 	document.querySelector("#selection").classList.toggle("active");
@@ -234,7 +244,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 		});
 	}
 
-	let r = Math.floor(Math.random() * fontSizes.length);
+	// let r = Math.floor(Math.random() * fontSizes.length);
 
 	return (
 		<section className="grid">
