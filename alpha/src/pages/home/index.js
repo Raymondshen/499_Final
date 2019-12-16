@@ -14,23 +14,34 @@ import jsPDF from "jspdf";
 //Haven't started styling the app. Just setting up the routing. Have applied some easy classes that I had in my library to make it easy to look at.
 //https://mannenpag.github.io/sass-library/
 
-import {PairingDoc,ClickList,FontRange, Spacing} from "./components";
+import { PairingDoc, ClickList, FontRange, Spacing } from "./components";
+
+const reduceProperty = (s, a) => {
+	s[+a.i] = { ...s[+a.i], ...a.v };
+	return [...s];
+}
+const reduceIndex = (s, a) => ({ ...s, ...a });
 
 
+const FontStyleSheet = ({fonts}) => {
+ return (
+	 <style>
+		 {/* Map trouch fonts, output the style @import */}
+		 {fonts.reduce((r,o)=>r+o.import,"")}
+	 </style>
+ )
+}
 
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
 
 	let [fontFamilies, setFontFamilies] = useReducer(
-		(s, a) => ({ ...s, ...a }),
+		reduceIndex,
 		{ first: {}, second: {} }
 	);
 	let [fontSizes, setFontSizes] = useReducer(
-		(s, a) => {
-			s[+a.i] = { ...s[+a.i], ...a.v };
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{ size: 72, min: 12, max: 96, name: 'H1' },
 			{ size: 56, min: 12, max: 72, name: 'H2' },
@@ -43,84 +54,81 @@ const HomePage = ({ fonts }) => {
 
 	//Reducer for letter spacing and line height
 	let [spacings,setSpacings] = useReducer(
-		(s,a) => {
-			s[+a.i]={...s[+a.i],...a.v};
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{
-				trackingSize:0,
-				trackingMin:-5,
-				trackingMax:15,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:150,
-				name:'H1',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -5,
+				trackingMax: 15,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 150,
+				name: 'H1',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H2',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -3,
+				trackingMax: 8,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 125,
+				name: 'H2',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H3',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -3,
+				trackingMax: 8,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 125,
+				name: 'H3',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H4',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -3,
+				trackingMax: 8,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 125,
+				name: 'H4',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H5',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -3,
+				trackingMax: 8,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 125,
+				name: 'H5',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 			{
-				trackingSize:0,
-				trackingMin:-2,
-				trackingMax:4,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'P',
-				label1:"Tracking",
-				label2:"Leading"
+				trackingSize: 0,
+				trackingMin: -2,
+				trackingMax: 4,
+				leadingSize: 100,
+				leadingMin: 80,
+				leadingMax: 125,
+				name: 'P',
+				label1: "Tracking",
+				label2: "Leading"
 			},
 		]
 	);
 
-	useEffect(()=>{
-		if(!fonts.length) return;
+	useEffect(() => {
+		if (!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
-		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i != r1).length);
+		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
 		console.log(r1, r2, fonts[r1], fonts[r2])
 		setFontFamilies({ first: fonts[r1] })
 		setFontFamilies({ second: fonts[r2] })
@@ -130,6 +138,7 @@ const HomePage = ({ fonts }) => {
 
 	return (
 		<article className=" container">
+			<FontStyleSheet fonts={fonts}/>
 			<section>
 				<Switch>
 					<Route exact path={`${path}`}>
@@ -154,12 +163,11 @@ const HomePage = ({ fonts }) => {
 						/>
 					</Route>
 					<Route path={`${path}/spacing`}>
-						<SetSpacing 
+						<SetSpacing
 							path={path}
 
 							spacings={spacings}
 							setSpacings={setSpacings}
-							spacings={spacings}
 							fontFamilies={fontFamilies}
 							fontSizes={fontSizes}
 						/>
@@ -182,27 +190,34 @@ const HomePage = ({ fonts }) => {
 //Here is the start pairing content.
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
-const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings}) => {
-	const changeFontOne = (e) => {
-		e.preventDefault();
-		setFontFamilies({ first: e.target.value });
-	}
+const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, spacings }) => {
+	// const changeFontOne = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ first: e.target.value });
+	// }
 
-	const changeFontTwo = (e) => {
-		e.preventDefault();
-		setFontFamilies({ second: e.target.value });
-	}
+	// const changeFontTwo = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ second: e.target.value });
+	// }
+
+	// const openMobile = () =>{
+	// 	document.querySelector("#selection").classList.toggle("active");
+	// };
+
+	let [sideBarOpen, setSideBarOpen] = useState(false);
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r">
+    		<div class="closeBtn display-md-none" onClick={()=>setSideBarOpen(!sideBarOpen)}>x</div>
+			<div className={`selection col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
-				<div id="selection-fontpair-interface" className="bg-dark">
+				<div id="selection-fontpair-interface" className="bg-dark p-xs-txl">
 					<ClickList
 						data={fontlist}
 						families={fontFamilies}
@@ -210,18 +225,18 @@ const PairFont = ({fontlist,path,setFontFamilies,fontFamilies,fontSizes,spacings
 					/>
 				</div>
 			</div>
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
-				<PairingDoc 
-					fontSizes={fontSizes} 
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
+				<PairingDoc
+					fontSizes={fontSizes}
 					fontFamilies={fontFamilies}
 					spacings={spacings}
-					/>
+				/>
 			</div>
 		</section>
 	);
 }
 
-const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
+const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 
 	const setSize = e => {
 		e.preventDefault();
@@ -231,11 +246,11 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 		});
 	}
 
-	let r = Math.floor(Math.random() * fontSizes.length);
+	// let r = Math.floor(Math.random() * fontSizes.length);
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<div className="size-container selection col-md-5 position-xs-a position-md-r bg-dark-solid ">
 				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -253,12 +268,12 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 						setSize={setSize} />
 				))}
 			</div>
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
 					spacings={spacings}
-					/>
+				/>
 			</div>
 		</section>
 	);
@@ -267,102 +282,104 @@ const SetSize = ({path,setFontSizes,fontSizes,fontFamilies,spacings}) => {
 //Sudo component for tracking and leading
 
 
-const SetSpacing = ({path,setSpacings,spacings,fontSizes,fontFamilies}) => {
+const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) => {
 
 	const setTracking = e => {
 		e.preventDefault();
 		setSpacings({
-			i:e.target.dataset.id,
-			v:{trackingSize:e.target.value}
+			i: e.target.dataset.id,
+			v: { trackingSize: e.target.value }
 		});
 	}
 
 	const setLeading = e => {
 		e.preventDefault();
 		setSpacings({
-			i:e.target.dataset.id,
-			v:{leadingSize:e.target.value}
+			i: e.target.dataset.id,
+			v: { leadingSize: e.target.value }
 		});
 	}
 
 	return (
 		<section className="grid">
-		<div id="selection" className="col--5 pos-r bg-dark-solid">
-			<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+			<div className="spacing-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
+				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
-			</section>
-			<div id="selectspacing" className="p-xs-txl vh-100">			
-				<div className="fontsize-title">
-					<p>Choose the font size</p>
+				</section>
+				<div id="selectspacing" className="p-xs-txl vh-100">
+					<div className="fontsize-title">
+						<p>Choose the font size</p>
+					</div>
+					{spacings.map((o, i) => (
+						<Spacing
+							key={i}
+							id={i}
+							spacing={spacings}
+							setTracking={setTracking}
+							setLeading={setLeading}
+						/>
+					))}
 				</div>
-				{ spacings.map((o,i)=>(
-					<Spacing
-					key={i}
-					id={i}
-					spacing={spacings}
-					setTracking={setTracking}
-					setLeading={setLeading}
-					/>
-				))}
 			</div>
-		</div>
 
-		<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
-			<PairingDoc 
-				fontFamilies={fontFamilies}
-				fontSizes={fontSizes}
-				spacings={spacings}
+			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+				<PairingDoc
+					fontFamilies={fontFamilies}
+					fontSizes={fontSizes}
+					spacings={spacings}
 				//Inset property into the pairing doc. for the spacing
 				/>
-		</div>
+			</div>
 		</section>
 	);
 }
 
-const PrintPDF = ({path,spacings,fontSizes,fontFamilies}) => {
+const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 
 	const printDoc = e => {
 		e.preventDefault();
 		const string = renderToString(
-			<PairingDoc 
-			fontFamilies={fontFamilies}
-			fontSizes={fontSizes}
-			spacings={spacings}
-		  />
-		  );
+			<PairingDoc
+				fontFamilies={fontFamilies}
+				fontSizes={fontSizes}
+				spacings={spacings}
+			/>
+		);
 		const pdf = new jsPDF("p", "mm", "a4");
-	  
-	  // doc.setFont('courier')
-	  // doc.setFontType('normal')
-	  // doc.text(20, 30, 'This is courier normal.')
-	  
+
+		// doc.setFont('courier')
+		// doc.setFontType('normal')
+		// doc.text(20, 30, 'This is courier normal.')
+
 		pdf.fromHTML(string);
 		pdf.save("pdf");
 	}
 
-  return (
-    <section className="grid">
-	 <div id="selection" className="col--5 pos-r bg-dark-solid">
-		 <section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-			<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
-			<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
-			<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
-			<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
+	return (
+		<section className="grid">
+			<div className="pdf-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
+				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
+				</section>
+				<div id="selectprint" class="flex-row h-100">
+					<button className="print-button" onClick={printDoc}>Download PDF</button>
+				</div>
+			</div>
+			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+				<PairingDoc
+					fontFamilies={fontFamilies}
+					fontSizes={fontSizes}
+					spacings={spacings}
+				/>
+			</div>
 		</section>
-      	<button className="print-button" onClick={printDoc}>Download PDF</button>
-	  </div>
-	  <div id="preview" className="preview col--8 offset--6 pairing-wrapper">
-		<PairingDoc 
-			fontFamilies={fontFamilies}
-			fontSizes={fontSizes}
-			spacings={spacings}
-			/>
-		</div>
-    </section>
-  );
+	);
 }
 
 export default HomePage;

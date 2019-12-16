@@ -1,8 +1,4 @@
-import React from 'react';
-
-import {
-	Link,
-} from 'react-router-dom';
+import React, {useState,useEffect} from 'react';
 
 //Question for pairing dock. How does one change the unique h1 for the user and not the whole document.
 
@@ -15,7 +11,7 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings }) => {
 
   return (<div>
     <section className="grid p-xs-m">
-      <h1 style={{ letterSpacing:spacings[0].trackingSize+'px', lineHeight:spacings[0].leadingSize+'%', fontSize:fontSizes[0].size+'px', fontFamily: fontFamilies.first.name }} className="col--12">An Afxdaptable Foundation</h1>
+      <h1 style={{ letterSpacing:spacings[0].trackingSize+'px', lineHeight:spacings[0].leadingSize+'%', fontSize:fontSizes[0].size+'px', fontFamily: fontFamilies.first.name }} className="col--12">An adaptable Foundation</h1>
     </section>
     <section className="grid p-xs-m p-xs-hs">
       <div className="col-xs-12 col-lg-6 p-lg-rl">
@@ -41,29 +37,46 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings }) => {
   );
 }
 
+
+
+
 //Click list from Hamilton
 const ClickList = ({ data, families, callback }) => {
+  const makeFontSearch = (e) => {
+    let s = e.target.value;
+    let r = new RegExp(s,'i');
+    console.log(s,r);
+    setList(data.filter(o=>r.test(o.name)))
+  }
+
+  let [list,setList] = useState([]);
+  useEffect(()=>{
+    setList(data);
+  },[data]);
   // let r1 = Math.floor(Math.random() * data.length);
   // let r2 = Math.floor(Math.random() * data.filter((o,i)=>i!=r1).length);
 
   console.log(data)
   return (<>
-  {/* <div><input type="search" onchange={makeFontSearch}/></div> */}
-    <section id="selectfont" className="flex-xs-parent flex-xs-wrap p-xs-txl">
-      {data.map((o,i) => (
+    <div>
+      <input type="search" onChange={makeFontSearch} />
+    </div>
+      <section id="selectfont" className="flex-xs-parent flex-xs-wrap">
+      {list.map((o,i) => (
         <div className="font-card" key={i}>
           <div className="font-card-nav flex-xs-parent">
             <p className="txt-purewhite font-card-name" style={{fontFamily:o.name}}>{o.name}</p>
             <div className="font-card-btns-container flex-xs-parent txt-purewhite">
-              <div className={`font-card-btns flex-xs-parent ${o.id==families.first.id?'chosen':''}`} onClick={() => callback({ first: o })}>H</div>
-              <div className={`font-card-btns flex-xs-parent ${o.id==families.second.id?'chosen':''}`} onClick={() => callback({ second: o })}>B</div>
+              <div className={`font-card-btns flex-xs-parent ${o.id===families.first.id?'chosen':''}`} onClick={() => callback({ first: o })}>H</div>
+              <div className={`font-card-btns flex-xs-parent ${o.id===families.second.id?'chosen':''}`} onClick={() => callback({ second: o })}>B</div>
             </div>
           </div>
           <h4 className="txt-purewhite font-card-dummy" style={{fontFamily:o.name}}>Aa</h4>
         </div>
       ))}
     </section>
-  </>);
+    </>
+  );
 }
 
 
@@ -75,10 +88,10 @@ const TypeHierarchy = ({ fontFamilies, fontSizes, spacings }) => {
       <div className="slider-info m-xs-bl">{fontSizes[0].size} / Letter Spacing {spacings[0].trackingSize} px / Line Height {spacings[0].leadingSize} % </div>
 
       <h2 className="" style={{ letterSpacing:spacings[1].trackingSize+'px', lineHeight:spacings[1].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[1].size+'px' }}>H2 / {fontFamilies.first.name}</h2>
-      <div class="slider-info m-xs-bl">{fontSizes[1].size} / Letter Spacing {spacings[1].trackingSize} px / Line Height {spacings[1].leadingSize} % </div>
+      <div className="slider-info m-xs-bl">{fontSizes[1].size} / Letter Spacing {spacings[1].trackingSize} px / Line Height {spacings[1].leadingSize} % </div>
 
       <h3 className="" style={{ letterSpacing:spacings[2].trackingSize+'px', lineHeight:spacings[2].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[2].size+'px' }}>H3 / {fontFamilies.first.name}</h3>
-      <div class="slider-info m-xs-bl">{fontSizes[2].size} / Letter Spacing {spacings[2].trackingSize} px / Line Height {spacings[2].leadingSize} % </div>
+      <div className="slider-info m-xs-bl">{fontSizes[2].size} / Letter Spacing {spacings[2].trackingSize} px / Line Height {spacings[2].leadingSize} % </div>
 
       <h4 className="" style={{ letterSpacing:spacings[3].trackingSize+'px', lineHeight:spacings[3].leadingSize+'%', fontFamily: fontFamilies.first.name, fontSize: fontSizes[3].size+'px' }}>H4 / {fontFamilies.first.name}</h4>
       <div className="slider-info m-xs-bl">{fontSizes[3].size} / Letter Spacing  {spacings[3].trackingSize} px / Line Height {spacings[3].leadingSize} % </div>
@@ -102,7 +115,7 @@ const FontRange = ({id,size,setSize}) => {
 
 const Spacing = ({id,spacing,setTracking, setLeading}) => {
 	return (
-  <div className=" spacingfont fontsize-slider-container">
+  <div className="spacingfont fontsize-slider-container">
 
       <h5 className="txt-purewhite spacing-width-100">{spacing[id].name}</h5>
       <br/>

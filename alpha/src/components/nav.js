@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeaderNav = ({title,children}) => {
     return (
-    <header className="nav flex-xs-parent p-xs-s">
+    <header className="nav flex-xs-parent">
     	<div>
     		<h1 style={{fontSize:'1em'}}>{title}</h1>
     	</div>

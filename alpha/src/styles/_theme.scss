@@ -74,7 +74,10 @@ h5 {
 }
 
 a {
-  font-size: 1.1em;
+  @include setFont($bold, 0.9em);
+  @include breakpoint("laptop"){
+    @include setFont($bold, 1.1em);
+  }
   line-height: 105%;
 }
 
@@ -95,6 +98,7 @@ header {
   border-bottom: 1px solid var(--color-bg-dark);
   width: 100vw;
   display: none;
+  padding: 1em 3.5em;
   nav {
     padding-left: 2vw;
     li:nth-last-child(1) {
@@ -136,8 +140,7 @@ header {
 }
 
 // # GLOBAL: Selection Navigation #
-#selection {
-  position: relative;
+.selection {
   // # Navigation for the selection Area #
   .selection-nav-container {
     z-index: 2;
@@ -149,6 +152,18 @@ header {
       margin-right: 0.8em;
     }
   }
+  &.active {
+    //transform: positionX(-2000px);
+    width: 0;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  color: var(--color-purewhite);
+  font-size: 4rem;
+  z-index: 10;
+  cursor: pointer;
 }
 
 // # SELECTION : FONT PAIR #
@@ -161,6 +176,7 @@ header {
       width: 0;
     }
     .font-card {
+      max-height: 245px;
       &:nth-child(odd) {
         margin-left: 2.5%;
         margin-right: 2.5%;
@@ -305,6 +321,32 @@ header {
   }
 }
 
+// # SELECTION: PRINT BUTTON #
+.pdf-container {
+  height: 100vh;
+  #selectprint {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .print-button {
+      border-radius: 5px;
+      color: var(--color-purewhite) !important;
+      background-color: var(--color-bg-dark);
+      border: 1px solid var(--color-purewhite);
+      height: 3em;
+      padding: 0em 3em;
+      // margin: 7rem;
+      // padding: 1rem;
+    }
+    .print-button:hover {
+      background-color: var(--color-purewhite);
+      border: 1px solid var(--color-bg-dark);
+      border-radius: 5px;
+      color: var(--color-bg-dark) !important;
+    }
+  }
+}
+
 // # Preview Container #
 #preview {
   overflow-y: scroll;
@@ -338,19 +380,4 @@ header {
   &-100 {
     width: 100%;
   }
-}
-
-.print-button {
-  border-radius: 5px;
-  color: var(--color-purewhite) !important;
-  background-color: var(--color-bg-dark);
-  border: 1px solid var(--color-purewhite);
-  margin: 7rem;
-  padding: 1rem;
-}
-.print-button:hover {
-  background-color: var(--color-purewhite);
-  border: 1px solid var(--color-bg-dark);
-  border-radius: 5px;
-  color: var(--color-bg-dark) !important;
 }

@@ -25,9 +25,6 @@ import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
 
-
-
-
 const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
 const parseRow = row => {
   return getKeys(row).reduce((obj, key) => {
@@ -36,8 +33,10 @@ const parseRow = row => {
   }, {});
 };
 
+
+
 function App() {
-  let [title,setTitle] = useState("FontPairing");
+  // let [title,setTitle] = useState("FontPairing");
 
   let [fonts,setFonts] = useState([]);
 
@@ -51,7 +50,7 @@ function App() {
   
   return (
     <Router style={{overflow: 'auto'}}>
-      <HeaderNav title={title}>
+      <HeaderNav title={"FontPairing"}>
         {/* <Link to="/">FontPairing</Link> */}
         <Link to="/learn">How to pair fonts</Link>
         <Link to="/about">About FontPairing</Link>
