@@ -1,0 +1,36 @@
+this is Chunjia's journal of Final project
+
+W09:
+-finding inspirations on mood-board
+-did sketches
+-small meeting with teammates
+
+
+w10:
+-finding inspiration for animations 
+-sketch for website, basic wireframe 
+-transition effects in website (links)
+-developed new site-flow (disapproved)
+
+
+w11:
+-did visual designs for contents page
+-refined site-flow
+
+W12:
+- group meeting in class lasted for one and half hour, discussed about the functions, contents, and revised site flow
+- developed the site-flow again
+- the first prototype came out!
+
+w13:
+-Had a good thanksgiving break
+-received feedback from Gustav, need to adjust the Hierarchy of texts
+
+w13+:
+
+-Refined the ux ui again.
+-designed mobile version
+-adjusted the Hierarchy of texts
+-joined the repository Raymond shared
+
+

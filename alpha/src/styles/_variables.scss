@@ -1,15 +1,20 @@
 $color-main:#F8F7F4;
 $color-main-dark:darken($color-main,20%);
 $color-body-text: #F8F7F4;
-
+$color-bg-dark: #1C1C1C;
+$color-bg-lightdark: #262626;
+$color-purewhite: #FFFFFF;
+$color-dark-gray: #A9A9A9;
+$color-red: #FF6161;
+$color-purple: #7B78FF;
 $color-body-background: #0F1313;
 $color-body-background-light: lighten($color-body-background,30%);
 
-$color-main-yellow:#FFDCA7;
-$color-main-transition-yellow:#FF876C;
-$color-main-transition-red:#FF5C4F;
-$color-main-red:#FF3232;
-
+// List of Font Weight
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
 //List of maps
 
 $breakpoints:(
@@ -26,6 +31,7 @@ $spacers:(
 	l:3em,
 	m:2em,
 	s:1em,
+	xs:.3em,
 	n:0,
 	auto:auto,
 );
@@ -113,19 +119,20 @@ $gap:map-get($spacers,'l');
 $header-height: 3rem;
 
 :root {
+
+	--color-purple:#{$color-purple};
+	--color-red:#{$color-red};
+	--color-purewhite:#{$color-purewhite};
+	--color-bg-dark:#{$color-bg-dark};
+	--color-bg-lightdark:#{$color-bg-lightdark};
+	--color-dark-gray:#{$color-dark-gray};
+
 	--main-color:#{$color-main};
 	--border-color: 248, 247, 244;
 	--main-color-dark:#{$color-main-dark};
 	--body-text-color:#{$color-body-text};
 	--color-body-background:#{$color-body-background};
 	--color-body-background-light:#{$color-body-background-light};
-
-
-	--main-yellow:#{$color-main-yellow};
-	--main-transition-yellow:#{$color-main-transition-yellow};
-	--main-transition-red:#{$color-main-transition-red};
-	--main-red:#{$color-main-red};
-
 	--color-gray-dark: #2e2b39;
 	--color-gray-light: #ede8ff;
 

@@ -3,6 +3,13 @@
 - in process: copy doc for fontpairing
 	- link: https://docs.google.com/document/d/1jGU9QEBV7sHwjX1UB1PhyzHlrGpINBNuLiPu7F5oYvc/edit?usp=sharing 
 
+- possible names : 
+	- fontpackage ; since the end product is a "package" of font choices in a pdf
+	- fontpick 
+	- fontplan
+	- fontplot
+	- fontpanel
+	- fontplayground
 
 ## 12/5 --------------------------->
 - Need to add google fonts to database
