@@ -210,14 +210,14 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 	return (
 		<section className="grid">
     		<div class="closeBtn display-md-none" onClick={()=>setSideBarOpen(!sideBarOpen)}>x</div>
-			<div className={`selection col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
+			<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
-				<div id="selection-fontpair-interface" className="bg-dark p-xs-txl">
+				<div id="selection-fontpair-interface" className="bg-dark">
 					<ClickList
 						data={fontlist}
 						families={fontFamilies}
@@ -309,7 +309,7 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</section>
-				<div id="selectspacing" className="p-xs-txl vh-100">
+				<div id="selectspacing" className="vh-100">
 					<div className="fontsize-title">
 						<p>Choose the font size</p>
 					</div>
