@@ -54,8 +54,7 @@ function App() {
         {/* <Link to="/">FontPairing</Link> */}
         <Link to="/learn">How to pair fonts</Link>
         <Link to="/about">About FontPairing</Link>
-        <Link className="" to="pair-fonts">Get Started</Link>
-
+        <Link to="/pair-fonts">Get Started</Link>
       </HeaderNav>
       <main>
         <Switch>
