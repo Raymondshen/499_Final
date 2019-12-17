@@ -178,6 +178,12 @@ header {
   .selectfont-searchbar {
     input {
       width: 100%;
+      border:none;
+      background:none;
+      border-bottom: 1.5px solid white;
+      @include setFont($medium, 0.9em);
+      color: white;
+      height: 50px;
     }
     padding: 5em 1em 1em;
     @include breakpoint("tablet"){
