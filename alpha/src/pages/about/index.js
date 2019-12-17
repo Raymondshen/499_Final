@@ -50,22 +50,6 @@ FontParing is brought to you by a group of 5 passionate design students. We all 
 
 
 
-			<div className="contactform">
-				// <form class="flex-xs-parent flex-xs-vertical" action="/my-handling-form-page" method="post">
-		                
-	   //                  <label for="name">Your Name:</label>
-	   //                  <input type="text" id="name" name="user_name" placeholder="yourname">
-	   //                  <label for="email">Email:</label>
-	   //                  <input type="text" id="name" name="user_name" placeholder="">
-	   //                  <label for="mobile phone">Mobile Phone</label>
-	   //                  <input type="text" id="name" name="user_name" placeholder="">
-	   //                  <label for="mobile phone">Message</label>
-	   //                  <input type="Message" id="name" name="user_name" placeholder="The maximum 200 words">
-	   //                  <label for="submit">Submit</label>
-	   //        	</form>
-			</div>
-
-
            
 
 
