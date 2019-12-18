@@ -13,8 +13,9 @@ import jsPDF from "jspdf";
 //Haven't started styling the app. Just setting up the routing. Have applied some easy classes that I had in my library to make it easy to look at.
 //https://mannenpag.github.io/sass-library/
 
-import {PairingDoc,ClickList,FontRange, Spacing} from "./components";
-
+import {ClickList,FontRange, Spacing} from "./components";
+import {PairingDoc} from "../../components/pairing-doc";
+import { fontFamiliesData, fontSizesData, spacingsData } from "../../pairingdoc-data";
 
 
 //Here is home content. 
@@ -23,21 +24,23 @@ const HomePage = ({ fonts }) => {
 
 	let [fontFamilies, setFontFamilies] = useReducer(
 		(s, a) => ({ ...s, ...a }),
-		{ first: {}, second: {} }
+		fontFamiliesData
+		// { first: {}, second: {} }
 	);
 	let [fontSizes, setFontSizes] = useReducer(
 		(s, a) => {
 			s[+a.i] = { ...s[+a.i], ...a.v };
 			return [...s];
 		},
-		[
-			{ size: 72, min: 12, max: 96, name: 'H1' },
-			{ size: 56, min: 12, max: 72, name: 'H2' },
-			{ size: 43, min: 12, max: 72, name: 'H3' },
-			{ size: 16, min: 12, max: 72, name: 'H4' },
-			{ size: 14, min: 12, max: 72, name: 'H5' },
-			{ size: 12, min: 12, max: 26, name: 'P' }
-		]
+		fontSizesData
+		// [
+		// 	{ size: 72, min: 12, max: 96, name: 'H1' },
+		// 	{ size: 56, min: 12, max: 72, name: 'H2' },
+		// 	{ size: 43, min: 12, max: 72, name: 'H3' },
+		// 	{ size: 16, min: 12, max: 72, name: 'H4' },
+		// 	{ size: 14, min: 12, max: 72, name: 'H5' },
+		// 	{ size: 12, min: 12, max: 26, name: 'P' }
+		// ]
 	);
 
 	//Reducer for letter spacing and line height
@@ -46,74 +49,75 @@ const HomePage = ({ fonts }) => {
 			s[+a.i]={...s[+a.i],...a.v};
 			return [...s];
 		},
-		[
-			{
-				trackingSize:0,
-				trackingMin:-5,
-				trackingMax:15,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:150,
-				name:'H1',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H2',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H3',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H4',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-			{
-				trackingSize:0,
-				trackingMin:-3,
-				trackingMax:8,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'H5',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-			{
-				trackingSize:0,
-				trackingMin:-2,
-				trackingMax:4,
-				leadingSize:100,
-				leadingMin:80,
-				leadingMax:125,
-				name:'P',
-				label1:"Tracking",
-				label2:"Leading"
-			},
-		]
+		spacingsData
+		// [
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-5,
+		// 		trackingMax:15,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:150,
+		// 		name:'H1',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-3,
+		// 		trackingMax:8,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:125,
+		// 		name:'H2',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-3,
+		// 		trackingMax:8,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:125,
+		// 		name:'H3',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-3,
+		// 		trackingMax:8,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:125,
+		// 		name:'H4',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-3,
+		// 		trackingMax:8,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:125,
+		// 		name:'H5',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// 	{
+		// 		trackingSize:0,
+		// 		trackingMin:-2,
+		// 		trackingMax:4,
+		// 		leadingSize:100,
+		// 		leadingMin:80,
+		// 		leadingMax:125,
+		// 		name:'P',
+		// 		label1:"Tracking",
+		// 		label2:"Leading"
+		// 	},
+		// ]
 	);
 
 	useEffect(()=>{
