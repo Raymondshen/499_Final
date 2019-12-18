@@ -1,6 +1,15 @@
 # 499_Final
 Font Parent/Pairing website about 
 
+## Link to main deployment
+
+https://raymondshen.github.io/499_Final
+
+## Dependencies
+
+jsPDF
+react-router-dom
+
 ## Slack
 
 https://wnm499finalworkspace.slack.com

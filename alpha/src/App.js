@@ -1,7 +1,7 @@
 //Hello!
 //Suggested workfolw. Open a new terminal tab for node running react, sass compile and watch for style folder, and git for alpha folder. 
 
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,useReducer} from 'react';
 import './styles/App.css';
 import './styles/style.min.css';
 
@@ -27,9 +27,6 @@ import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
 
-
-
-
 const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
 const parseRow = row => {
   return getKeys(row).reduce((obj, key) => {
@@ -39,7 +36,7 @@ const parseRow = row => {
 };
 
 function App() {
-  let [title,setTitle] = useState("FontPairing");
+  // let [title,setTitle] = useState("FontPairing");
 
   let [fonts,setFonts] = useState([]);
 
@@ -53,7 +50,7 @@ function App() {
   
   return (
     <Router style={{overflow: 'auto'}}>
-      <HeaderNav title={title}>
+      <HeaderNav title={"FontPairing"}>
         {/* <Link to="/">FontPairing</Link> */}
         <Link to="/learn">How to pair fonts</Link>
         <Link to="/about">About FontPairing</Link>
@@ -62,7 +59,9 @@ function App() {
       </HeaderNav>
       <main>
         <Switch>
-          <Route exact path="/"><IntroPage/></Route>
+          <Route exact path="/">
+            <IntroPage fonts={fonts}/>
+          </Route>
           <Route path="/pair-fonts">
             <HomePage fonts={fonts} />
           </Route>
@@ -74,7 +73,24 @@ function App() {
   );
 }
 
-const IntroPage = () => {
+const IntroPage = (fonts) => {
+  const reduceIndex = (s, a) => ({ ...s, ...a });
+  
+  let [fontFamilies, setFontFamilies] = useReducer(
+		reduceIndex,
+		fontFamiliesData
+  );
+
+  useEffect(() => {
+		if (!fonts.length) return;
+		let r1 = Math.floor(Math.random() * fonts.length);
+		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
+		console.log(r1, r2, fonts[r1], fonts[r2])
+		setFontFamilies({ first: fonts[r1] })
+		setFontFamilies({ second: fonts[r2] })
+  }, [fonts]);
+  
+  console.log(fonts);
 
   return (<div className="bg-dark">
     <section className="landingpage grid">
@@ -86,7 +102,7 @@ const IntroPage = () => {
       <div className="container max-xs-s p-xs-txl col--6">
         <PairingDoc 
 					fontSizes={fontSizesData} 
-					fontFamilies={fontFamiliesData}
+					fontFamilies={fontFamilies}
           spacings={spacingsData}
           className='landingpage__pairingdoc'
 					/>

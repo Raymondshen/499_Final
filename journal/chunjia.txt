@@ -1,4 +1,5 @@
 this is Chunjia's journal of Final project
+Role: UX&UI Designer
 
 W09:
 -finding inspirations on mood-board
@@ -34,3 +35,7 @@ w13+:
 -joined the repository Raymond shared
 
 
+w14
+-both desktop and mobile version are confirmed
+-process book is ready
+-start to code the "about page"
