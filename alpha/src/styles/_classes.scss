@@ -1,3 +1,4 @@
+
 .compact {
   list-style-type: none;
   margin-top: 0;
@@ -11,18 +12,21 @@
   }
   a {
     display: block;
-    padding: 0.2em 0.5em;
     font-weight: normal;
     cursor: pointer;
-    color: var(--color-bg-dark);
-    text-align: justify;
-    padding: .8em;
-    &:hover {
-      color: var(--color-body-background);
+    @include breakpoint("tablet") {
+      text-align: justify;
+      padding: .8em;
     }
   }
 }
+.flex-parent {
+  display:flex;
+}
 
+.flex-col {
+  flex-flow: column wrap;
+}
 .container {
   margin: 0em auto;
 }
@@ -63,4 +67,14 @@
 .flex-row {
 	display:flex;
 	flex-flow: wrap row;
+
 }
+
+
+
+
+
+
+
+
+
