@@ -28,6 +28,8 @@ p {
   font-family: "Helvetica", "Arial", sans-serif;
 }
 
+
+
 h1 {
   font-size: 3em;
   line-height: 112%;
@@ -36,7 +38,11 @@ h1 {
     font-size: 3em;
     line-height: 92%;
   }
+
 }
+
+
+
 
 h2 {
   font-size: 1.75em;
@@ -616,11 +622,6 @@ nav {
     font-size: 1.5em;
     margin-top: 2%;
 
-     @include breakpoint("tablet") {
-          width: 300px;
-        }
-
-
   }
 
   #about-title {
@@ -633,9 +634,24 @@ nav {
     list-style: none;
     justify-content: space-between;
     margin-top: 10%;
+    
+    @include breakpoint("mobile") {
+      flex-flow: column wrap;
+    }
+
+
+    @include breakpoint("laptop") {
+      flex-flow: row wrap;
+    }
+
 
     li {
-      width: 19.5%;
+      width:100%;
+      
+      @include breakpoint("laptop") {
+        width: 19.5%;
+      }
+    
       .about-profile {
         width: 50%;
       }

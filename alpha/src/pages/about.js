@@ -14,8 +14,8 @@ const AboutPage = () => {
 
 
 
-				<h1 id="about-title">About FontPairing</h1>
-				<p>Well executed font pairing is important to achieve aesthetic finesse. Though it is difficult to imagine how fonts will look together along with various style attributes applied to them.
+				<h1 id="about-title"  className="w-100">About FontPairing</h1>
+				<p className="w-100">Well executed font pairing is important to achieve aesthetic finesse. Though it is difficult to imagine how fonts will look together along with various style attributes applied to them.
 				This is why font pairing was created. It gives you the ability to easily play around with different options and pairings. FontPairing displays your font and style selections in real time, by laying the the process and options next to the previewed result.
 				FontPairing is brought to you by a group of 5 passionate design students. We all have a passion for typography, design, and code.
 				</p>
@@ -23,7 +23,7 @@ const AboutPage = () => {
 
 
 
-				<ul id="about-team-list" class="flex-parent flex-row" style={{textAlign:'center'}}>
+				<ul id="about-team-list" className="flex-parent w-100" style={{textAlign:'center'}}>
 					<li>
 						<div>
 							<img className="about-profile" src={raymondIcon} alt="Raymond" />
