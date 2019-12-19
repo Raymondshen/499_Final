@@ -29,7 +29,7 @@ p {
 }
 
 h1 {
-  font-size: 3.25em;
+  font-size: 3em;
   line-height: 112%;
   @include breakpoint("tablet") {
     font-size: 6em;
@@ -71,7 +71,10 @@ h5 {
 }
 
 a {
-  font-size: 1.1em;
+  @include setFont($bold, 0.9em);
+  @include breakpoint("laptop") {
+    @include setFont($bold, 1.1em);
+  }
   line-height: 105%;
 }
 
@@ -92,7 +95,10 @@ header {
   border-bottom: 1px solid var(--color-bg-dark);
   width: 100vw;
   display: none;
-  padding: 1em 3.5em;
+  padding: 1em;
+  @include breakpoint("tablet") {
+    padding: 1em 3.5em;
+  }
   nav {
     padding-left: 2vw;
     li:nth-last-child(1) {
@@ -134,11 +140,18 @@ header {
 }
 
 // # GLOBAL: Selection Navigation #
-#selection {
+.selection {
+  width: 100%;
+  @include breakpoint("tablet") {
+    grid-column-end: span 5;
+  }
   // # Navigation for the selection Area #
   .selection-nav-container {
+    padding: 1.5em 1em;
+    @include breakpoint("tablet") {
+      padding: 2em 3.5em;
+    }
     z-index: 2;
-    padding: 2em 3.5em;
     flex-flow: wrap row;
     border-bottom: 1px solid #ffffff63;
     .selection-nav-links {
@@ -146,18 +159,50 @@ header {
       margin-right: 0.8em;
     }
   }
+  &.active {
+    //transform: positionX(-2000px);
+    width: 0;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  color: var(--color-purewhite);
+  font-size: 4rem;
+  z-index: 10;
+  cursor: pointer;
 }
 
 // # SELECTION : FONT PAIR #
 #selection-fontpair-interface {
+  .selectfont-searchbar {
+    input {
+      width: 100%;
+      border:none;
+      background:none;
+      border-bottom: 1.5px solid white;
+      @include setFont($medium, 0.9em);
+      color: white;
+      height: 50px;
+    }
+    padding: 5em 1em 1em;
+    @include breakpoint("tablet"){
+      padding: 7em 7.5% 2em;
+    }
+  }
   #selectfont {
     height: 100vh;
     overflow-y: scroll;
-    padding-bottom: 6em;
+    padding: 0em;
+    padding-bottom: 12em;
+    @include breakpoint ("tablet") {
+      padding-bottom: 14em;
+    }
     &::-webkit-scrollbar {
       width: 0;
     }
     .font-card {
+      max-height: 245px;
       &:nth-child(odd) {
         margin-left: 2.5%;
         margin-right: 2.5%;
@@ -234,22 +279,37 @@ header {
 }
 
 // # SELECTION: Font Size #
+.size-container {
+  height: 100vh;
+}
 .fontsize-title {
-  padding: 0em 3.5em;
+  padding: 0em 1em;
+  @include breakpoint("tablet") {
+    padding: 0em 3.5em;
+  }
   p {
     @include setFont($medium, 0.8em);
     color: var(--color-purewhite);
     padding: 0;
-    padding-top: 5em;
+    padding-top: 2em;
+    @include breakpoint("tablet") {
+      padding-top: 5em;
+    }
     opacity: 0.8;
   }
 }
 .fontsize-slider-container {
-  padding: 2em 3.5em;
+  padding: 1.5em 1em;
+  @include breakpoint("tablet") {
+    padding: 2em 3.5em;
+  }
   align-items: center;
   justify-content: space-between;
   .fontsize-head {
-    @include setFont($bold, 1.5em);
+    @include setFont($bold, 1.1em);
+    @include breakpoint("tablet") {
+      @include setFont($bold, 1.5em);
+    }
     margin-right: 3%;
   }
   .fontsize-slider-track {
@@ -259,14 +319,21 @@ header {
     background: var(--color-purewhite);
     outline: none;
     &-limited-width {
-      width: 66%;
+      width: 70%;
+      @include breakpoint("tablet") {
+        width: 66%;
+      }
     }
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       border-radius: 50px;
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
+      @include breakpoint("tablet") {
+        width: 20px;
+        height: 20px;
+      }
       background: var(--color-purewhite);
       cursor: pointer;
     }
@@ -274,7 +341,10 @@ header {
   .fontsize-slider-input {
     border: none;
     background: none;
-    @include setFont($bold, 1.2em);
+    @include setFont($bold, 1em);
+    @include breakpoint("tablet") {
+      @include setFont($bold, 1.2em);
+    }
     color: var(--color-purewhite);
   }
 }
@@ -283,14 +353,23 @@ header {
 #selectspacing {
   height: 100vh;
   overflow-y: scroll;
-  padding-bottom: 6em;
+  padding: 4em 0em;
+  @include breakpoint("tablet") {
+    padding: 6em 0em;
+  }
   .spacingfont {
     h5 {
-      @include setFont($bold, 1.5em);
+      @include setFont($bold, 1.2em);
+      @include breakpoint("tablet") {
+        @include setFont($bold, 1.5em);
+      }
     }
     .spacing-head-label {
-      @include setFont($medium, 1em);
-      width: 20%;
+      @include setFont($medium, 0.9em);
+      @include breakpoint("tablet") {
+        @include setFont($medium, 1em);
+      }
+      width: 18%;
     }
     .spacing-input {
       width: 10%;
@@ -298,29 +377,34 @@ header {
     .spacing-lead,
     .spacing-track {
       justify-content: space-between;
+      align-items: center;
     }
   }
 }
 
 // # SELECTION: PRINT BUTTON #
-#selectprint {
-  justify-content: center;
-  align-items: center;
-  .print-button {
-    border-radius: 5px;
-    color: var(--color-purewhite) !important;
-    background-color: var(--color-bg-dark);
-    border: 1px solid var(--color-purewhite);
-    height: 3em;
-    padding: 0em 3em;
-    // margin: 7rem;
-    // padding: 1rem;
-  }
-  .print-button:hover {
-    background-color: var(--color-purewhite);
-    border: 1px solid var(--color-bg-dark);
-    border-radius: 5px;
-    color: var(--color-bg-dark) !important;
+.pdf-container {
+  height: 100vh;
+  #selectprint {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .print-button {
+      border-radius: 5px;
+      color: var(--color-purewhite) !important;
+      background-color: var(--color-bg-dark);
+      border: 1px solid var(--color-purewhite);
+      height: 3em;
+      padding: 0em 3em;
+      // margin: 7rem;
+      // padding: 1rem;
+    }
+    .print-button:hover {
+      background-color: var(--color-purewhite);
+      border: 1px solid var(--color-bg-dark);
+      border-radius: 5px;
+      color: var(--color-bg-dark) !important;
+    }
   }
 }
 

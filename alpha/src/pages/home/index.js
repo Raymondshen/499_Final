@@ -15,21 +15,32 @@ import jsPDF from "jspdf";
 
 import { PairingDoc, ClickList, FontRange, Spacing } from "./components";
 
+const reduceProperty = (s, a) => {
+	s[+a.i] = { ...s[+a.i], ...a.v };
+	return [...s];
+}
+const reduceIndex = (s, a) => ({ ...s, ...a });
 
+
+const FontStyleSheet = ({fonts}) => {
+ return (
+	 <style>
+		 {/* Map trouch fonts, output the style @import */}
+		 {fonts.reduce((r,o)=>r+o.import,"")}
+	 </style>
+ )
+}
 
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
 
 	let [fontFamilies, setFontFamilies] = useReducer(
-		(s, a) => ({ ...s, ...a }),
+		reduceIndex,
 		{ first: {}, second: {} }
 	);
 	let [fontSizes, setFontSizes] = useReducer(
-		(s, a) => {
-			s[+a.i] = { ...s[+a.i], ...a.v };
-			return [...s];
-		},
+		reduceProperty,
 		[
 			{ size: 72, min: 12, max: 96, name: 'H1' },
 			{ size: 56, min: 12, max: 72, name: 'H2' },
@@ -41,11 +52,8 @@ const HomePage = ({ fonts }) => {
 	);
 
 	//Reducer for letter spacing and line height
-	let [spacings, setSpacings] = useReducer(
-		(s, a) => {
-			s[+a.i] = { ...s[+a.i], ...a.v };
-			return [...s];
-		},
+	let [spacings,setSpacings] = useReducer(
+		reduceProperty,
 		[
 			{
 				trackingSize: 0,
@@ -119,7 +127,7 @@ const HomePage = ({ fonts }) => {
 	useEffect(() => {
 		if (!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
-		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i != r1).length);
+		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
 		console.log(r1, r2, fonts[r1], fonts[r2])
 		setFontFamilies({ first: fonts[r1] })
 		setFontFamilies({ second: fonts[r2] })
@@ -129,6 +137,7 @@ const HomePage = ({ fonts }) => {
 
 	return (
 		<article className=" container">
+			<FontStyleSheet fonts={fonts}/>
 			<section>
 				<Switch>
 					<Route exact path={`${path}`}>
@@ -158,7 +167,6 @@ const HomePage = ({ fonts }) => {
 
 							spacings={spacings}
 							setSpacings={setSpacings}
-							spacings={spacings}
 							fontFamilies={fontFamilies}
 							fontSizes={fontSizes}
 						/>
@@ -181,21 +189,28 @@ const HomePage = ({ fonts }) => {
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
 const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, spacings }) => {
-	const changeFontOne = (e) => {
-		e.preventDefault();
-		setFontFamilies({ first: e.target.value });
-	}
+	// const changeFontOne = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ first: e.target.value });
+	// }
 
-	const changeFontTwo = (e) => {
-		e.preventDefault();
-		setFontFamilies({ second: e.target.value });
-	}
+	// const changeFontTwo = (e) => {
+	// 	e.preventDefault();
+	// 	setFontFamilies({ second: e.target.value });
+	// }
+
+	// const openMobile = () =>{
+	// 	document.querySelector("#selection").classList.toggle("active");
+	// };
+
+	let [sideBarOpen, setSideBarOpen] = useState(false);
 
 	return (
 		<section className="grid">
-			<div id="selection" className=" col-md-5 position-xs-a position-md-r">
+    		<div class="closeBtn display-md-none" onClick={()=>setSideBarOpen(!sideBarOpen)}>x</div>
+			<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
 				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
+					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
@@ -229,11 +244,11 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 		});
 	}
 
-	let r = Math.floor(Math.random() * fontSizes.length);
+	// let r = Math.floor(Math.random() * fontSizes.length);
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 position-xs-a position-md-r bg-dark-solid ">
+			<div className="size-container selection col-md-5 position-xs-a position-md-r bg-dark-solid ">
 				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -285,14 +300,14 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<div className="spacing-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</section>
-				<div id="selectspacing" className="p-xs-txl vh-100">
+				<div id="selectspacing" className="vh-100">
 					<div className="fontsize-title">
 						<p>Choose the font size</p>
 					</div>
@@ -343,7 +358,7 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 
 	return (
 		<section className="grid">
-			<div id="selection" className="col--5 pos-r bg-dark-solid">
+			<div className="pdf-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
