@@ -1,11 +1,10 @@
 import React from 'react';
 
-// CHANGE YOUR SRC LINK HERE.
-import raymondIcon from '../assets/members/avatarsample.jpg';
-import chunjiaIcon from '../assets/members/avatarsample.jpg';
-import gustavIcon from '../assets/members/avatarsample.jpg';
-import lovisaIcon from '../assets/members/avatarsample.jpg';
-import dinoIcon from '../assets/members/avatarsample.jpg';
+import raymondIcon from '../assets/members/raymond.jpg';
+import chunjiaIcon from '../assets/members/chunjia.jpg';
+import gustavIcon from '../assets/members/gustav.jpg';
+import lovisaIcon from '../assets/members/lovisa.jpg';
+import dinoIcon from '../assets/members/dino.jpg';
 
 
 const AboutPage = () => {
@@ -18,11 +17,11 @@ const AboutPage = () => {
 				[site name] is brought to you by a group of 5 passionate design students. We all have a passion for typography, design, and code.
 				</p>
 				<ul id="about-team-list" class="flex-parent flex-row">
-				  <li><img className="about-profile"src={raymondIcon} alt="Raymond"></img></li>
-				  <li><img className="about-profile"src={chunjiaIcon} alt="Chunjia"></img></li>
-				  <li><img className="about-profile"src={gustavIcon} alt="Gustav"></img></li>
-				  <li><img className="about-profile"src={lovisaIcon} alt="Lovisa"></img></li>
-				  <li><img className="about-profile"src={dinoIcon} alt="Dino"></img></li>
+					<li><img className="about-profile" src={raymondIcon} alt="Raymond"></img></li>
+					<li><img className="about-profile" src={chunjiaIcon} alt="Chunjia"></img></li>
+					<li><img className="about-profile" src={gustavIcon} alt="Gustav"></img></li>
+					<li><img className="about-profile" src={lovisaIcon} alt="Lovisa"></img></li>
+					<li><img className="about-profile" src={dinoIcon} alt="Dino"></img></li>
 				</ul>
 				<div id="about-form" class="flex-parent flex-col">
 					<h2>Contact Us</h2>
@@ -30,7 +29,7 @@ const AboutPage = () => {
 
 					<div id="about-form-input" class="flex-parent flex-row">
 
-						<div id="about-form-left">						
+						<div id="about-form-left">
 							<div id="about-form-name">
 								<label>Name</label>
 								<input type='text' placeholder="John Doe"></input>
@@ -49,6 +48,11 @@ const AboutPage = () => {
 				</div>
 			</div>
 		</section>
+
+
+
+
+
 	);
 }
 
