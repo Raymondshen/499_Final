@@ -627,9 +627,17 @@ nav {
     list-style: none;
     justify-content: space-between;
     margin-top: 10%;
-
+    @include breakpoint ("mobile"){
+      flex-flow: column wrap;
+    }
+    @include breakpoint ("laptop") {
+      flex-flow: row wrap;
+    }
     li {
-      width: 19.5%;
+      width:100%;
+      @include breakpoint ("laptop"){
+        width: 19.5%;
+      }
       .about-profile {
         width: 50%;
       }
