@@ -28,3 +28,12 @@ Dec 5 - 12
 - Checked in with everyone on their progress
 - Helped out classmate and resolved any git issues
 - Cleaned up some of the coding and naming.
+
+Dec 13 - 19
+- Worked on styling up all the other pages that gustav had finish for the 
+different sub sections.
+- Resolved issues and code for the about page remotely which was AWESOME!
+- Checked in with classmates
+- Helped restructure the whole about js for chunjia to finish off
+- Overall Gustav, Chunjia, and Lovisa did a exemplifying job on getting all their task done!
+- Great semester overall and definitely learned alot of new coding stuff!
