@@ -21,6 +21,14 @@ const parseRow = row => {
   }, {});
 };
 
+const FontStyleSheet = ({fonts}) => {
+  return (
+    <style>
+      {fonts.reduce((r,o)=>r+o.import,"")}
+    </style>
+  )
+ }
+
 function App() {
   let [fonts,setFonts] = useState([]);
 
@@ -31,8 +39,10 @@ function App() {
       setFonts(d.feed.entry.map(parseRow))
 		})
   },[]);
+  
   return (
     <Router style={{overflow: 'auto'}}>
+      <FontStyleSheet fonts={fonts}/>
       <HeaderNav title={"fontPairing"}/>
       <main>
         <Switch>
