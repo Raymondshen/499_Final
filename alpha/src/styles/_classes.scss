@@ -20,8 +20,14 @@
     }
   }
 }
+
+// these can be used on the html classes you can delete this.
+
 .flex-parent {
-  display:flex;
+
+  display: flex;
+  // display: flex;
+
 }
 
 .flex-col {
@@ -67,6 +73,7 @@
 .flex-row {
 	display:flex;
 	flex-flow: wrap row;
+
 
 }
 
