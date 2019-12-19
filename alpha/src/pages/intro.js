@@ -21,7 +21,10 @@ const IntroPage = (fonts) => {
           setFontFamilies({ first: fonts[r1] })
           setFontFamilies({ second: fonts[r2] })
     }, [fonts]);
-      
+    
+
+    console.log(fonts);
+
     return (<div className="bg-dark">
       <section className="landingpage grid">
         <div className="container max-xs-s p-xs-txl col-md-6 col-xs-10">
@@ -38,8 +41,8 @@ const IntroPage = (fonts) => {
           <PairingDoc 
                       fontSizes={fontSizesData} 
                       fontFamilies={fontFamilies}
-            spacings={spacingsData}
-            className='landingpage__pairingdoc'
+                      spacings={spacingsData}
+                      className='landingpage__pairingdoc'
                       />
         </div>
       </section>

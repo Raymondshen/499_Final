@@ -62,7 +62,7 @@ const HomePage = ({ fonts }) => {
 		if (!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
 		let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
-		console.log(r1, r2, fonts[r1], fonts[r2])
+		// console.log(r1, r2, fonts[r1], fonts[r2])
 		setFontFamilies({ first: fonts[r1] })
 		setFontFamilies({ second: fonts[r2] })
 	}, [fonts]);

@@ -31,7 +31,6 @@ function App() {
       setFonts(d.feed.entry.map(parseRow))
 		})
   },[]);
-  console.log(fonts);
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={"fontPairing"}/>
