@@ -66,10 +66,9 @@ a{
 	color: inherit;
 	font-weight: bold;
 	text-decoration: none;
-	background-color: transparent;
+  background-color: transparent;
 	&:hover{
-		color:var(--color-red);
-		text-decoration: none;
+    text-decoration: none;
 	}
 }
 

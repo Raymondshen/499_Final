@@ -18,7 +18,13 @@ import { Spacing } from "../components/spacing";
 import {PairingDoc} from "../components/pairing-doc";
 import {ClickList} from "../components/click-list";
 import {FontRange} from "../components/font-range";
-import gearIcon from '../assets/images/gear.svg'; 
+
+import gearIcon from '../assets/images/icon_settings.svg'; 
+import chooseIcon from '../assets/images/icon_choose_font.svg'; 
+import sizeIcon from '../assets/images/icon_font_size.svg'; 
+import spacingIcon from '../assets/images/icon_spacing.svg'; 
+import downloadIcon from '../assets/images/icon_download.svg'; 
+
 
 const reduceProperty = (s, a) => {
 	s[+a.i] = { ...s[+a.i], ...a.v };
@@ -77,10 +83,8 @@ const HomePage = ({ fonts }) => {
 						<PairFont
 							path={path}
 							spacings={spacings}
-
 							fontlist={fonts}
 							setFontFamilies={setFontFamilies}
-
 							fontFamilies={fontFamilies}
 							fontSizes={fontSizes}
 						/>
@@ -97,7 +101,6 @@ const HomePage = ({ fonts }) => {
 					<Route path={`${path}/spacing`}>
 						<SetSpacing
 							path={path}
-
 							spacings={spacings}
 							setSpacings={setSpacings}
 							fontFamilies={fontFamilies}
@@ -131,10 +134,30 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 			</div>
 				<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
 				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
+							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Choose</span>
+						</Link>	
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/set-sizes`}>
+							<img src={sizeIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Font Size</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/spacing`}>
+							<img src={spacingIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Spacing</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/download`}>
+							<img src={downloadIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>PDF</span>
+						</Link>
+					</div>
 				</div>
 				<div id="selection-fontpair-interface" className="bg-dark">
 					<ClickList
@@ -172,11 +195,31 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`size-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
+			<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
+							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Choose</span>
+						</Link>	
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/set-sizes`}>
+							<img src={sizeIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Font Size</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/spacing`}>
+							<img src={spacingIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Spacing</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/download`}>
+							<img src={downloadIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>PDF</span>
+						</Link>
+					</div>
 				</div>
 				<div className="p-xs-bxl">
 					<div className="fontsize-title p-xs-txl">
@@ -201,8 +244,6 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 		</section>
 	);
 }
-
-//Sudo component for tracking and leading
 
 const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) => {
 
@@ -230,12 +271,32 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`spacing-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
-				</section>
+				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
+							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Choose</span>
+						</Link>	
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/set-sizes`}>
+							<img src={sizeIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Font Size</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/spacing`}>
+							<img src={spacingIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>Spacing</span>
+						</Link>
+					</div>
+					<div className="selection-nav-links">
+						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/download`}>
+							<img src={downloadIcon} alt="Choose font" className="pairing-nav-icon"></img>
+							<span>PDF</span>
+						</Link>
+					</div>
+				</div>
 				<div id="selectspacing" className="vh-100 p-xs-bxl">
 					<div className="fontsize-title p-xs-txl">
 						<p>Choose the font size</p>
@@ -257,7 +318,6 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
 					spacings={spacings}
-				//Inset property into the pairing doc. for the spacing
 				/>
 			</div>
 		</section>
@@ -277,6 +337,10 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 		);
 		const pdf = new jsPDF("p", "mm", "a4");
 
+		// pdf.setFont(fontFamilies.first.name)
+		// pdf.setFontSize(30)
+		// pdf.text(20, 30, fontFamilies.first.name)
+		// console.log(fontSizes[0].size);
 		pdf.fromHTML(string);
 		pdf.save("pdf");
 	}
@@ -289,13 +353,33 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`pdf-container  selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
-					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
-					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
-				</section>
-				<div id="selectprint" class="flex-row h-100">
+				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+						<div className="selection-nav-links">
+							<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
+								<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
+								<span>Choose</span>
+							</Link>	
+						</div>
+						<div className="selection-nav-links">
+							<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/set-sizes`}>
+								<img src={sizeIcon} alt="Choose font" className="pairing-nav-icon"></img>
+								<span>Font Size</span>
+							</Link>
+						</div>
+						<div className="selection-nav-links">
+							<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/spacing`}>
+								<img src={spacingIcon} alt="Choose font" className="pairing-nav-icon"></img>
+								<span>Spacing</span>
+							</Link>
+						</div>
+						<div className="selection-nav-links">
+							<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/download`}>
+								<img src={downloadIcon} alt="Choose font" className="pairing-nav-icon"></img>
+								<span>PDF</span>
+							</Link>
+						</div>
+					</div>
+				<div id="selectprint" className="flex-row h-100">
 					<button className="print-button" onClick={printDoc}>Download PDF</button>
 				</div>
 			</div>

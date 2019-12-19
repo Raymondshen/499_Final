@@ -9,9 +9,9 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings,className }) => {
     const hasValidData = fontSizes instanceof Array && fontSizes.length && fontFamilies instanceof Object && spacings instanceof Array && spacings.length;
   
     return hasValidData ? (
-      <div className={className ? className : '', 'p-xs-tm p-md-tn'}>
+      <div className={className ? className : 'p-xs-tm p-md-tn'}>
         <section className="grid p-xs-m p-xs-hs">
-        <h1 style={{ letterSpacing: spacings[0].trackingSize + 'px', lineHeight: spacings[0].leadingSize + '%', fontSize: fontSizes[0].size + 'px', fontFamily: fontFamilies.first.name }} className="col--12">An adaptable Foundation</h1>
+        <h1 style={{ letterSpacing: spacings[0].trackingSize + 'px', lineHeight: spacings[0].leadingSize + '%', fontSize: fontSizes[0].size + 'px', fontFamily: fontFamilies.first.name }} className="col--12">An Adaptable Foundation</h1>
         </section>
         <section className="grid p-xs-m p-xs-hs">
         <div className="col-xs-12 col-lg-6 p-lg-rl">

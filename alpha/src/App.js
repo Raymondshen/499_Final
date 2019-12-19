@@ -1,28 +1,15 @@
-//Hello!
-//Suggested workfolw. Open a new terminal tab for node running react, sass compile and watch for style folder, and git for alpha folder. 
-
 import React, {useState,useEffect,useReducer} from 'react';
 import './styles/App.css';
 import './styles/style.min.css';
-
 import {
   HashRouter as Router,
   Switch,
   Route,
   Link
 } from 'react-router-dom';
-
-//Here goes the components that we're importing to the main app.
-//The main components are the ones that will be displayed at all times. 
-//Etc. the nav, the footer. The components that will be in the blocks that make up the pages can be imported directlly into the pages and then the pages into the main app.
 import {HeaderNav} from "./components/nav";
-
 import {PairingDoc} from "./components/pairing-doc";
 import { fontFamiliesData, fontSizesData, spacingsData } from "./pairingdoc-data";
-
-//Here goes the pages that we're importing to the main app.
-//The pages are the contet that will be exchanged in the app.
-//You may locate these files via /src/pages/{the selected files}.
 import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
@@ -36,8 +23,6 @@ const parseRow = row => {
 };
 
 function App() {
-  // let [title,setTitle] = useState("FontPairing");
-
   let [fonts,setFonts] = useState([]);
 
 	useEffect(()=>{
@@ -50,13 +35,7 @@ function App() {
   
   return (
     <Router style={{overflow: 'auto'}}>
-      <HeaderNav title={"FontPairing"}>
-        <Link to="/">Home</Link>
-        <Link to="/learn">How to pair fonts</Link>
-        <Link to="/about">About FontPairing</Link>
-        <Link className="btn btn--primary" to="pair-fonts">Get Started</Link>
-
-      </HeaderNav>
+      <HeaderNav title={"fontPairing"}/>
       <main>
         <Switch>
           <Route exact path="/">

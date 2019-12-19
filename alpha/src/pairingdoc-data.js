@@ -6,7 +6,7 @@ const fontSizesData = [
     { size: 16, min: 12, max: 72, name: 'H3' },
     { size: 14, min: 12, max: 72, name: 'H4' },
     { size: 12, min: 12, max: 72, name: 'H5' },
-    { size: 10, min: 12, max: 26, name: 'P' }
+    { size: 12, min: 12, max: 26, name: 'P' }
 ];
 
 const spacingsData = [
