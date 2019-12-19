@@ -637,7 +637,8 @@ nav {
   }
 
   #about-form {
-    margin-top: 20%;
+
+    margin-top:20%;
 
     h2 {
       @include setFont($bold, 3em);
@@ -646,21 +647,26 @@ nav {
     #about-form-input {
       justify-content: space-between;
       width: 80%;
-    }
+    
 
-    .flex-parent {
-      display: flex;
-    }
 
-    .flex-row {
-      display: table;
-      flex-flow: wrap row;
+      .flex-parent {
 
-      @include breakpoint("tablet") {
         display: flex;
-        flex-flow: wrap row;
+   
+
       }
-    }
+
+
+      .flex-row {
+        display:table;
+        flex-flow: wrap row;
+
+        @include breakpoint("tablet") {
+          display:table;
+        }
+      }
+    }  
   }
 }
 
