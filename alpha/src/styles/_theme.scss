@@ -199,6 +199,7 @@ nav {
   &--secondary {
     background-color: var(--color-purewhite);
     color: var(--color-bg-dark);
+    font-weight: 100;
 
     &:hover {
       border-color: var(--color-purewhite);
@@ -210,25 +211,59 @@ nav {
 
 // LANDING PAGE
 .landingpage {
+
   h1 {
     font-size: 3rem;
   }
   &__pairingdoc {
     background-color: var(--color-purewhite);
     overflow-y: scroll;
-    height: 100vh;
+    height: 70vh;
+    margin-bottom: 4rem;
+    display: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
+    @include breakpoint("tablet") {
+      display: block;
+    }
+  }
+  p.txt-purewhite {
+    margin: 4rem 0;
+  }
+  .btn {
+    max-width: 7.8rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint("tablet") {
+      margin: 0;
+    }
+  }
+}
+
+.logo-outline {
+  height: 6rem;
+  position: absolute;
+  right: 2em;
+  bottom: 4em;
+
+  @include breakpoint("tablet") {
+    height: 14rem;
+    bottom: 9em;
+    left: 4em;
   }
 }
 
 // RAYMOND EDITS
 #root {
   padding-top: 5rem;
+  overflow-y: scroll;
 }
 .bg-dark {
   background: var(--color-bg-dark);
+  min-height: 100vh;
 }
 .txt-purewhite {
   color: var(--color-purewhite);
@@ -261,7 +296,16 @@ nav {
 
 .selection {
   width: 100%;
+<<<<<<< HEAD
   transition: 0.5s ease-in;
+=======
+  height: 100vh;
+  overflow-y: scroll;
+  transition: .5s ease-in;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+>>>>>>> 16676edec4e98d4a89e458ecf5433ba5deec3aa7
   @include breakpoint("tablet") {
     transform: none;
     transition: 0s;
@@ -297,6 +341,9 @@ nav {
 
 // # SELECTION : FONT PAIR #
 #selection-fontpair-interface {
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .selectfont-searchbar {
     input {
       width: 100%;
@@ -317,30 +364,40 @@ nav {
     }
   }
   #selectfont {
-    height: 100vh;
     overflow-y: scroll;
     padding: 0em;
+<<<<<<< HEAD
     padding-bottom: 20em;
     @include breakpoint("tablet") {
       padding-bottom: 20em;
     }
+=======
+    padding-bottom: 2em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    @include breakpoint ("tablet") {
+      padding-bottom: 2em;
+   }
+   @include breakpoint("desktop") {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+  }
+>>>>>>> 16676edec4e98d4a89e458ecf5433ba5deec3aa7
     &::-webkit-scrollbar {
       width: 0;
     }
     .font-card {
       max-height: 245px;
       &:nth-child(odd) {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
+        margin-left: auto;
         @include breakpoint("desktop") {
-          margin-left: 7.5%;
+          margin-right: 2.5%;
         }
       }
       &:nth-child(even) {
-        margin-right: 2.5%;
-        margin-left: 2.5%;
+        margin-right: auto;
         @include breakpoint("desktop") {
-          margin-right: 7.5%;
+          margin-left: 2.5%;
         }
       }
       position: relative;
@@ -350,7 +407,7 @@ nav {
       border: 1px solid var(--color-purewhite);
       background: var(--color-bg-lightdark);
       @include breakpoint("desktop") {
-        width: 40%;
+        width: 47%;
       }
       .button {
         cursor: pointer;
@@ -477,7 +534,8 @@ nav {
 #selectspacing {
   height: 100vh;
   overflow-y: scroll;
-  @include breakpoint("tablet") {
+  &::-webkit-scrollbar{
+    display: none;
   }
   .spacingfont {
     h5 {

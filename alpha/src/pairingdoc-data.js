@@ -1,11 +1,11 @@
 const fontFamiliesData = { first: {}, second: {} };
   
 const fontSizesData = [
-    { size: 43, min: 12, max: 96, name: 'H1' },
-    { size: 36, min: 12, max: 72, name: 'H2' },
-    { size: 16, min: 12, max: 72, name: 'H3' },
-    { size: 14, min: 12, max: 72, name: 'H4' },
-    { size: 12, min: 12, max: 72, name: 'H5' },
+    { size: 56, min: 12, max: 96, name: 'H1' },
+    { size: 43, min: 12, max: 72, name: 'H2' },
+    { size: 36, min: 12, max: 72, name: 'H3' },
+    { size: 16, min: 12, max: 72, name: 'H4' },
+    { size: 14, min: 12, max: 72, name: 'H5' },
     { size: 12, min: 12, max: 26, name: 'P' }
 ];
 

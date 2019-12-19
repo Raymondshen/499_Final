@@ -10,6 +10,8 @@ import {
 import {HeaderNav} from "./components/nav";
 import {PairingDoc} from "./components/pairing-doc";
 import { fontFamiliesData, fontSizesData, spacingsData } from "./pairingdoc-data";
+import LogoOutline from "./assets/images/logo_outline.svg";
+
 import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
 import AboutPage from "./pages/about";
@@ -73,12 +75,17 @@ const IntroPage = (fonts) => {
 
   return (<div className="bg-dark">
     <section className="landingpage grid">
-      <div className="container max-xs-s p-xs-txl col--6">
+      <div className="container max-xs-s p-xs-txl col-md-6 col-xs-10">
         <h1 className="txt-purewhite">Experiment with font pairing and styling options while seeing the results live</h1>
-        <p className="txt-purewhite">Choose a body and header font to pair, and then customize each with styling options. Once you are complete with the process you will have the option to download a personal style-guide.</p>
-        <Link className="btn btn--secondary" to="pair-fonts">Get Started</Link>
+        <section className="grid">
+          <p className="txt-purewhite col-md-6 col-xs-10 offset-xs-0 offset-md-6">Choose a body and header font to pair, and then customize each with styling options. Once you are complete with the process you will have the option to download a personal style-guide.</p>
+          <Link className="btn btn--secondary col-xs-10 offset-xs-0 offset-md-6" to="pair-fonts">Get Started</Link>
+        </section>
+        <section>
+        <img className="logo-outline" src={LogoOutline} />
+        </section>
       </div>
-      <div className="container max-xs-s p-xs-txl col--6">
+      <div className="container max-xs-s p-xs-txl col--6 display-xs-n display-md-b">
         <PairingDoc 
 					fontSizes={fontSizesData} 
 					fontFamilies={fontFamilies}
