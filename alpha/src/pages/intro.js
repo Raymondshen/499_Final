@@ -12,16 +12,20 @@ const IntroPage = (fonts) => {
           reduceIndex,
           fontFamiliesData
     );
-  
+  	console.log(fonts);
+
     useEffect(() => {
-          if (!fonts.length) return;
-          let r1 = Math.floor(Math.random() * fonts.length);
-          let r2 = Math.floor(Math.random() * fonts.filter((o, i) => i !== r1).length);
-          console.log(r1, r2, fonts[r1], fonts[r2])
-          setFontFamilies({ first: fonts[r1] })
-          setFontFamilies({ second: fonts[r2] })
+      if (!fonts.fonts.length) return;
+        let f = fonts.fonts;
+          let r1 = Math.floor(Math.random() * f.length);
+          let r2 = Math.floor(Math.random() * f.filter((o, i) => i !== r1).length);
+          console.log(r1, r2, f[r1], f[r2])
+          setFontFamilies({ first: f[r1] })
+          setFontFamilies({ second: f[r2] })
     }, [fonts]);
-      
+    
+
+
     return (<div className="bg-dark">
       <section className="landingpage grid">
         <div className="container max-xs-s p-xs-txl col-md-6 col-xs-10">
@@ -38,8 +42,8 @@ const IntroPage = (fonts) => {
           <PairingDoc 
                       fontSizes={fontSizesData} 
                       fontFamilies={fontFamilies}
-            spacings={spacingsData}
-            className='landingpage__pairingdoc'
+                      spacings={spacingsData}
+                      className='landingpage__pairingdoc'
                       />
         </div>
       </section>
