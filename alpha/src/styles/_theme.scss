@@ -101,21 +101,47 @@ header {
   }
   nav {
     padding-left: 2vw;
-    li:nth-last-child(1) {
-      background-color: var(--color-bg-dark);
-      border-radius: 5px;
-      border: 1px solid transparent;
-      a {
-        color: var(--color-purewhite) !important;
-      }
-    }
-    li:nth-last-child(1):hover {
+  }
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0.8em;
+
+  &--primary {
+    background-color: var(--color-bg-dark);
+    color: var(--color-purewhite);
+
+    &:hover {
+      border-color: var(--color-bg-dark);
       background-color: var(--color-purewhite);
-      border: 1px solid var(--color-bg-dark);
-      border-radius: 5px;
-      a {
-        color: var(--color-bg-dark) !important;
-      }
+      color: var(--color-bg-dark);
+    }
+  }
+  &--secondary {
+    background-color: var(--color-purewhite);
+    color: var(--color-bg-dark);
+
+    &:hover {
+      border-color: var(--color-purewhite);
+      background-color: var(--color-bg-dark);
+      color: var(--color-purewhite);
+    }
+  }
+}
+
+// LANDING PAGE
+.landingpage {
+  h1 {
+    font-size: 3rem;
+  }
+  &__pairingdoc {
+    background-color: var(--color-purewhite);
+    overflow-y: scroll;
+    height: 100vh;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 }

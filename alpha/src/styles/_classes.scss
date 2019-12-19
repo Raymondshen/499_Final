@@ -14,12 +14,8 @@
     padding: 0.2em 0.5em;
     font-weight: normal;
     cursor: pointer;
-    color: var(--color-bg-dark);
     text-align: justify;
     padding: .8em;
-    &:hover {
-      color: var(--color-body-background);
-    }
   }
 }
 

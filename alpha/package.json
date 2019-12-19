@@ -2,7 +2,7 @@
   "name": "alpha",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Raymondshen.github.io/499_Final",
+  "homepage": "https://lovisabe.github.io/499_Final",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "jspdf": "^1.5.3",
