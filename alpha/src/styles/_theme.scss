@@ -31,13 +31,18 @@ p {
   font-family: "Helvetica", "Arial", sans-serif;
 }
 
+
+
 h1 {
   font-size: 3em;
   line-height: 112%;
+
   @include breakpoint("tablet") {
-    font-size: 1em;
+    font-size: 3em;
     line-height: 92%;
   }
+
+
 }
 
 h2 {
@@ -542,30 +547,133 @@ nav {
   }
 }
 
-// # About Page Container #
-.about-container {
+
+
+
+
+
+
+// .about-container {
+//   #about-team-list {
+//     text-decoration: none;
+//     list-style: none;
+//     justify-content: space-between;
+//     li {
+//       width: 19.5%;
+//       .about-profile {
+//         width: 100%;
+//       }
+//     }
+//   }
+//   #about-form {
+//     align-items: center;
+//     h2 {
+//       @include setFont($bold, 4em);
+//     }
+//     #about-form-input {
+//       justify-content: space-between;
+//       width: 80%;
+//     }
+//   }
+// }
+
+
+
+// # About Page Container # 
+// This is where you put your styling below here 
+
+
+.about-container{
+
+
+  p{
+    font-size: 1.5em;
+    margin-top: 2%;
+  }
+
+
+  #about-title { @include setFont($bold,3em); line-height:92%;}
+
+
   #about-team-list {
+
     text-decoration: none;
     list-style: none;
     justify-content: space-between;
+    margin-top: 10%;
+    
+
     li {
       width: 19.5%;
       .about-profile {
-        width: 100%;
+        width: 50%;
       }
+
     }
   }
+
+
+
+
   #about-form {
-    align-items: center;
+    
+   
+
+    margin-top:20%;
+
+
     h2 {
-      @include setFont($bold, 4em);
+      @include setFont($bold, 3em);
     }
+
+
+
+
     #about-form-input {
       justify-content: space-between;
       width: 80%;
     }
-  }
+
+
+    .flex-parent {
+
+      display: flex;
+ 
+
+    }
+
+
+    .flex-row {
+      display:table;
+      flex-flow: wrap row;
+
+        @include breakpoint("tablet") {
+        display:flex;
+        flex-flow: wrap row;
+      
+      }
+
+    }
+
+
+
+  
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// This si where you put your styling above here
+// #About Page Container #
 
 .slider-info {
   font-size: 1em;
