@@ -2,11 +2,7 @@
   "name": "alpha",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-  "homepage": "https://chunjiaouyang.github.io/499_Final",
-=======
   "homepage": "https://Raymondshen.github.io/499_Final",
->>>>>>> 567c7b2c432a2f7d0e37b2d4e79a1aa8addd64af
   "dependencies": {
     "gh-pages": "^2.1.1",
     "jspdf": "^1.5.3",
