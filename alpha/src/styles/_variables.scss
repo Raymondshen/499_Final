@@ -7,7 +7,6 @@ $color-purewhite: #FFFFFF;
 $color-dark-gray: #A9A9A9;
 $color-red: #FF6161;
 $color-purple: #7B78FF;
-
 $color-body-background: #0F1313;
 $color-body-background-light: lighten($color-body-background,30%);
 
@@ -16,7 +15,6 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 $black: 900;
-
 //List of maps
 
 $breakpoints:(
@@ -136,7 +134,6 @@ $header-height: 3rem;
 	--body-text-color:#{$color-body-text};
 	--color-body-background:#{$color-body-background};
 	--color-body-background-light:#{$color-body-background-light};
-
 	--color-gray-dark: #2e2b39;
 	--color-gray-light: #ede8ff;
 
