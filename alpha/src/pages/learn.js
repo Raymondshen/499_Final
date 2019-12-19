@@ -2,7 +2,7 @@ import React from 'react';
 
 const LearnPage = () => {
 	return (
-		<section className="container max-xs-s p-xs-txl">
+		<section className="container max-xs-s p-xs-txl" id="preview">
 			<div className="hero">
 				<h3>How to Pair Fonts?</h3>
 				<p>
