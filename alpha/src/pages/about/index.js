@@ -48,7 +48,13 @@ FontParing is brought to you by a group of 5 passionate design students. We all 
 			</div>
 
 
-
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
 
            
 
