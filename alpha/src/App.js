@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useReducer} from 'react';
+import React, {useState,useEffect} from 'react';
 import './styles/App.css';
 import './styles/style.min.css';
 import {
