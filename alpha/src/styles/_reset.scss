@@ -64,12 +64,11 @@ p{
 
 a{
 	color: inherit;
-	font-weight: bold;
 	text-decoration: none;
-	background-color: transparent;
+  background-color: transparent;
+  font-weight: bold !important;
 	&:hover{
-		color:var(--main-color-dark);
-		text-decoration: none;
+    text-decoration: none;
 	}
 }
 

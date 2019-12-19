@@ -1,0 +1,49 @@
+## 12/12 --------------------------->
+- still working on landing page - need to complete
+- in process: copy doc for fontpairing
+	- link: https://docs.google.com/document/d/1jGU9QEBV7sHwjX1UB1PhyzHlrGpINBNuLiPu7F5oYvc/edit?usp=sharing 
+
+- possible names : 
+	- fontpackage ; since the end product is a "package" of font choices in a pdf
+	- fontpick 
+	- fontplan
+	- fontplot
+	- fontpanel
+	- fontplayground
+
+## 12/5 --------------------------->
+- Need to add google fonts to database
+
+- simplify workflow ? or functionality of tool?
+- making graphic elements, maybe custom font on ipad, or some graphic symbols, ____, _____, ____
+- Going to choose and create main colorway, styleguide with main font choice for site, and site logo for nav bar and brand
+- certain people to work on certain parts of the site so no overlap? assigned parts of the site to work on ~ 
+
+
+## 11/14 --------------------------->
+
+- - In Figma  - -
+- Created a alternate homepage layout where you can search by keyword or name of typeface
+- Also Added Random Pair select if the user does not have a font in mind but just wants to generate and idea for inspiration
+- Re-designed a full page layout to present the font matchings based on the search or input query 
+^ just as an option an alternate way to present it
+
+
+WEEK GOALS
+- have design
+- have vector components done
+- structure built out, workable nav
+
+
+
+## 11/7 ---------------------------->
+
+TO SEE GIT HISTORY
+- git log 
+
+WAYS TO PRESENT GIT
+- git log - -pretty=oneline
+- git log - -pretty=format: “%h %s”  - -graph
+
+TO MAKE A NEW BRANCH 
+- git checkout -b <branch name> <branch its from>

@@ -1,5 +1,6 @@
 import React, { useReducer, useState, useEffect } from 'react';
 
+
 import {
 	Switch,
 	Route,
@@ -183,6 +184,7 @@ const HomePage = ({ fonts }) => {
 			</section>
 		</article>
 	);
+
 }
 
 //Here is the start pairing content.
@@ -379,6 +381,5 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 		</section>
 	);
 }
-
 
 export default HomePage;
