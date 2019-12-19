@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../assets/images/logo.svg'; 
+import HamburgerIcon from '../assets/images/icon_hamburger.svg'; 
 
 
 import {Link} from 'react-router-dom';
@@ -10,7 +11,7 @@ const HeaderNav = ({title}) => {
     return (
 	<>
 		<div className="nav-icon display-md-n position-xs-a" onClick={()=>setSideBarOpen(!sideBarOpen)}>
-			x
+			<img src={HamburgerIcon} alt="nav icon"/>
 		</div>
 		<header className="nav flex-xs-parent flex-md-horizontal flex-xs-vertical">
 			<div className="p-xs-s p-md-n content-contain-header">

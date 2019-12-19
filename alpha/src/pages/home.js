@@ -125,7 +125,7 @@ const HomePage = ({ fonts }) => {
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
 const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, spacings }) => {
-	let [sideBarOpen, setSideBarOpen] = useState(false);
+	let [sideBarOpen, setSideBarOpen] = useState(true);
 
 	return (
 		<section className="grid">
@@ -133,7 +133,7 @@ const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, sp
 				<img src={gearIcon} alt=""></img>
 			</div>
 				<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
-				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+				<div className="selection-nav-container flex-xs-justify-even position-xs-a flex-xs-parent flex-xs-justify-even flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links">
 						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
 							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
@@ -187,7 +187,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 			v: { size: e.target.value }
 		});
 	}
-	let [sideBarOpen, setSideBarOpen] = useState(false);
+	let [sideBarOpen, setSideBarOpen] = useState(true);
 
 	return (
 		<section className="grid">
@@ -195,7 +195,7 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`size-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-			<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+			<div className="selection-nav-container flex-xs-justify-even position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links">
 						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
 							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
@@ -263,7 +263,7 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 		});
 	}
 
-	let [sideBarOpen, setSideBarOpen] = useState(false);
+	let [sideBarOpen, setSideBarOpen] = useState(true);
 
 	return (
 		<section className="grid">
@@ -271,7 +271,7 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`spacing-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+				<div className="selection-nav-container flex-xs-justify-even position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links">
 						<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
 							<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>
@@ -345,7 +345,7 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 		pdf.save("pdf");
 	}
 
-	let [sideBarOpen, setSideBarOpen] = useState(false);
+	let [sideBarOpen, setSideBarOpen] = useState(true);
 
 	return (
 		<section className="grid">
@@ -353,7 +353,7 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 				<img src={gearIcon} alt=""></img>
 			</div>
 			<div className={`pdf-container  selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
-				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+				<div className="selection-nav-container flex-xs-justify-even position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 						<div className="selection-nav-links">
 							<Link className="flex-xs-parent flex-xs-vertical hover-underline" to={`${path}/`}>
 								<img src={chooseIcon} alt="Choose font" className="pairing-nav-icon"></img>

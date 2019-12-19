@@ -69,7 +69,7 @@ const IntroPage = (fonts) => {
 		setFontFamilies({ second: fonts[r2] })
   }, [fonts]);
   
-  console.log(fonts);
+  console.log(fontFamiliesData);
 
   return (<div className="bg-dark">
     <section className="landingpage grid">
