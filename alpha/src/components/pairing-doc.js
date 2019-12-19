@@ -15,7 +15,7 @@ const PairingDoc = ({ fontSizes,fontFamilies,spacings,className }) => {
         </section>
         <section className="grid p-xs-m p-xs-hs">
         <div className="col-xs-12 col-lg-6 p-lg-rl">
-            <h2 style={{ letterSpacing: spacings[4].trackingSize + 'px', lineHeight: spacings[4].leadingSize + '%', fontSize: fontSizes[1].size + 'px', fontFamily: fontFamilies.first.name }}>The Cannibal King</h2>
+            <h2 style={{ letterSpacing: spacings[1].trackingSize + 'px', lineHeight: spacings[1].leadingSize + '%', fontSize: fontSizes[1].size + 'px', fontFamily: fontFamilies.first.name }}>The Cannibal King</h2>
             <p style={{ letterSpacing: spacings[5].trackingSize + 'px', lineHeight: spacings[5].leadingSize + '%', fontSize: fontSizes[5].size + 'px', fontFamily: fontFamilies.second.name }}>Pippi had not forgotten her father. He was a sea captain who sailed on the great ocean, and Pippi had sailed with him in his ship until one day her father was blown overboard in a storm and disappeared. But Pippi was absolutely certain that he would come back. She would never believe that he had drowned; she was sure he had floated until he landed on an island inhabited by cannibals. And she thought he had become the king of all the cannibals and went around with a golden crown on his head all day long. </p>
         </div>
         <div className="col-lg-6 col-xs-12 offset-lg-7 p-lg-ll m-xs-tl m-lg-tn">
