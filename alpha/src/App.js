@@ -51,7 +51,7 @@ function App() {
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={"FontPairing"}>
-        {/* <Link to="/">FontPairing</Link> */}
+        <Link to="/">Home</Link>
         <Link to="/learn">How to pair fonts</Link>
         <Link to="/about">About FontPairing</Link>
         <Link className="btn btn--primary" to="pair-fonts">Get Started</Link>

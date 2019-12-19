@@ -166,16 +166,14 @@ header {
 }
 
 // # GLOBAL: Selection Navigation #
-.selection {
-  width: 100%;
-  @include breakpoint("tablet") {
-    grid-column-end: span 5;
-  }
+
   // # Navigation for the selection Area #
   .selection-nav-container {
     padding: 1.5em 1em;
+    width: 100vw;
     @include breakpoint("tablet") {
       padding: 2em 3.5em;
+      width: inherit;
     }
     z-index: 2;
     flex-flow: wrap row;
@@ -185,18 +183,31 @@ header {
       margin-right: 0.8em;
     }
   }
+
+.selection {
+  width: 100%;
+  transition: .5s ease-in;
+  @include breakpoint("tablet") {
+    grid-column-end: span 5;
+  }
   &.active {
-    //transform: positionX(-2000px);
-    width: 0;
+    transform: translate(-2000px, 0px);
+    transition: .5s ease-in;
   }
 }
 
 .closeBtn {
   position: absolute;
+  right: .2em;
   color: var(--color-purewhite);
   font-size: 4rem;
   z-index: 10;
   cursor: pointer;
+  img{
+    position: relative;
+    width: 2.5rem;
+    top: -.1em
+  }
 }
 
 // # SELECTION : FONT PAIR #
@@ -211,18 +222,22 @@ header {
       color: white;
       height: 50px;
     }
-    padding: 5em 1em 1em;
+    padding: 5em 0 1em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     @include breakpoint("tablet"){
-      padding: 7em 7.5% 2em;
+      padding: 7em 0 2em;
+      margin-left: 7.5%;
+      margin-right: 7.5%;
     }
   }
   #selectfont {
     height: 100vh;
     overflow-y: scroll;
     padding: 0em;
-    padding-bottom: 12em;
+    padding-bottom: 20em;
     @include breakpoint ("tablet") {
-      padding-bottom: 14em;
+      padding-bottom: 20em;
     }
     &::-webkit-scrollbar {
       width: 0;
@@ -317,9 +332,7 @@ header {
     @include setFont($medium, 0.8em);
     color: var(--color-purewhite);
     padding: 0;
-    padding-top: 2em;
     @include breakpoint("tablet") {
-      padding-top: 5em;
     }
     opacity: 0.8;
   }
@@ -379,9 +392,7 @@ header {
 #selectspacing {
   height: 100vh;
   overflow-y: scroll;
-  padding: 4em 0em;
   @include breakpoint("tablet") {
-    padding: 6em 0em;
   }
   .spacingfont {
     h5 {

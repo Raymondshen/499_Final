@@ -18,6 +18,7 @@ import { Spacing } from "../components/spacing";
 import {PairingDoc} from "../components/pairing-doc";
 import {ClickList} from "../components/click-list";
 import {FontRange} from "../components/font-range";
+import gearIcon from '../assets/images/gear.svg'; 
 
 const reduceProperty = (s, a) => {
 	s[+a.i] = { ...s[+a.i], ...a.v };
@@ -29,7 +30,6 @@ const reduceIndex = (s, a) => ({ ...s, ...a });
 const FontStyleSheet = ({fonts}) => {
  return (
 	 <style>
-		 {/* Map trouch fonts, output the style @import */}
 		 {fonts.reduce((r,o)=>r+o.import,"")}
 	 </style>
  )
@@ -122,27 +122,15 @@ const HomePage = ({ fonts }) => {
 //If this is the flow we want to go for. The flow is accesable from the home screen. 
 
 const PairFont = ({ fontlist, path, setFontFamilies, fontFamilies, fontSizes, spacings }) => {
-	// const changeFontOne = (e) => {
-	// 	e.preventDefault();
-	// 	setFontFamilies({ first: e.target.value });
-	// }
-
-	// const changeFontTwo = (e) => {
-	// 	e.preventDefault();
-	// 	setFontFamilies({ second: e.target.value });
-	// }
-
-	// const openMobile = () =>{
-	// 	document.querySelector("#selection").classList.toggle("active");
-	// };
-
 	let [sideBarOpen, setSideBarOpen] = useState(false);
 
 	return (
 		<section className="grid">
-    		<div class="closeBtn display-md-none" onClick={()=>setSideBarOpen(!sideBarOpen)}>x</div>
-			<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
-				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
+			<div className="closeBtn display-md-n" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+				<img src={gearIcon} alt=""></img>
+			</div>
+				<div className={`selection col-sm-12 col-md-5 position-xs-a position-md-r ${sideBarOpen?'active':''}`}>
+				<div className="selection-nav-container position-xs-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
@@ -176,28 +164,32 @@ const SetSize = ({ path, setFontSizes, fontSizes, fontFamilies, spacings }) => {
 			v: { size: e.target.value }
 		});
 	}
-
-	// let r = Math.floor(Math.random() * fontSizes.length);
+	let [sideBarOpen, setSideBarOpen] = useState(false);
 
 	return (
 		<section className="grid">
-			<div className="size-container selection col-md-5 position-xs-a position-md-r bg-dark-solid ">
-				<div className="selection-nav-container pos-r flex-xs-parent flex-xs-align-center w-100 bg-dark-solid">
+			<div className="closeBtn display-md-n" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+				<img src={gearIcon} alt=""></img>
+			</div>
+			<div className={`size-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
+				<div className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</div>
-				<div className="fontsize-title">
-					<p>Choose the font size</p>
+				<div className="p-xs-bxl">
+					<div className="fontsize-title p-xs-txl">
+						<p>Choose the font size</p>
+					</div>
+					{fontSizes.map((o, i) => (
+						<FontRange
+							key={i}
+							id={i}
+							size={fontSizes}
+							setSize={setSize} />
+					))}
 				</div>
-				{fontSizes.map((o, i) => (
-					<FontRange
-						key={i}
-						id={i}
-						size={fontSizes}
-						setSize={setSize} />
-				))}
 			</div>
 			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
@@ -230,17 +222,22 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 		});
 	}
 
+	let [sideBarOpen, setSideBarOpen] = useState(false);
+
 	return (
 		<section className="grid">
-			<div className="spacing-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
+			<div className="closeBtn display-md-n" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+				<img src={gearIcon} alt=""></img>
+			</div>
+			<div className={`spacing-container selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/spacing`}>Spacing</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/download`}>Download PDF</Link></div>
 				</section>
-				<div id="selectspacing" className="vh-100">
-					<div className="fontsize-title">
+				<div id="selectspacing" className="vh-100 p-xs-bxl">
+					<div className="fontsize-title p-xs-txl">
 						<p>Choose the font size</p>
 					</div>
 					{spacings.map((o, i) => (
@@ -255,7 +252,7 @@ const SetSpacing = ({ path, setSpacings, spacings, fontSizes, fontFamilies }) =>
 				</div>
 			</div>
 
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
@@ -280,17 +277,18 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 		);
 		const pdf = new jsPDF("p", "mm", "a4");
 
-		// doc.setFont('courier')
-		// doc.setFontType('normal')
-		// doc.text(20, 30, 'This is courier normal.')
-
 		pdf.fromHTML(string);
 		pdf.save("pdf");
 	}
 
+	let [sideBarOpen, setSideBarOpen] = useState(false);
+
 	return (
 		<section className="grid">
-			<div className="pdf-container selection col-xs-12 col-md-5 pos-r bg-dark-solid">
+			<div className="closeBtn display-md-n" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+				<img src={gearIcon} alt=""></img>
+			</div>
+			<div className={`pdf-container  selection col-sm-12 col-md-5 position-xs-a position-md-r bg-dark-solid ${sideBarOpen?'active':''}`}>
 				<section className="selection-nav-container pos-a flex-xs-parent flex-xs-align-center w-100 bg-dark-transparent">
 					<div className="selection-nav-links"><Link to={`${path}/`}	>Choose Font</Link></div>
 					<div className="selection-nav-links"><Link to={`${path}/set-sizes`}>Font Size</Link></div>
@@ -301,7 +299,7 @@ const PrintPDF = ({ path, spacings, fontSizes, fontFamilies }) => {
 					<button className="print-button" onClick={printDoc}>Download PDF</button>
 				</div>
 			</div>
-			<div id="preview" className="preview col--8 offset--6 pairing-wrapper">
+			<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
 				<PairingDoc
 					fontFamilies={fontFamilies}
 					fontSizes={fontSizes}
