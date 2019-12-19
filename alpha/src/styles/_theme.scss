@@ -71,8 +71,12 @@ h5 {
 }
 
 a {
-  @include setFont($bold, .9em);
+  @include setFont($bold, 0.9em);
   line-height: 105%;
+}
+
+.vh-100 {
+  height: 100vh;
 }
 
 //STYLE GUIDE CSS
@@ -98,7 +102,7 @@ header {
 }
 
 nav {
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   background: #1c1c1ced;
   color: var(--color-purewhite);
   border-bottom: 1px solid var(--color-purewhite);
@@ -119,7 +123,7 @@ nav {
   }
   &.active {
     transform: translate(0px, -30em);
-    transition: .5s ease-in;
+    transition: 0.5s ease-in;
     @include breakpoint("tablet") {
       transform: none;
       transition: 0s;
@@ -130,14 +134,14 @@ nav {
   }
 }
 
-.content-contain-header{
+.content-contain-header {
   z-index: 20;
   background-color: var(--color-purewhite);
 }
 
-.hover-underline{
-    border-bottom: 1px solid transparent;
-  &:hover{
+.hover-underline {
+  border-bottom: 1px solid transparent;
+  &:hover {
     border-bottom: 1px solid var(--color-purewhite);
   }
 }
@@ -152,16 +156,16 @@ nav {
 
 .nav-icon {
   position: absolute;
-  right: .2em;
+  right: 0.2em;
   top: 0;
   color: var(--color-purple);
   font-size: 4rem;
   z-index: 20;
   cursor: pointer;
-  img{
+  img {
     position: relative;
     width: 1.8rem;
-    top: -.1em
+    top: -0.1em;
   }
 }
 
@@ -179,9 +183,9 @@ nav {
       color: var(--color-purewhite);
     }
     &:hover {
-        border-color: var(--color-purewhite);
-        background-color: var(--color-bg-dark);
-        color: var(--color-purewhite);
+      border-color: var(--color-purewhite);
+      background-color: var(--color-bg-dark);
+      color: var(--color-purewhite);
       @include breakpoint("tablet") {
         border-color: var(--color-bg-dark);
         background-color: var(--color-purewhite);
@@ -235,26 +239,26 @@ nav {
   width: 2em;
   margin: auto;
 }
-  // # Navigation for the selection Area #
-  .selection-nav-container {
-    padding: 1.5em 2.5% .8em 2.5%;
-    width: 100vw;
-    @include breakpoint("tablet") {
-      padding: 1.5em 7.5% .8em 7.5%;
-      width: inherit;
-    }
-    z-index: 2;
-    flex-flow: wrap row;
-    border-bottom: 1px solid #ffffff63;
-    .selection-nav-links {
-      color: var(--color-purewhite);
-      margin-right: 0.8em;
-    }
+// # Navigation for the selection Area #
+.selection-nav-container {
+  padding: 1.5em 2.5% 0.8em 2.5%;
+  width: 100vw;
+  @include breakpoint("tablet") {
+    padding: 1.5em 7.5% 0.8em 7.5%;
+    width: inherit;
   }
+  z-index: 2;
+  flex-flow: wrap row;
+  border-bottom: 1px solid #ffffff63;
+  .selection-nav-links {
+    color: var(--color-purewhite);
+    margin-right: 0.8em;
+  }
+}
 
 .selection {
   width: 100%;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   @include breakpoint("tablet") {
     transform: none;
     transition: 0s;
@@ -264,7 +268,7 @@ nav {
   }
   &.active {
     transform: translate(0px, 100%);
-    transition: .5s ease-in;
+    transition: 0.5s ease-in;
     @include breakpoint("tablet") {
       transform: none;
       transition: 0s;
@@ -281,10 +285,10 @@ nav {
   font-size: 4rem;
   z-index: 10;
   cursor: pointer;
-  img{
+  img {
     position: relative;
     width: 2.5rem;
-    top: -.1em
+    top: -0.1em;
   }
 }
 
@@ -293,8 +297,8 @@ nav {
   .selectfont-searchbar {
     input {
       width: 100%;
-      border:none;
-      background:none;
+      border: none;
+      background: none;
       border-bottom: 1.5px solid white;
       @include setFont($medium, 0.9em);
       color: white;
@@ -303,7 +307,7 @@ nav {
     padding: 5em 0 1em;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    @include breakpoint("desktop"){
+    @include breakpoint("desktop") {
       padding: 7em 0 2em;
       margin-left: 7.5%;
       margin-right: 7.5%;
@@ -314,7 +318,7 @@ nav {
     overflow-y: scroll;
     padding: 0em;
     padding-bottom: 20em;
-    @include breakpoint ("tablet") {
+    @include breakpoint("tablet") {
       padding-bottom: 20em;
     }
     &::-webkit-scrollbar {
@@ -532,6 +536,31 @@ nav {
   }
   @include breakpoint("desktop") {
     padding: 3em 4em;
+  }
+}
+
+// # About Page Container #
+.about-container {
+  #about-team-list {
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    li {
+      width: 19.5%;
+      .about-profile {
+        width: 100%;
+      }
+    }
+  }
+  #about-form {
+    align-items: center;
+    h2 {
+      @include setFont($bold, 4em);
+    }
+    #about-form-input {
+      justify-content: space-between;
+      width: 80%;
+    }
   }
 }
 

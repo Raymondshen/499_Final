@@ -19,7 +19,13 @@
     }
   }
 }
+.flex-parent {
+  display:flex;
+}
 
+.flex-col {
+  flex-flow: column wrap;
+}
 .container {
   margin: 0em auto;
 }
