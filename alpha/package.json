@@ -2,10 +2,11 @@
   "name": "alpha",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lovisabe.github.io/499_Final",
+  "homepage": "https://mannenpag.github.io/499_Final",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "jspdf": "^1.5.3",
+    "pdf-lib": "^1.2.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
@@ -15,8 +16,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

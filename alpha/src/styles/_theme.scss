@@ -32,7 +32,7 @@ h1 {
   font-size: 3em;
   line-height: 112%;
   @include breakpoint("tablet") {
-    font-size: 6em;
+    font-size: 1em;
     line-height: 92%;
   }
 }
@@ -71,10 +71,7 @@ h5 {
 }
 
 a {
-  @include setFont($bold, 0.9em);
-  @include breakpoint("laptop") {
-    @include setFont($bold, 1.1em);
-  }
+  @include setFont($bold, .9em);
   line-height: 105%;
 }
 
@@ -82,7 +79,6 @@ a {
 
 main {
   width: 100vw;
-  //height: 6000px;
 }
 
 header {
@@ -90,17 +86,82 @@ header {
   left: 0;
   top: 0;
   bottom: 0;
-  height: 5rem;
+  height: 6em;
   background-color: var(--color-purewhite);
   border-bottom: 1px solid var(--color-bg-dark);
+  border-right: none;
   width: 100vw;
   display: none;
-  padding: 1em;
   @include breakpoint("tablet") {
-    padding: 1em 3.5em;
+    padding: 1em;
   }
-  nav {
+}
+
+nav {
+  transition: .5s ease-in;
+  background: #1c1c1ced;
+  color: var(--color-purewhite);
+  border-bottom: 1px solid var(--color-purewhite);
+  width: 100vw;
+  @include breakpoint("tablet") {
+    background: none;
+    transition: 0s;
+    color: var(--color-bg-dark);
+    border-bottom: none;
+    width: auto;
+    height: auto;
+  }
+  a {
+    font-size: 1.4em;
+    @include breakpoint("tablet") {
+      font-size: 1.1em;
+    }
+  }
+  &.active {
+    transform: translate(0px, -30em);
+    transition: .5s ease-in;
+    @include breakpoint("tablet") {
+      transform: none;
+      transition: 0s;
+    }
+  }
+  @include breakpoint("tablet") {
     padding-left: 2vw;
+  }
+}
+
+.content-contain-header{
+  z-index: 20;
+  background-color: var(--color-purewhite);
+}
+
+.hover-underline{
+    border-bottom: 1px solid transparent;
+  &:hover{
+    border-bottom: 1px solid var(--color-purewhite);
+  }
+}
+
+.nav {
+  z-index: 10;
+  @include breakpoint("tablet") {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-icon {
+  position: absolute;
+  right: .2em;
+  top: 0;
+  color: var(--color-purple);
+  font-size: 4rem;
+  z-index: 20;
+  cursor: pointer;
+  img{
+    position: relative;
+    width: 1.8rem;
+    top: -.1em
   }
 }
 
@@ -108,15 +169,24 @@ header {
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 0.8em;
+  max-width: 7em;
 
   &--primary {
-    background-color: var(--color-bg-dark);
-    color: var(--color-purewhite);
-
+    background-color: var(--color-purewhite);
+    color: var(--color-bg-dark);
+    @include breakpoint("tablet") {
+      background-color: var(--color-bg-dark);
+      color: var(--color-purewhite);
+    }
     &:hover {
-      border-color: var(--color-bg-dark);
-      background-color: var(--color-purewhite);
-      color: var(--color-bg-dark);
+        border-color: var(--color-purewhite);
+        background-color: var(--color-bg-dark);
+        color: var(--color-purewhite);
+      @include breakpoint("tablet") {
+        border-color: var(--color-bg-dark);
+        background-color: var(--color-purewhite);
+        color: var(--color-bg-dark);
+      }
     }
   }
   &--secondary {
@@ -184,11 +254,6 @@ header {
   padding-top: 5rem;
   overflow-y: scroll;
 }
-.nav {
-  z-index: 10;
-  justify-content: space-between;
-  align-items: center;
-}
 .bg-dark {
   background: var(--color-bg-dark);
   min-height: 100vh;
@@ -201,16 +266,17 @@ header {
 }
 
 // # GLOBAL: Selection Navigation #
-.selection {
-  width: 100%;
-  @include breakpoint("tablet") {
-    grid-column-end: span 5;
-  }
+.pairing-nav-icon {
+  width: 2em;
+  margin: auto;
+}
   // # Navigation for the selection Area #
   .selection-nav-container {
-    padding: 1.5em 1em;
+    padding: 1.5em 2.5% .8em 2.5%;
+    width: 100vw;
     @include breakpoint("tablet") {
-      padding: 2em 3.5em;
+      padding: 1.5em 7.5% .8em 7.5%;
+      width: inherit;
     }
     z-index: 2;
     flex-flow: wrap row;
@@ -220,22 +286,54 @@ header {
       margin-right: 0.8em;
     }
   }
+
+.selection {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  transition: .5s ease-in;
+  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include breakpoint("tablet") {
+    transform: none;
+    transition: 0s;
+    display: block;
+  }
+  @include breakpoint("tablet") {
+    grid-column-end: span 5;
+  }
   &.active {
-    //transform: positionX(-2000px);
-    width: 0;
+    transition: .5s ease-in;
+    display: block!important;
+    @include breakpoint("tablet") {
+      transition: 0s;
+    }
   }
 }
 
 .closeBtn {
   position: absolute;
+  right: 50%;
+  top: 0;
+  transform: translate(21px, 10px);
   color: var(--color-purewhite);
   font-size: 4rem;
   z-index: 10;
   cursor: pointer;
+  img{
+    position: relative;
+    width: 2.5rem;
+    top: -.1em
+  }
 }
 
 // # SELECTION : FONT PAIR #
 #selection-fontpair-interface {
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .selectfont-searchbar {
     input {
       width: 100%;
@@ -246,36 +344,43 @@ header {
       color: white;
       height: 50px;
     }
-    padding: 5em 1em 1em;
-    @include breakpoint("tablet"){
-      padding: 7em 7.5% 2em;
+    padding: 5em 0 1em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    @include breakpoint("desktop"){
+      padding: 7em 0 2em;
+      margin-left: 7.5%;
+      margin-right: 7.5%;
     }
   }
   #selectfont {
-    height: 100vh;
     overflow-y: scroll;
     padding: 0em;
-    padding-bottom: 12em;
+    padding-bottom: 2em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     @include breakpoint ("tablet") {
-      padding-bottom: 14em;
-    }
+      padding-bottom: 2em;
+   }
+   @include breakpoint("desktop") {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+  }
     &::-webkit-scrollbar {
       width: 0;
     }
     .font-card {
       max-height: 245px;
       &:nth-child(odd) {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
-        @include breakpoint("laptop") {
-          margin-left: 7.5%;
+        margin-left: auto;
+        @include breakpoint("desktop") {
+          margin-right: 2.5%;
         }
       }
       &:nth-child(even) {
-        margin-right: 2.5%;
-        margin-left: 2.5%;
-        @include breakpoint("laptop") {
-          margin-right: 7.5%;
+        margin-right: auto;
+        @include breakpoint("desktop") {
+          margin-left: 2.5%;
         }
       }
       position: relative;
@@ -284,8 +389,8 @@ header {
       padding: 4em 3em;
       border: 1px solid var(--color-purewhite);
       background: var(--color-bg-lightdark);
-      @include breakpoint("laptop") {
-        width: 40%;
+      @include breakpoint("desktop") {
+        width: 47%;
       }
       .button {
         cursor: pointer;
@@ -352,9 +457,7 @@ header {
     @include setFont($medium, 0.8em);
     color: var(--color-purewhite);
     padding: 0;
-    padding-top: 2em;
     @include breakpoint("tablet") {
-      padding-top: 5em;
     }
     opacity: 0.8;
   }
@@ -414,9 +517,8 @@ header {
 #selectspacing {
   height: 100vh;
   overflow-y: scroll;
-  padding: 4em 0em;
-  @include breakpoint("tablet") {
-    padding: 6em 0em;
+  &::-webkit-scrollbar{
+    display: none;
   }
   .spacingfont {
     h5 {

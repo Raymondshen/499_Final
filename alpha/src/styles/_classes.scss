@@ -11,11 +11,12 @@
   }
   a {
     display: block;
-    padding: 0.2em 0.5em;
     font-weight: normal;
     cursor: pointer;
-    text-align: justify;
-    padding: .8em;
+    @include breakpoint("tablet") {
+      text-align: justify;
+      padding: .8em;
+    }
   }
 }
 

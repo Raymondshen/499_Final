@@ -30,3 +30,12 @@ December 05-12:
 - Worked on the landing page.
 - Started looking into the animation for landing page and download success of design doc.
 - Met with Gustav on Wednesday to continue working on the project.
+
+December 12-19:
+
+- Structured and cleaned up components, files and folders.
+- Coded the landing page based on our figma design.
+- Created svg logo and icons.
+- Created svg animation of the logo on the landing page.
+- Added fonts to the font list (google spreadsheet).
+- Worked with Gustav on the nav layout, icon placements etc.

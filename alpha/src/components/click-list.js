@@ -18,7 +18,7 @@ const ClickList = ({ data, families, callback }) => {
     console.log(data)
     return (<>
       <div className="selectfont-searchbar">
-        <input type="search" placeholder="Type a font name..." onChange={makeFontSearch} />
+        <input type="search" placeholder="Search" onChange={makeFontSearch} />
       </div>
       <section id="selectfont" className="flex-xs-parent flex-xs-wrap">
         {list.map((o, i) => (
