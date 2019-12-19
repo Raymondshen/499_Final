@@ -27,15 +27,6 @@ const reduceProperty = (s, a) => {
 }
 const reduceIndex = (s, a) => ({ ...s, ...a });
 
-
-const FontStyleSheet = ({fonts}) => {
- return (
-	 <style>
-		 {fonts.reduce((r,o)=>r+o.import,"")}
-	 </style>
- )
-}
-
 //Here is home content. 
 const HomePage = ({ fonts }) => {
 	let { path } = useRouteMatch();
@@ -57,7 +48,6 @@ const HomePage = ({ fonts }) => {
 		},
 		spacingsData
 	);
-
 	useEffect(() => {
 		if (!fonts.length) return;
 		let r1 = Math.floor(Math.random() * fonts.length);
@@ -72,7 +62,6 @@ const HomePage = ({ fonts }) => {
 
 	return (
 		<article className="container">
-			<FontStyleSheet fonts={fonts}/>
 			<section className="grid">
 				<div className="closeBtn position-xs-f display-md-n" onClick={()=>setSideBarOpen(!sideBarOpen)}>
 					<img src={gearIcon} alt=""></img>
@@ -137,7 +126,7 @@ const HomePage = ({ fonts }) => {
 
 const PairFont = ({ fontlist, setFontFamilies, fontFamilies }) => {
 	return (
-			<div id="selection-fontpair-interface" className="bg-dark">
+			<div id="selectspacing selection-fontpair-interface" className="bg-dark">
 				<ClickList
 					data={fontlist}
 					families={fontFamilies}

@@ -15,7 +15,6 @@ const ClickList = ({ data, families, callback }) => {
     // let r1 = Math.floor(Math.random() * data.length);
     // let r2 = Math.floor(Math.random() * data.filter((o,i)=>i!=r1).length);
   
-    console.log(data)
     return (<>
       <div className="selectfont-searchbar">
         <input type="search" placeholder="Search" onChange={makeFontSearch} />
