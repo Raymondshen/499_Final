@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useReducer} from 'react';
+import React, {useState,useEffect} from 'react';
 import './styles/App.css';
 import './styles/style.min.css';
 import {
@@ -10,7 +10,7 @@ import {HeaderNav} from "./components/nav";
 
 import HomePage from "./pages/home";
 import LearnPage from "./pages/learn";
-//import IntroPage from "./pages/intro";
+import IntroPage from "./pages/intro";
 import AboutPage from "./pages/about";
 
 const getKeys = row => Object.keys(row).filter(key => /^gsx\$/.test(key));
@@ -31,7 +31,7 @@ function App() {
       setFonts(d.feed.entry.map(parseRow))
 		})
   },[]);
-  
+  console.log(fonts);
   return (
     <Router style={{overflow: 'auto'}}>
       <HeaderNav title={"fontPairing"}/>

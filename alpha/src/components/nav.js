@@ -14,15 +14,14 @@ const HeaderNav = ({title}) => {
 			<img src={HamburgerIcon} alt="nav icon"/>
 		</div>
 		<header className="nav flex-xs-parent flex-md-horizontal flex-xs-vertical">
-			<div className="p-xs-s p-md-n content-contain-header">
-				<img src={Logo} alt="logo" style={{width: '2em'}}/>
-				<h1 style={{fontSize:'1.2em', fontWeight:'bold'}}>{title}</h1>
-			</div>
+			<Link to="/" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+				<div className="p-xs-s p-md-n content-contain-header">
+					<img src={Logo} alt="logo" style={{width: '2em'}}/>
+					<h1 style={{fontSize:'1.2em', fontWeight:'bold'}}>{title}</h1>
+				</div>
+			</Link>
 			<nav className={`p-xs-s p-md-n nav flex-xs-parent flex-md-horizontal flex-xs-vertical ${sideBarOpen?'active':''}`}>
 			<ul className="flex-xs-parent flex-xs-vertical flex-md-horizontal flex-xs-justify-end p-xs-bl p-md-bn">
-				<li className="p-xs-tm p-md-tn">
-					<Link to="/" onClick={()=>setSideBarOpen(!sideBarOpen)}>Home</Link>
-				</li>
 				<li className="p-xs-tm p-md-tn">
 					<Link to="/learn" onClick={()=>setSideBarOpen(!sideBarOpen)}>How to pair fonts</Link>
 				</li>

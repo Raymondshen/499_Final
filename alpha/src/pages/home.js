@@ -3,7 +3,6 @@ import React, { useReducer, useState, useEffect } from 'react';
 import {
 	Switch,
 	Route,
-	Link,
 	useRouteMatch
 } from 'react-router-dom';
 
@@ -159,7 +158,7 @@ const SetSize = ({ setFontSizes, fontSizes }) => {
 	}
 
 	return (
-			<div className="p-xs-bxl">
+			<div id="selectspacing" className="p-xs-bxl">
 				<div className="fontsize-title p-xs-txl p-xs-bs">
 					<p>Choose the font size</p>
 				</div>

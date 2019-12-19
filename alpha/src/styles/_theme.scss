@@ -93,7 +93,7 @@ header {
   left: 0;
   top: 0;
   bottom: 0;
-  height: 6em;
+  height: 5em;
   background-color: var(--color-purewhite);
   border-bottom: 1px solid var(--color-bg-dark);
   border-right: none;
@@ -125,8 +125,13 @@ nav {
     }
   }
   &.active {
+<<<<<<< HEAD
     transform: translate(0px, -30em);
     transition: 0.5s ease-in;
+=======
+    transform: translate(0px, -40em);
+    transition: .5s ease-in;
+>>>>>>> dce585d203f7236c5649dc9aa0eb2f844f0ff113
     @include breakpoint("tablet") {
       transform: none;
       transition: 0s;
@@ -135,11 +140,16 @@ nav {
   @include breakpoint("tablet") {
     padding-left: 2vw;
   }
+
 }
 
 .content-contain-header {
   z-index: 20;
   background-color: var(--color-purewhite);
+  border-bottom: 1px solid var(--color-dark-gray);
+  @include breakpoint("tablet") {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 .hover-underline {
@@ -347,6 +357,8 @@ nav {
 
 // # SELECTION : FONT PAIR #
 #selection-fontpair-interface {
+  height: 100vh;
+  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
