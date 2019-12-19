@@ -10,7 +10,7 @@ const HeaderNav = ({title}) => {
 
     return (
 	<>
-		<div className="nav-icon display-md-n position-xs-a" onClick={()=>setSideBarOpen(!sideBarOpen)}>
+		<div className="nav-icon display-md-n position-xs-f" onClick={()=>setSideBarOpen(!sideBarOpen)}>
 			<img src={HamburgerIcon} alt="nav icon"/>
 		</div>
 		<header className="nav flex-xs-parent flex-md-horizontal flex-xs-vertical">
