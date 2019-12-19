@@ -23,12 +23,35 @@ const AboutPage = () => {
 
 
 
-				<ul id="about-team-list" class="flex-parent flex-row">
-					<li><img className="about-profile" src={raymondIcon} alt="Raymond"></img>Raymond</li>
-					<li><img className="about-profile" src={chunjiaIcon} alt="Chunjia"></img>Chunjia</li>
-					<li><img className="about-profile" src={gustavIcon} alt="Gustav"></img>Gustav</li>
-					<li><img className="about-profile" src={lovisaIcon} alt="Lovisa"></img>Lovisa</li>
-					<li><img className="about-profile" src={dinoIcon} alt="Dino"></img>Dino</li>
+				<ul id="about-team-list" class="flex-parent flex-row" style={{textAlign:'center'}}>
+					<li>
+						<div>
+							<img className="about-profile" src={raymondIcon} alt="Raymond" />
+						</div>
+						<div>Raymond</div>
+					</li>
+					<li>
+						<div>
+							<img className="about-profile" src={chunjiaIcon} alt="Chunjia" />
+						</div>
+						<div>Chunjia</div>
+					</li>
+					<li>
+						<div>
+							<img className="about-profile" src={gustavIcon} alt="Gustav" />
+						</div>
+						<div>Gustav</div>
+					</li>
+					<li>
+						<div>
+							<img className="about-profile" src={lovisaIcon} alt="Lovisa" />
+						</div>
+						<div>Lovisa</div>
+					</li>
+					<li><div>
+							</div><img className="about-profile" src={dinoIcon} alt="Dino" />
+						<div>Dino</div>
+					</li>
 				</ul>
 
 
@@ -47,6 +70,7 @@ const AboutPage = () => {
 								<label>Name</label>
 								<input type='text' placeholder="John Doe"></input>
 							</div>
+
 							<br></br>
 
 							<div id="about-form-email">

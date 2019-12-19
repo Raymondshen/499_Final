@@ -601,14 +601,13 @@ nav {
     list-style: none;
     justify-content: space-between;
     margin-top: 10%;
-    
+
 
     li {
       width: 19.5%;
       .about-profile {
         width: 50%;
       }
-
     }
   }
 
@@ -616,49 +615,37 @@ nav {
 
 
   #about-form {
-    
-   
 
     margin-top:20%;
-
 
     h2 {
       @include setFont($bold, 3em);
     }
 
-
-
-
     #about-form-input {
       justify-content: space-between;
       width: 80%;
-    }
+    
 
 
-    .flex-parent {
+      .flex-parent {
 
-      display: flex;
- 
+        display: flex;
+   
 
-    }
-
-
-    .flex-row {
-      display:table;
-      flex-flow: wrap row;
-
-        @include breakpoint("tablet") {
-        display:flex;
-        flex-flow: wrap row;
-      
       }
 
-    }
 
+      .flex-row {
+        display:table;
+        flex-flow: wrap row;
 
-
-  
-}
+        @include breakpoint("tablet") {
+          display:table;
+        }
+      }
+    }  
+  }
 }
 
 
