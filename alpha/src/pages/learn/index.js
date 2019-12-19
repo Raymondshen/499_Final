@@ -14,7 +14,7 @@ const LearnPage = () => {
 					<li>You can pair fonts of the same family using variation to the spacing and weight</li>
 					<li>Create a visual hierarchy</li>
 					<li>Avoid choosing similar fonts</li>
-				</ul>
+				</ul> 
 				<p>
 					With that said, those are just a few ground rules to keep in mind while exploring <br/> 
 					Have fun font experimenting!
