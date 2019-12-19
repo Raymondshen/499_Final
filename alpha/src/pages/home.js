@@ -82,7 +82,7 @@ const HomePage = ({ fonts }) => {
 					<PairNav path={path}/>
 					<div id="selection-fontpair-interface" className="bg-dark">
 						<Switch>
-						<Route exact path={`${path}`}>
+							<Route exact path={`${path}`}>
 							<PairFont
 								path={path}
 								spacings={spacings}
@@ -92,7 +92,7 @@ const HomePage = ({ fonts }) => {
 								fontSizes={fontSizes}
 							/>
 						</Route>
-						<Route path={`${path}/set-sizes`}>
+							<Route path={`${path}/set-sizes`}>
 							<SetSize
 								path={path}
 								spacings={spacings}
@@ -101,7 +101,7 @@ const HomePage = ({ fonts }) => {
 								fontSizes={fontSizes}
 							/>
 						</Route>
-						<Route path={`${path}/spacing`}>
+							<Route path={`${path}/spacing`}>
 							<SetSpacing
 								path={path}
 								spacings={spacings}
@@ -110,7 +110,7 @@ const HomePage = ({ fonts }) => {
 								fontSizes={fontSizes}
 							/>
 						</Route>
-						<Route path={`${path}/download`}>
+							<Route path={`${path}/download`}>
 							<PrintPDF
 								path={path}
 								spacings={spacings}
@@ -118,7 +118,7 @@ const HomePage = ({ fonts }) => {
 								fontSizes={fontSizes}
 							/>
 						</Route>
-					</Switch>
+						</Switch>
 					</div>
 				</div>
 				<div id="preview" className="preview col-xs-12 offset-xs-0 col-md-8 offset-md-6 pairing-wrapper">
