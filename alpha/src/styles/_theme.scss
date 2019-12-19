@@ -289,7 +289,12 @@ nav {
 
 .selection {
   width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   transition: .5s ease-in;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   @include breakpoint("tablet") {
     transform: none;
     transition: 0s;
@@ -325,6 +330,9 @@ nav {
 
 // # SELECTION : FONT PAIR #
 #selection-fontpair-interface {
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .selectfont-searchbar {
     input {
       width: 100%;
@@ -345,30 +353,33 @@ nav {
     }
   }
   #selectfont {
-    height: 100vh;
     overflow-y: scroll;
     padding: 0em;
-    padding-bottom: 20em;
+    padding-bottom: 2em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     @include breakpoint ("tablet") {
-      padding-bottom: 20em;
-    }
+      padding-bottom: 2em;
+   }
+   @include breakpoint("desktop") {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+  }
     &::-webkit-scrollbar {
       width: 0;
     }
     .font-card {
       max-height: 245px;
       &:nth-child(odd) {
-        margin-left: 2.5%;
-        margin-right: 2.5%;
+        margin-left: auto;
         @include breakpoint("desktop") {
-          margin-left: 7.5%;
+          margin-right: 2.5%;
         }
       }
       &:nth-child(even) {
-        margin-right: 2.5%;
-        margin-left: 2.5%;
+        margin-right: auto;
         @include breakpoint("desktop") {
-          margin-right: 7.5%;
+          margin-left: 2.5%;
         }
       }
       position: relative;
@@ -378,7 +389,7 @@ nav {
       border: 1px solid var(--color-purewhite);
       background: var(--color-bg-lightdark);
       @include breakpoint("desktop") {
-        width: 40%;
+        width: 47%;
       }
       .button {
         cursor: pointer;
@@ -505,7 +516,8 @@ nav {
 #selectspacing {
   height: 100vh;
   overflow-y: scroll;
-  @include breakpoint("tablet") {
+  &::-webkit-scrollbar{
+    display: none;
   }
   .spacingfont {
     h5 {
