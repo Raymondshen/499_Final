@@ -589,6 +589,12 @@ nav {
   p{
     font-size: 1.5em;
     margin-top: 2%;
+
+     @include breakpoint("tablet") {
+          width: 300px;
+        }
+
+
   }
 
 

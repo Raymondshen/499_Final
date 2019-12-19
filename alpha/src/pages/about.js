@@ -30,12 +30,14 @@ const AboutPage = () => {
 						</div>
 						<div>Raymond</div>
 					</li>
+
 					<li>
 						<div>
 							<img className="about-profile" src={chunjiaIcon} alt="Chunjia" />
 						</div>
 						<div>Chunjia</div>
 					</li>
+
 					<li>
 						<div>
 							<img className="about-profile" src={gustavIcon} alt="Gustav" />
@@ -48,8 +50,12 @@ const AboutPage = () => {
 						</div>
 						<div>Lovisa</div>
 					</li>
-					<li><div>
-							</div><img className="about-profile" src={dinoIcon} alt="Dino" />
+
+					<li>
+						<div>
+							<img className="about-profile" src={dinoIcon} alt="Dino" />
+						</div>
+
 						<div>Dino</div>
 					</li>
 				</ul>
