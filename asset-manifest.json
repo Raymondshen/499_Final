@@ -1,22 +1,35 @@
 {
   "files": {
-    "main.css": "/499_Final/static/css/main.57461178.chunk.css",
-    "main.js": "/499_Final/static/js/main.6067b9d1.chunk.js",
-    "main.js.map": "/499_Final/static/js/main.6067b9d1.chunk.js.map",
+    "main.css": "/499_Final/static/css/main.b24d3d1f.chunk.css",
+    "main.js": "/499_Final/static/js/main.e47702b0.chunk.js",
+    "main.js.map": "/499_Final/static/js/main.e47702b0.chunk.js.map",
     "runtime-main.js": "/499_Final/static/js/runtime-main.2bf8be26.js",
     "runtime-main.js.map": "/499_Final/static/js/runtime-main.2bf8be26.js.map",
-    "static/js/2.51e6d65d.chunk.js": "/499_Final/static/js/2.51e6d65d.chunk.js",
-    "static/js/2.51e6d65d.chunk.js.map": "/499_Final/static/js/2.51e6d65d.chunk.js.map",
+    "static/js/2.331efdc6.chunk.js": "/499_Final/static/js/2.331efdc6.chunk.js",
+    "static/js/2.331efdc6.chunk.js.map": "/499_Final/static/js/2.331efdc6.chunk.js.map",
     "index.html": "/499_Final/index.html",
-    "precache-manifest.5dd8fdebbf8885a8c2c2a7053e1077e5.js": "/499_Final/precache-manifest.5dd8fdebbf8885a8c2c2a7053e1077e5.js",
+    "precache-manifest.9c01eea49988978ae805c2a11c9ff9b8.js": "/499_Final/precache-manifest.9c01eea49988978ae805c2a11c9ff9b8.js",
     "service-worker.js": "/499_Final/service-worker.js",
-    "static/css/main.57461178.chunk.css.map": "/499_Final/static/css/main.57461178.chunk.css.map",
-    "static/js/2.51e6d65d.chunk.js.LICENSE": "/499_Final/static/js/2.51e6d65d.chunk.js.LICENSE"
+    "static/css/main.b24d3d1f.chunk.css.map": "/499_Final/static/css/main.b24d3d1f.chunk.css.map",
+    "static/js/2.331efdc6.chunk.js.LICENSE": "/499_Final/static/js/2.331efdc6.chunk.js.LICENSE",
+    "static/media/chunjia.jpg": "/499_Final/static/media/chunjia.98c655a0.jpg",
+    "static/media/dino.jpg": "/499_Final/static/media/dino.c000fbe2.jpg",
+    "static/media/gustav.jpg": "/499_Final/static/media/gustav.0ddf07d8.jpg",
+    "static/media/icon_choose_font.svg": "/499_Final/static/media/icon_choose_font.583feda7.svg",
+    "static/media/icon_download.svg": "/499_Final/static/media/icon_download.42540c8d.svg",
+    "static/media/icon_font_size.svg": "/499_Final/static/media/icon_font_size.d1917733.svg",
+    "static/media/icon_hamburger.svg": "/499_Final/static/media/icon_hamburger.79379326.svg",
+    "static/media/icon_settings.svg": "/499_Final/static/media/icon_settings.9af961e1.svg",
+    "static/media/icon_spacing.svg": "/499_Final/static/media/icon_spacing.de683106.svg",
+    "static/media/logo.svg": "/499_Final/static/media/logo.6f0fc60f.svg",
+    "static/media/logo_outline.svg": "/499_Final/static/media/logo_outline.6cb18e40.svg",
+    "static/media/lovisa.jpg": "/499_Final/static/media/lovisa.4ab23833.jpg",
+    "static/media/raymond.jpg": "/499_Final/static/media/raymond.f09484c2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2bf8be26.js",
-    "static/js/2.51e6d65d.chunk.js",
-    "static/css/main.57461178.chunk.css",
-    "static/js/main.6067b9d1.chunk.js"
+    "static/js/2.331efdc6.chunk.js",
+    "static/css/main.b24d3d1f.chunk.css",
+    "static/js/main.e47702b0.chunk.js"
   ]
 }

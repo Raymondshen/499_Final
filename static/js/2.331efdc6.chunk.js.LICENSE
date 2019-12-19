@@ -165,7 +165,7 @@ object-assign
  */
 
 /** @license React v16.11.0
- * react-dom-server.browser.production.min.js
+ * react-is.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -174,7 +174,7 @@ object-assign
  */
 
 /** @license React v16.11.0
- * react-is.production.min.js
+ * react-dom-server.browser.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
