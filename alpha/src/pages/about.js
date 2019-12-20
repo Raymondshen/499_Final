@@ -14,7 +14,10 @@ const AboutPage = () => {
 
 
 
+
+
 				<h1 id="about-title" className="w-100">About FontPairing</h1>
+
 				<p className="w-100">Well executed font pairing is important to achieve aesthetic finesse. Though it is difficult to imagine how fonts will look together along with various style attributes applied to them.
 				This is why font pairing was created. It gives you the ability to easily play around with different options and pairings. FontPairing displays your font and style selections in real time, by laying the the process and options next to the previewed result.
 				FontPairing is brought to you by a group of 5 passionate design students. We all have a passion for typography, design, and code.
@@ -30,12 +33,14 @@ const AboutPage = () => {
 						</div>
 						<div>Raymond</div>
 					</li>
+
 					<li>
 						<div>
 							<img className="about-profile" src={chunjiaIcon} alt="Chunjia" />
 						</div>
 						<div>Chunjia</div>
 					</li>
+
 					<li>
 						<div>
 							<img className="about-profile" src={gustavIcon} alt="Gustav" />
@@ -48,8 +53,12 @@ const AboutPage = () => {
 						</div>
 						<div>Lovisa</div>
 					</li>
-					<li><div>
-							</div><img className="about-profile" src={dinoIcon} alt="Dino" />
+
+					<li>
+						<div>
+							<img className="about-profile" src={dinoIcon} alt="Dino" />
+						</div>
+
 						<div>Dino</div>
 					</li>
 				</ul>
@@ -58,22 +67,22 @@ const AboutPage = () => {
 
 
 
-				<div id="about-form" class="flex-parent flex-col">
+				<div id="about-form" class="flex-parent flex-col w-100">
 					<h2 id="about-contact">Contact Us</h2>
-					<p>Appreaciate your feedbacks! let’s make it better for fun!</p>
+					<p>Appreciate your feedback! let’s make it better for fun!</p>
 
 					<div id="about-form-input" class="flex-parent flex-row">
 
 						<div id="about-form-left">
 
-							<div id="about-form-name">
+							<div id="about-form-name" className="formbox">
 								<label>Name</label>
 								<input type='text' placeholder="John Doe"></input>
 							</div>
 
 							<br></br>
 
-							<div id="about-form-email">
+							<div id="about-form-email" className="formbox">
 								<label>Email</label>
 								<input type='text' placeholder="fontpairing123@example.com"></input>
 							</div>
@@ -81,7 +90,7 @@ const AboutPage = () => {
 						</div>
 
 						<div id="about-form-right">
-							<textarea rows="5" cols="100"></textarea>
+							<textarea rows="5" cols="50"></textarea>
 						</div>
 
 					</div>
